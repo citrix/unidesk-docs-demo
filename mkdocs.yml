@@ -1,0 +1,12 @@
+site_name: Unidesk Documentation Demo
+site_description: Demo site for Unidesk documentation on GitHub
+theme_dir: theme_multi
+markdown_extensions:
+  - admonition
+  - codehilite(guess_lang=false)
+  - toc(permalink=true)
+  - footnotes
+  - meta
+
+pages:
+- Unidesk Documentation: index.md
