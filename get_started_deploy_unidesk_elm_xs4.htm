@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Install the Unidesk Enterprise Layer Manager (ELM) (XenServer)</title>
+    </head>
+    <body style="padding-left: 1.5em; padding-right: 1em; border-bottom-width: .5em; border-left-width: .5em; border-right-width: .5em; border-top-width: .5em; color: #000000; font-family: Arial, ' Helvetica', ' Sans Serif'; font-size: 9pt; margin-left: 0pt; text-align: left; background-color: #ffffff;">
+        <div class="MCBreadcrumbsBox_0" style="border-bottom-color: #ffffff;border: 1px;border-bottom-width: 1px;border-top-width: 1px;border-left-width: 1px;border-right-width: 1px;font-size: 9pt;color: #636363;border-bottom-style: solid;padding-bottom: 10px;margin-bottom: 10px;"><span class="MCBreadcrumbsPrefix">You are here: </span><span class="MCBreadcrumbsSelf">Learn about Citrix App Layering [UnideskVersion Layering 4.0.8]</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">Set up</span><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="get_started_deploy_unidesk_elm_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Install the Unidesk ELM</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Install the ELM</span>
+        </div>
+        <h1 style="clear: both;width: 85%;page-break-before: always;color: #d31245;font-size: 20px;font-weight: 500;margin-bottom: 0.40em;margin-top: 0.4em;">Install the Unidesk Enterprise Layer Manager (ELM) (XenServer)</h1>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this article:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 100%;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Before" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Before you start</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Deploy_ELM" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Deploy the Unidesk Enterprise Layer Manager (ELM) </a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Expand" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Expand locally attached storage, if needed</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Next" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Next Step</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Before"></a>Before you start</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To get started with Unidesk, you will need:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">A Unidesk account.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><a href="welcome_platform_support_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">A supported version of Citrix XenServer</a>.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">A Virtual Network in XenServer.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Storage requirements and XenServer requirements listed <a href="get_started_prerequisites_xs4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">here</a>.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">A XenCenter Client.</li>
+        </ul>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Deploy_ELM"></a>Deploy the Unidesk Enterprise Layer Manager (ELM) </h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Using this procedure, you will do a basic Unidesk ELM installation on your XenServer Server. Once you complete these steps, use the following sections to <i>change the administrator password</i> (strongly recommended), and configure more advanced options, such as Static IP. </p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Download the Unidesk installation package, Unidesk_install_xenserver_pkg_4.x.x, from the Unidesk download site. This zip file contains the xenserver_elm_4.x.x.x.ova  and other files. </p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Extract the xenserver_elm_4.x.x.x.ova file to a folder on your local drive. </p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In your XenCenter Client, select <b>File &gt; Import</b>.</p>
+            </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the wizard that opens, select the following values:<ul style="margin-left: 0em;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><b>Import Source</b> - Browse to <i>your</i> unique location.</li></ul><ul style="margin-left: 0em;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><b>Location</b> - Choose the XenServer where you want to deploy the ELM.</li><li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><b>Storage</b> - Use the default value to put the Unidesk disks on the Local XenServer Storage.</li><li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><b>Networking</b> - Select the correct network for your XenServer configuration.</li><li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><b>Security</b> - This tab should be grayed out. Click <b>Next</b> to continue.</li><li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><b>OS&#160;Fixup Settings</b> - Select <b>Don't use Operating System Fixup</b>. </li><li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><b>Transfer VM&#160;Settings</b> - Choose the correct network , and choose <b>DHCP</b>.</li><li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><b>Finish</b> - Review your settings and select <b>Finish</b>.</li></ul></li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Switch to <b>Notification view</b> and wait for deployment to complete. This takes about 20-35 minutes.</p>
+            </li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Switch to <b>Infrastructure view</b>.</li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Rename your new appliance:</p>
+                <ol style="margin-left: 20px;padding-left: 0px;list-style-type: lower-alpha;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select your new appliance, which will be named <i>CentOS-7_x86_64_build_template_xenserver</i>.</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Click <b>Properties</b>, and enter a good name and description for your new ELM.</li>
+                </ol>
+            </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The new VM created from the Unidesk_ELM.ova file has 8 GB of memory and 4 CPUs. </p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;">Configure advanced settings</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Once you've completed the ELM&#160;installation, you should immediately log into the ELM and:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Modify the administrator password.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">(Optional) Configure advanced network options, such as Static IP, as needed.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Make any changes required to the existing settings, for example, the NTP servers you use or the Time Zone.</li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Unidesk Appliance Configuration utility lets you configure these settings. For details, click <a href="system_manage_appliance_co4.htm" class="MCXref_0" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Manage the Unidesk ELM (virtual appliance) </a>.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Expand"></a>Expand locally attached storage, if needed</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If you need to expand the ELM's local storage, see <a href="system_storage_co4.htm" class="MCXref_0" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Manage system storage</a>. </p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Next"></a>Next Step</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Once you're satisfied that the ELM is correctly configured and has the required storage space, you can log into the Unidesk Management Console, and begin creating your layers.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="get_started_login_vs4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Log into the Unidesk Management Console (UMC)</a>
+        </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Assign App Layers to users elastically (Elastic Layers)</title>
+    </head>
+    <body style="padding-left: 1.5em; padding-right: 1em; border-bottom-width: .5em; border-left-width: .5em; border-right-width: .5em; border-top-width: .5em; color: #000000; font-family: Arial, ' Helvetica', ' Sans Serif'; font-size: 9pt; margin-left: 0pt; text-align: left; background-color: #ffffff;">
+        <div class="MCBreadcrumbsBox_0" style="border-bottom-color: #ffffff;border: 1px;border-bottom-width: 1px;border-top-width: 1px;border-left-width: 1px;border-right-width: 1px;font-size: 9pt;color: #636363;border-bottom-style: solid;padding-bottom: 10px;margin-bottom: 10px;"><span class="MCBreadcrumbsPrefix">You are here: </span><span class="MCBreadcrumbsSelf">Learn about Citrix App Layering [UnideskVersion Layering 4.0.8]</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">Layer</span><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="layer_assign_apps_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Assign Layers</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Assign App Layers to users via Elastic Assignments</span>
+        </div>
+        <h1 style="clear: both;width: 85%;page-break-before: always;color: #d31245;font-size: 20px;font-weight: 500;margin-bottom: 0.40em;margin-top: 0.4em;"><a name="top"></a>Assign App Layers to users elastically (Elastic Layers)</h1>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this article:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 100%;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#You" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Assign apps elastically</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Prerequisites" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Prerequisites and limitations</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Enable_Elastic_Layers_in_Image" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Enable  Elastic Layering in the base image</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Elastic_Fit" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Run the Elastic Fit Analyzer on  App Layers  (Unidesk Labs)</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Assign" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Elastically assign an App Layer to AD&#160;Users and Groups</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#AssignMachine" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Elastically assign an App Layer to users via machine assignments and associations</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Manage" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Manage Elastic Assignments</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="You"></a>Assign apps elastically</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Wouldn't it be nice to drastically reduce the number of images you have to manage? What if you could leave apps that only a few users need out of your base image? And, assign the layers to specific users <i>elastically</i> on top of the base image. With the Elastic App Layers feature, you can do just that.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">An Elastic App Layer is a Unidesk App Layer that you configure to be delivered to specific users and groups, based on user entitlements, when the users log onto their session hosts or standalone desktops. With Elastic App Layers, you can give each user his/her own unique set of applications in addition to the base Layered Image that is used across sessions in the case of session hosts), and across floating pools/shared groups in the case of desktops.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">As this diagram shows, once you add Elastic Assignments to an App Layer,  a copy of the Layer is stored in the ELM's Network File Share, and delivered to individual AD users and groups on-demand, in addition to the Layers that they receive via the base image.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+            <img src="Resources/Images/unidesk_elastic_layers_generic.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+        </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To use this feature, you'll add <i>Elastic Assignments</i> specifying which users and groups should receive each of the App Layers that you would like to leave out of your base images. You'll then publish your base image(s) with the <i>Elastic Layering For Session Hosts</i> selected.</p>
+        <h4 style="font-size: 100%;margin-top: 1.2em;margin-bottom: .5em;clear: both;color: #303030;"><a name="How"></a>How users access Elastic Layers assigned to them</h4>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When users log into their Session or Desktop, icons for their Elastic Layers will appear as shortcuts on the desktop. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">A user receives an Elastic Layer in the following cases:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The user (an AD&#160;user in the Unidesk Management Console) is assigned the Layer.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">An AD group that the user belongs to is assigned the Layer. </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">A machine that the user logs into is a member of an AD&#160;Group that receives the Elastic Layer.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">A machine that the user logs into is associated (via the UMC) with an AD&#160;Group that is assigned the Layer via the UMC.</li>
+        </ul>
+        <h4 style="font-size: 100%;margin-top: 1.2em;margin-bottom: .5em;clear: both;color: #303030;">If more than one version of the same Layer is assigned to a user </h4>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If a Layer is assigned directly to the user and indirectly to one or more of the user's groups, the user receives the most recent version of the Layer assigned <i>directly</i> to her/him. For example, if a user is assigned Version 2, and a group that the user belongs to is assigned Version 3, the user will get Version 2. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If the user is assigned a Layer via one or more group assignments, the user receives the most recent version of the Layer.</p>
+        <h4 style="font-size: 100%;margin-top: 1.2em;margin-bottom: .5em;clear: both;color: #303030;">If a user has an App Layer in their Layered Image, and the Layer is also assigned to them elastically</h4>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If a user has an App Layer in the Layered Image and the user is also assigned the Layer elastically, they will receive the Elastic Layer, even if the version in the base image is more recent.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Prerequisites"></a>Prerequisites and limitations</h2>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Prerequisites</h3>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The ELM's Network File Share must be configured correctly:<ul style="margin-left: 0px;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The Share must be configured using SMB technology. When using Elastic Layer assignments, <i>NFS technology is not supported</i>.</li><li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The Share must be set up by the admin to be <b>readonly</b> for all users <i>except</i> for the one configured in the ELM. This secures the Layers and other files stored on the Share. </li><li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The User named in this configuration must have <b>Read/Write</b> permissions on the root of the network file share. Select <b>System &gt; Settings and Configuration</b> and scroll to <b>Network File Share</b>. </li><li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Make sure that any users who will be assigned Elastic Layers have <b>Read only</b> access for the root directory of the Network File Share.</li></ul></li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">.NET Framework 4.5 is required on any Layered Image where Elastic Layers are enabled.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The <a href="layer_apps_create_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">App Layers</a> you want to elastically assign. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>Note:</b> App Layers must be created using the <i>same OS&#160;Layer</i> used to create the Layered Image that you enable to deliver the Elastic App Layer to users. </p>
+            </li>
+        </ul>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Elastic_Layering_Limitations"></a>Elastic Layering Limitations</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You cannot elastically layer the following:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Microsoft Office Add-ons and extensions in individual Unidesk Layers. A user must have <i>all</i> of their add-ons in <i>one</i> Layer. Note: Please use the recipe for elastically layering MS&#160;Office.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Applications with drivers that use the driver store. For example, a printer driver.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Applications that modify the network stack or hardware. For example, a VPN client.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Applications that have boot level drivers. For example, a virus scanner.</li>
+        </ul>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Enable_Elastic_Layers_in_Image"></a>Enable  <i>Elastic Layering</i> in the base image</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When you publish the Layered Image that the users will log into to get the Elastic App Layer(s):</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Image Template Wizard, on the Layered Image Disk tab, select <b>Elastic Layering For Session Hosts</b>. </p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Finish publishing the Layered Image.</p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Provision your Session Hosts with the new base image. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When the users log in, they should see an icon for each Elastic App Layer they've been assigned.</p>
+            </li>
+        </ol>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Elastic_Fit"></a>Run the Elastic Fit Analyzer on  App Layers  (Unidesk Labs)</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Before assigning an App Layer elastically, use the Elastic Fit Analyzer to determine the likelihood that the Layer assignment will be successful.  </p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Elastic"></a>Elastic Fit Analysis</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Layer Details, the Elastic Fit rating indicates how likely it is that the Layer will work when elastically assigned. </p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; margin-left: 0; margin-right: auto;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" style="width: 51px;" />
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+                            <img src="Resources/Images/elastic_fit_pass.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>Good Elastic Fit.</b> This layer should work when deployed elastically.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyB-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+                            <img src="Resources/Images/elastic_fit_fail.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>Poor Elastic Fit.</b> This layer will probably not work when deployed elastically, or may behave differently than when it is deployed in a Layered Image.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Elastic Fit Details</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You can learn more about the Elastic Fit of a Layer by expanding the Elastic Fit Analysis. If the Elastic Fit is less than ideal, the list of violated rules will be displayed. </p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; margin-left: 0; margin-right: auto;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" style="width: 34px;" />
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+                            <img src="Resources/Images/elastic_fit_green_warning.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;"><b>Low Severity Warning.</b>  This is unlikely to cause any change in behavior or functionality for most applications.</td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+                            <img src="Resources/Images/elastic_fit_yellow_warning.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;"><b>Medium Severity Warning.</b> This may cause minor changes in behavior or functionality for some applications.</td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyB-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+                            <img src="Resources/Images/elastic_fit_red_warning.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;"><b>High Severity Warning.</b> This is likely to cause significant changes in behavior or functionality for many applications.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Enable Elastic Fit in Unidesk Labs</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To use this Unidesk Labs feature, you must enable it. To enable Elastic Fit: </p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Unidesk Management Appliance (UMC), select <b>System &gt; Settings and Configuration</b>.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Click <b>Edit</b> Unidesk Labs.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select the <b>Elastic Fit</b> check box.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Click <b>Save</b>.</li>
+        </ol>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Analyze an App Layer for Elastic Fit</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">All new Layer Versions will be analyzed for elastic layering compatibility when they are finalized. To analyze existing App Layers for Elastic Fit:</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log into the Unidesk Management Console (UMC) .</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <b>Layers &gt; App Layers</b>.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select the Layer to analyze, and click <b>Analyze Layer</b>.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Select Versions tab, choose the Layer Versions to analyze. </li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Confirm and Complete tab, click <b>Analyze Layer Versions</b>. The analysis takes seconds.</li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">To see the Elastic Fit Analysis, select the App Layers module, move the mouse pointer over the Layer icon and click the <b>Info</b> <img src="Resources/Images/info_grey.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" /> icon. </li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Expand the <b>Version Information</b> for each Layer Version, and look for the Elastic Fit rating.  </li>
+            <li value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">For a detailed report, expand the <b>Elastic Fit Details</b>. If the Elastic Fit is less than ideal, the list of violated rules will be displayed. </li>
+            <li value="9" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">You can display the AD tree and hide the violated rules by clicking a button acknowledging that the layer is unlikely to work as expected.</li>
+        </ol>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Upgrading from Earlier Releases</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">After upgrading from an earlier Unidesk release, the Elastic Fit Detail shows that any existing Layer Version(s) have not been analyzed. Until you run the analysis on existing Layer Versions, the Versions will have a single <i>High severity</i> Elastic Fit Detail, and a <i>Poor</i> Elastic Fit.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Assign"></a>Elastically assign an App Layer to AD&#160;Users and Groups</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The first time you assign an App Layer elastically, we recommend starting with an app like <b>Notepad++</b> or <b>GIMP</b>, because they are simple to . </p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log into the Unidesk Management Console (UMC) as an Admin user, and select <b>Layers &gt; App Layers</b>.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select an App Layer that is <i>not going to be included in the base image</i>, and select <b>Add Assignments</b>. </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the wizard that opens, select the Version of the App Layer that you want to assign users.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Skip the <b>Image Template Assignment</b> tab. This tab is for assigning the Layer to an Image Template.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Elastic&#160;Assignment tab, select the users and groups who should get this App Layer.</li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Confirm and Complete tab, review your selections, and click <b>Assign Apps</b>.</li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When the users log in, they should see an icon for each Elastic App Layer they've been assigned.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="AssignMachine"></a>Elastically assign an App Layer to users via machine assignments and associations</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Any machine running the Unidesk Layering Service (ULayer.exe) can have Elastic Layers assigned to it. You can accomplish this by either adding the machine to or associating it with the AD&#160;Group, and then elastically assigning the App Layers to the AD&#160;Group. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Layers assigned to the machine will be available to every User who successfully logs into that machine. The Unidesk Layering Service will scan for changes to the machine's AD group memberships and associations every 10 minutes. When the users log in, they should see an icon for each Elastic App Layer they've been assigned.</p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Use <i>Active Directory</i> to <i>add</i> the machine to the AD&#160;Group</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Assuming you have a published Layered Image booted in your environment, you can add the machine to an AD&#160;Group, and assign Elastic Layers to the AD&#160;Group.</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Use Active Directory (AD) to add the machine to an AD&#160;Group.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select an App Layer that is <i>not going to be included in the base image</i>, and <a href="#Assign" class="selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">elastically assign</a> the Layer(s) to an AD&#160;Group. </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You can wait for AD&#160;to propagate the changes and be recognized by the Unidesk Layering Service, or you can force the Unidesk Layering Service to update its list of machine groups by doing <i>one</i> of the following:</p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Wait for the Unidesk Layering Service to detect the changes (within 10 minutes by default).</p>
+                    </li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Restart the Unidesk Layering Service. </p>
+                    </li>
+                    <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Reboot the Unidesk Layering Service Machine.</p>
+                    </li>
+                    <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Execute the <b>refresh.groups</b> command: </p><pre xml:space="preserve">C:\Program Files\Unidesk\Layering Services\ulayer.exe refresh.groups</pre>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <h4 style="font-size: 100%;margin-top: 1.2em;margin-bottom: .5em;clear: both;color: #303030;">Example </h4>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You start with an AD User, and AD&#160;Group, and a machine that you provisioned using a Layered Image.</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">AD User: <i>Kenya</i><ul style="margin-left: 0px;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Kenya has no elastic assignments.</li></ul></li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">AD&#160;Group:&#160;<i>Marketing</i><ul style="margin-left: 0px;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The <i>Marketing</i> group includes the member Kenya.</li></ul></li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Machine: <i>ElasticTestMachine</i><ul style="margin-left: 0px;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The <i>ElasticTestMachine</i> base image includes the <i>MS&#160;Office App Layer</i>.</li></ul></li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this example, you elastically assign the <i>Chrome App Layer</i> to  <i>ElasticTestMachine</i>:</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In AD, you add the machine <i>ElasticTestMachine</i> to the <i>Marketing</i> AD&#160;Group.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Unidesk Management Console (UMC) you <a href="#Assign" class="selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">elastically assign</a> the <i>Chrome App Layer</i> to the <i>Marketing</i> Group.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">When Kenya, who is part of the Marketing group, logs into <i>ElasticTestMachine</i>, she receives both the <i>MS&#160;Office App Layer</i>, which is in the base image, and the <i>Chrome App Layer</i>.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">When any user who is <i>not</i> in the <i>Marketing</i> group logs into <i>ElasticTestMachine</i>, they also receive both Layers: <i>MS&#160;Office</i> because it is in the base image, and <i>Chrome</i> because the <i>ElasticTestMachine</i> is a member of the <i>Marketing</i> AD&#160;Group.</li>
+        </ol>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Use"></a>Use the <i>UMC</i>&#160;to <i>associate</i> the machine with an AD&#160;Group</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Associating a set of machines with an AD Group allows any machine running the Unidesk Layering Service to have Layers elastically assigned to it via AD group membership. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Elastic Layers granted via Machine association can be thought of as <i>extending</i> the layers assigned to a user. For example, if a machine matches multiple Machine Associations, only the unique layers will be added to the ones the user already has. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the UMC, you use asterisk (*) wildcards in a machine name pattern to specify a set of machine names. For example:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; margin-left: 0; margin-right: auto; width: 637px;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" style="width: 147px;" />
+            <col class="TableStyle-Noborders-Column-Column1" style="width: 209px;" />
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <thead style="display: table-header-group;">
+                <tr class="TableStyle-Noborders-Head-Header1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <th class="TableStyle-Noborders-HeadE-Column1-Header1" style="padding-top: 0px;padding-bottom: 1px;padding-left: 6px;padding-right: 6px;text-align: left;vertical-align: top;background-color: #dcdcdc;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Machine name pattern</p>
+                    </th>
+                    <th class="TableStyle-Noborders-HeadE-Column1-Header1" style="padding-top: 0px;padding-bottom: 1px;padding-left: 6px;padding-right: 6px;text-align: left;vertical-align: top;background-color: #dcdcdc;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Matches these names</p>
+                    </th>
+                    <th class="TableStyle-Noborders-HeadD-Column1-Header1" style="padding-top: 0px;padding-bottom: 1px;padding-left: 6px;padding-right: 6px;text-align: left;vertical-align: top;background-color: #dcdcdc;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Does <i>not</i> match these names</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">machine*</p>
+                    </td>
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">machine01
+</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">machineindetroit</p>
+                    </td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">amachine</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">localtestmachine</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">*machine</td>
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">amachine</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">localtestmachine</p>
+                    </td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">machine01
+</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">machineindetroit</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">ky*eng</td>
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">ky02359eng</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">kytesteng</p>
+                    </td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">01ky_eng</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">testky01eng</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyB-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">*eng*</td>
+                    <td class="TableStyle-Noborders-BodyB-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">eng01</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">1eng</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">1eng01</p>
+                    </td>
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">en01</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">1en</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">1en01</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You can create Machine Associations before or after elastically assigning App Layers to the AD&#160;Group. Also, the machines do not need to exist when you add the associations, as the associations exist within Unidesk only, and AD is not aware of them. </p>
+        <h4 style="font-size: 100%;margin-top: 1.2em;margin-bottom: .5em;clear: both;color: #303030;">Associate a set of machines with an AD&#160;Group</h4>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Log into the Unidesk Management Console (UMC) as an Admin user, and select <b>Users &gt; Tree</b>.</p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Expand the Tree, select the appropriate Group and click <b>Edit Properties</b> in the Action bar. This opens the Edit Group Wizard. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/machine_association_notchecked.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_0" src="Resources/Images/machine_association_notchecked_thumb_0_150.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;width: 303px;height: 150px;" tabindex="" /></a>
+                </p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Select the checkbox, <i>Associate machines with this AD Group</i>. This reveals the <i>Machine Name Pattern</i> field:</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/machine_association_checked.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_0" src="Resources/Images/machine_association_checked_thumb_0_150.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;width: 303px;height: 150px;" tabindex="" /></a>
+                </p>
+            </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Specify a set of machines to associate with the AD group by entering a machine name pattern. For examples, see the above table of Machine name patterns.</p>
+            </li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">On the Confirm and Complete tab, select <b>Update Group</b>. Notice the shape of a computer monitor superimposed over the group icon. This indicates that machines are associated with the group.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+                    <img src="Resources/Images/machine_association_icon_incontext.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+                </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When you click the group's <img src="Resources/Images/info_grey.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" /> icon, the Detail view now includes a field called, <i>Associate With Machines</i> where the pattern. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/machine_association_details.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_0" src="Resources/Images/machine_association_details_thumb_0_150.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;width: 202px;height: 150px;" tabindex="" /></a>
+                </p>
+            </li>
+        </ol>
+        <h4 style="font-size: 100%;margin-top: 1.2em;margin-bottom: .5em;clear: both;color: #303030;">Example</h4>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You start with the machine, <i>Mach1</i>, the AD&#160;Group, <i>MachineGroup</i>, and the App Layers for <i>Firefox</i> and <i>MS&#160;Office</i>. </p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Machine: <i>Mach1</i></li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">AD&#160;Group:&#160;<i>MachineGroup</i></li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">App Layers: <i>Firefox</i>, <i>MS Office</i></li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Further, you have elastically assigned the Firefox and MS&#160;Office Layers to the AD Group. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If you add a Machine Association to <i>MachineGroup</i> with a name pattern of "<b>Mach*</b>", when any domain user logs into <i>Mach1</i>, they will receive the Firefox and MS Office Elastic App Layers.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Manage"></a>Manage Elastic Assignments</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You can: </p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">View a user's Elastic Layer assignments.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Update  an App Layer and elastically assign the new Version of the Layer. </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Remove Elastic Assignments.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Debug an Elastic Assignments.</li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a name="View"></a>View a user's Elastic Layer assignments</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log into the UMC and select <b>Users &gt; Tree</b>.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select an AD&#160;User or Group, and click the "i" icon to the <i>right</i> of the name. If the user or group is assigned any Elastic Layers, the Layers are listed just below the user's or group's profile information in the Details window that appears.</li>
+        </ol>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Update"></a>Update an App Layer and its Elastic Assignments</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You've added Elastic Assignments to an App Layer, and users are accessing the app as expected. A new version of the application is released, so you update it by adding a new Version to the Layer. Now you need to assign the new version to the users who have the Layer.</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log into the UMC and select <b>Layers &gt; App Layers</b>.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select the elastically assigned App Layer that you just updated.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Right-click the Layer icon and select <b>Update Assignments</b>.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the wizard that opens, select the new Version.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><i>Skip</i> the Image Template Assignment tab.</li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Elastic Assignment tab, there's a list of Users and Groups who have been assigned a different version of the selected Layer. Select the users and groups to whom you want to assign the new Version of the Layer. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>Notes:</b> <![CDATA[ ]]></p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If the list is long, use the <b>Search</b> field to filter the results. </li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If the list is empty, click the check box called, <b>Show AD users and groups already at this version</b>. A list of grayed out names may appear. These users have already been assigned the Version.</li>
+                </ul>
+            </li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Confirm and Complete tab, verify the Users and Groups selected to receive the new Version, and click <b>Update Assignments</b>.</li>
+        </ol>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Remove"></a>Remove a Layer's Elastic Assignments</h3>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Log into the UMC and select <b>Layers &gt; App Layers</b>.</p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Select the App Layer for which you want to remove assignments, and select <b>Remove Assignments</b>..</p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the wizard that opens, select the assigned templates from which you want to remove the Layer. All of the assignments for that layer are listed.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If the list is long, use the Search field to filter the results. </p>
+            </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Confirm and Complete tab, verify the Image Templates selected to receive the new Version, and click <b>Update Assignments</b>.</li>
+        </ol>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Debuggin"></a>Debug an Elastic Layer</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If you have an Elastic Layering issue, you can diagnose the problem by finding out whether the layer is being delivered, and if so, whether it is working correctly. If needed, collect data for Unidesk Support, as described here.</p>
+        <h4 style="font-size: 100%;margin-top: 1.2em;margin-bottom: .5em;clear: both;color: #303030;">Is this a Delivery issue?</h4>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Are the things you'd expect to see if this app were installed actually there as expected?</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Do you see the files and registry entries for the layer?</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If the app is supposed to be in the Start menu, is it there?</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If there should be a shortcut for the app on the user's desktop, is there one?</li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If you discover that app delivery is an issue, you can collect the following data, open a case, and send the data to Unidesk Support.</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Collect the data from these logs:</p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Windows App Event log – In the Windows Event Viewer under Windows Logs, export the Application event log as an EVTX file.</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Unidesk Layering Service log (ulayersvc.log) – C:\ProgramData\Unidesk\Logs\ulayersvc.log</li>
+                </ul>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Collect the values of these Registry keys:</p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">HKEY_LOCAL_MACHINE\SOFTWARE\Unidesk\ULayer:AssignmentFile</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">HKEY_LOCAL_MACHINE\SOFTWARE\Unidesk\ULayer:RepositoryPath</li>
+                </ul>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Collect the contents of the Assignment (ElasticLayerAssignments.json) and Layers (Layers.json) files from the Repository Path.</p>
+            </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Contact Support.</p>
+            </li>
+        </ol>
+        <h4 style="font-size: 100%;margin-top: 1.2em;margin-bottom: .5em;clear: both;color: #303030;">Is this an operational issue?</h4>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">One of these issues could indicate that this is an Elastic Layering issue:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The app is being delivered but doesn't launch correctly.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">An operation within the app doesn't work correctly.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">A licensing problem or a security issue.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The app launches, but then misbehaves, for example, it crashes on startup, or starts up but doesn't work right.</li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If the problem with the Layer is operational, test the App Layer in the base image to rule out general layering issues:</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Add the App Layer to an Image Template, and publish a Layered Image that includes the App Layer.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log in as a user who is <i>not</i> assigned the Layer elastically, and make sure that the application is operational in the base image.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Contact Support with your findings.</li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">&#160;</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>connector_config_fields_az4 - Citrix XenServer SDK</title>
+     
+    <link rel="shortcut icon" href="
+https://www.citrix.com/etc/designs/citrix/icon-favicon.png"> 
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/override.css" type="text/css" />
+    <link rel="stylesheet" href="../css/font-awesome.css" type="text/css" /> 
+    <script>
+      // Current page data
+      var mkdocs_page_name = "connector_config_fields_az4";
+      var mkdocs_page_input_path = "connector_config_fields_az4.md";
+      var mkdocs_page_url = "/connector_config_fields_az4/";
+
+    </script>
+    
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/custom.js"></script>  
+  </head>
+
+  <body class="wy-body-for-nav" role="document">
+
+    <div class="header-top">
+      <div class="header-inner-body">
+        <div class="header-top-left">
+          <a href="http://citrix.github.io" class="logo-position"><img height="60" src="img/citrixlogoblack.png" target="_blank" class="logo-citrix"><span style="color:#000;font-size: 20px;position: relative;top:4px;left: 5px">Developer Documentation</span></a>
+        </div>
+        <div class="header-top-right">
+          <ul>
+
+            <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+             <ul class="header-elements">
+              <li class="list-inline support">
+                <input name="q" id="txtName" type="text" placeholder="Search SDKs" class="searchdocs">
+                <a class="fa fa-search errspan"></a>
+              </li>
+             <li> <a href="javascript:void(0);" style="font-size: 22px;position: relative;left: -10px;top: 3px"><i class="fa fa-globe"></i></a></li>
+             </ul>
+            </form>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="wy-grid-for-nav">
+
+        
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+          <div class="wy-side-nav-search">
+            <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+	<i class="fa fa-search"></i>
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+          </div>
+
+          <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+            <ul class="current">
+              
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="..">Welcome</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connectors_about_co4/">connectors_about_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_create_co4/">connector_config_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields3_vs4/">connector_config_fields3_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_ah4/">connector_config_fields_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_ah_mc4/">connector_config_fields_ah_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 current">
+        <span class="expli"><i class="fa fa-plus-square-o" aria-hidden="true"></i></span><a class="current" style="width:270px;font-size: 12px" href="./">connector_config_fields_az4</a>
+        
+            <ul style="display:none">
+            
+                <li class="toctree-l3"><a href="#azure-connector-configuration" style="font-size: 12px;margin-left: 10px;position: relative;">&nbsp;Azure Connector Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#when-to-add-a-connector-configuration-for-azure" style="font-size: 12px;margin-left: 30px;position: relative;">When to add a Connector Configuration for Azure</a></li>
+                
+                    <li><a class="toctree-l4" href="#azure-information-required" style="font-size: 12px;margin-left: 30px;position: relative;">Azure information required</a></li>
+                
+                    <li><a class="toctree-l4" href="#add-a-connector-configuration" style="font-size: 12px;margin-left: 30px;position: relative;">Add a Connector Configuration</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_fs4/">connector_config_fields_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_pv4/">connector_config_fields_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_vs_mc4/">connector_config_fields_vs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_vw4/">connector_config_fields_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_xs4/">connector_config_fields_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_xs_mc4/">connector_config_fields_xs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_release_notes_co4/">get_started_deploy_release_notes_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_ah4/">get_started_deploy_unidesk_elm_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_az4/">get_started_deploy_unidesk_elm_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_co4/">get_started_deploy_unidesk_elm_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_hv4/">get_started_deploy_unidesk_elm_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_vs4/">get_started_deploy_unidesk_elm_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_xs4/">get_started_deploy_unidesk_elm_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_install_agent_pv4/">get_started_install_agent_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_license_co4/">get_started_license_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_ah4/">get_started_login_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_az4/">get_started_login_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_co4/">get_started_login_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_hv4/">get_started_login_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_vs4/">get_started_login_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_xs4/">get_started_login_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_ah4/">get_started_prerequisites_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_az4/">get_started_prerequisites_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_hv4/">get_started_prerequisites_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_vs4/">get_started_prerequisites_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_xs4/">get_started_prerequisites_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_setup_fileshare_co4/">get_started_setup_fileshare_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_upgrade_elm_co4/">get_started_upgrade_elm_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_upgrade_unidesk_co4/">get_started_upgrade_unidesk_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../glossary_co4/">glossary_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../labs_enable_co4/">labs_enable_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_ah4/">landing_install_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_az4/">landing_install_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_hv4/">landing_install_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_vs4/">landing_install_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_xs4/">landing_install_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_layer_co4/">landing_layer_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_publish_co4/">landing_publish_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_set_up_co4/">landing_set_up_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_co4/">layered_images_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_ah4/">layered_images_create_template_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_ah_mc4/">layered_images_create_template_ah_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_az4/">layered_images_create_template_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_co4/">layered_images_create_template_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_fs4/">layered_images_create_template_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_mc4/">layered_images_create_template_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_pv4/">layered_images_create_template_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_vs4/">layered_images_create_template_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_vw4/">layered_images_create_template_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_xs4/">layered_images_create_template_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_xs_mc4/">layered_images_create_template_xs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_manage_template_co4/">layered_images_manage_template_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_ah4/">layered_images_publish_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_ah_mc4/">layered_images_publish_ah_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_az4/">layered_images_publish_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_co4/">layered_images_publish_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_fs4/">layered_images_publish_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_mc4/">layered_images_publish_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_pv4/">layered_images_publish_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_vs4/">layered_images_publish_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_vw4/">layered_images_publish_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_xs4/">layered_images_publish_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_xs_mc4/">layered_images_publish_xs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_about_co4/">layer_about_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_co4/">layer_apps_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_ah4/">layer_apps_create_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_az4/">layer_apps_create_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_co4/">layer_apps_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_fs4/">layer_apps_create_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_vs4/">layer_apps_create_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_xs4/">layer_apps_create_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_delete_co4/">layer_apps_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_recipes_co4/">layer_apps_recipes_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_assign_apps_co4/">layer_assign_apps_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_assign_apps_elastic_co4/">layer_assign_apps_elastic_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_assign_apps_image_template_co4/">layer_assign_apps_image_template_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_delete_co4/">layer_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_co4/">layer_os_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_ah4/">layer_os_create_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_az4/">layer_os_create_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_co4/">layer_os_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_fs4/">layer_os_create_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_vs4/">layer_os_create_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_xs4/">layer_os_create_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_delete_co4/">layer_os_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_ah4/">layer_os_image_prep_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_az4/">layer_os_image_prep_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_co4/">layer_os_image_prep_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_vs4/">layer_os_image_prep_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_xs4/">layer_os_image_prep_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_ah4/">layer_os_version_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_az4/">layer_os_version_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_co4/">layer_os_version_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_vs4/">layer_os_version_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_xs4/">layer_os_version_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_ah4/">layer_platform_create_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_ah_mc4/">layer_platform_create_ah_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_az4/">layer_platform_create_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_co4/">layer_platform_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_mc4/">layer_platform_create_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_ot4/">layer_platform_create_ot4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_pv4/">layer_platform_create_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_vs4/">layer_platform_create_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_vw4/">layer_platform_create_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_xs4/">layer_platform_create_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_delete_co4/">layer_platform_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_user_enable_co4/">layer_user_enable_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../logs_export_co4/">logs_export_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../platforms_for_publishing_pb_bk4/">platforms_for_publishing_pb_bk4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../platforms_for_publishing_pb_hy4/">platforms_for_publishing_pb_hy4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../platforms_for_publishing_pb_ps4/">platforms_for_publishing_pb_ps4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_ah4/">scenarios_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_az4/">scenarios_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_co4/">scenarios_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_hv4/">scenarios_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_pv4/">scenarios_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_vw4/">scenarios_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_xa65_pv4/">scenarios_xa65_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_xs4/">scenarios_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../support_co4/">support_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_manage_appliance_co4/">system_manage_appliance_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_ports_firewall_co4/">system_ports_firewall_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_settings_co4/">system_settings_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_storage_co4/">system_storage_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_update_license_co4/">system_update_license_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../users_admins_assign_role_co4/">users_admins_assign_role_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../users_admin_password_co4/">users_admin_password_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../users_dir_service_co4/">users_dir_service_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../welcome_platform_support_co4/">welcome_platform_support_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../welcome_release_notes_co4/">welcome_release_notes_co4</a>
+        
+    </li>
+
+                <li>
+                  
+            </ul>
+          </div>
+          &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+           
+          <div class="wy-nav-content">
+            <div class="rst-content">
+              <!-- <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>connector_config_fields_az4</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/ajitchelat/AppDNA-SDK.git" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div> -->
+              <div role="main">
+                <div class="section">
+                <div class="file-format">
+                 <div class="leftAlign" style="float: left;visibility: hidden;">
+                  </div>
+                  <div class="rightAlign" style="float: right;">
+                      <span>Download full document:</span>
+                      <ul class="file-types">
+                        <li><a style="border: 1px solid #EE3D24;padding: 5px;font-size: 11px;color: #EE3D24;border-radius: 5px;font-weight: 700">PDF</a></li>
+                        <li><a style="border: 1px solid #2A579A;padding: 5px;font-size: 11px;color: #2A579A;border-radius: 5px;font-weight: 700">DOCX</a></li>
+                        <li><a style="border: 1px solid #495164;padding: 5px;font-size: 11px;color: #495164;border-radius: 5px;font-weight: 700">EMAIL</a></li>
+                        <li><a style="border: 1px solid #495164;padding: 5px;font-size: 11px;color: #495164;border-radius: 5px;font-weight: 700">PRINT</a></li>
+                      </ul>
+                  </div>
+                  </div>
+                   <p><a href="../connector_config_create_co4">Add Connector Configuration</a></p>
+<blockquote>
+<p>MS Azure</p>
+</blockquote>
+<h1 id="azure-connector-configuration"><a class="toclink" href="#azure-connector-configuration">Azure Connector Configuration<a name="Azure_Platform_Connector_Fields"></a></a></h1>
+<p>This article contains:</p>
+<p><a href="#How"> When to add a Connector Configuration for Azure</a><a href="#How">        </a></p>
+<p><a href="#Creds"> Azure information required</a><a href="#Creds">        </a></p>
+<p><a href="#Create"> Add a Connector Configuration</a><a href="#Create">        </a></p>
+<p>A Connector Configuration contains the credentials and location information that Unidesk needs to access a specific location in Azure. For example, your organization may have one Azure account and several storage locations, and you will need a Connector Configuration so Unidesk can access each storage locations. For more about Connectors and Connector Configurations, see <a href="../connectors_about_co4">Connectors and Connector Configurations</a><a href="../connectors_about_co4">.</a></p>
+<h2 id="when-to-add-a-connector-configuration-for-azure"><a class="toclink" href="#when-to-add-a-connector-configuration-for-azure">When to add a Connector Configuration for Azure<a name="How"></a></a></h2>
+<p>When you create your first Layers, and later when you publish Layered Images for the first time you will add a Connector Configuration for each task, as described below.</p>
+<h2 id="azure-information-required"><a class="toclink" href="#azure-information-required">Azure information required<a name="Creds"></a></a></h2>
+<p>Your organization may have several Azure subscriptions. For Unidesk to access your Azure RDSession Host account, whether it's to download an OSImage or to publish a Layered Image, you must run this tool for each Azure subscription that you want to connect to via Unidesk. You can use the Unidesk Credentials Setup Tool to set up credentials for the Unidesk ELM, and later retrieve, the credentials you set up. </p>
+<ul>            <li><b>Name</b> - A name you enter for a new Connector Configuration. </li>            <li><b>Subscription ID</b> - In order to deploy Azure virtual machines, your organization must have an account and credentials, including a subscription ID. </li>            <li><b>Tenant ID</b> - This is a GUID that identifies your organization's dedicated instance of Azure AD. </li>            <li><b>Client ID</b> - The identifier for one of potentially many Azure accounts that your organization has.</li>            <li><b>Client Secret</b> - The password you want to use for the Client ID specified. If you already have a forgotten it, you can create a new one.</li>            <li>                <p><b>Storage Account Name</b> - The Azure storage account you want to use when storing Azure virtual machine disks. This name must adhere to Azure storage account naming restrictions. For example, the storage account name cannot contain uppercase characters. </p>                <p>You must either create a storage account through the portal or use an existing storage account that fits the following criteria. The account:</p>                <ul>                    <li>Cannot be a <i>classic</i> storage account.</li>                    <li>Should be a separate storage account from the one used for the Unidesk ELM. This new storage account will be used during Layer creation and Layered Image publishing.</li>                    <li>Must be in the Azure location where you will deploy VMs.</li>                    <li>Must be one of the following types: <ul><li><i>Standard</i> Locally Redundant storage (LRS)</li><li><i>Standard</i> Geo-Redundant storage (GRS)</li><li><i>Standard</i> Read-Access Geo-Redundant storage (RAGRS)</li></ul></li>                    <li>Can be located in any resource group, as long as the resource group's location is the same as the account's location.</li>                </ul>            </li>        </ul>
+
+<h3 id="tool-for-retrieving-information-from-azure"><a class="toclink" href="#tool-for-retrieving-information-from-azure">Tool for retrieving information from Azure<a name="Tool"></a></a></h3>
+<p>The Azure Credentials  Tool is a PowerShell script that grants the Unidesk appliance restricted access to your Azure subscription so that Unidesk can retrieve the information required to create a new Azure Connector Configuration. When you run the tool, it prompts you for your Azure Login credentials, then sets up the credentials required for Unidesk to gain restricted access to your Azure subscription. </p>
+<h4 id="requirements-for-running-the-azure-credentials-tool"><a class="toclink" href="#requirements-for-running-the-azure-credentials-tool">Requirements for running the Azure Credentials Tool</a></h4>
+<ul>            <li>A system with access to Azure and running the following software:<ul><li> Windows Server 2008, or later</li><li>Windows Powershell 2.0, or later (This ships with Windows Server 2008 and later.)</li><li>Storage Account in Azure</li></ul></li>            <li>                <p>Login credentials for a <i>Global Admin</i> or <i>Service Admin</i> in the Azure Active Directory Tenant associated with your subscription. In Azure, you can manage Active Directory <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">here</a>.</p>                <p>An Azure AD tenant can be associated with many subscriptions, but each subscription can only have one tenant. If you are not sure which tenant is associated with which subscription, you can find out by clicking <b>Subscriptions</b> on the top of the old portal, and filtering by the directories listed until your subscription is listed as a check box under <b>Filter by Subscriptions</b>. </p>            </li>        </ul>
+
+<h4 id="create-a-new-storage-account-in-azure-if-you-dont-have-one-for-this-purpose"><a class="toclink" href="#create-a-new-storage-account-in-azure-if-you-dont-have-one-for-this-purpose">Create a new storage account in Azure, if you don't have one for this purpose</a></h4>
+<ol>            <li>In a web browser, navigate to the <a href="https://portal.azure.com">Microsoft Azure portal</a> and log in.</li>            <li>On the sidebar, select <b>Storage accounts</b> or <b>Browser > Storage accounts</b>. Do <i>not</i> select Storage accounts (classic). </li>            <li>Select <b>Add</b> in the top-left corner of the window that opens. </li>            <li>In the form that appears, select the options you need, making sure that the new storage location fits the same criteria for using any existing storage account.</li>        </ol>
+
+<h4 id="retrieve-information-for-a-new-azure-connector-configuration"><a class="toclink" href="#retrieve-information-for-a-new-azure-connector-configuration">Retrieve information for a new Azure Connector Configuration</a></h4>
+<p>Here's how to set up your Azure credentials in the Connector Configuration wizard. It explains how to run the Azure for each Azure subscription that you want Unidesk to access.</p>
+<ol>            <li>On a Windows Server 2008 (or later version) machine, download and run the Unidesk Azure Credentials Tool from the <a href="http://www.unidesk.com/support/downloads">Unidesk 4 Downloads</a> page.</li>            <li>Follow the directions in the command prompt to select a subscription and choose a Client Secret.</li>            <li>When the tool is complete, it will display the fields below. These should be entered into the configuration. </li>            <li>Enter the Client Secret that you chose while running the tool.</li>            <li>If you did not enter a Client Secret, it has already been set up using this tool and you should use the one that was entered previously.</li>        </ol>
+
+<p>Note: you will have to enter a new Client Secret each time you use a new subscription that has a new Tenant ID. This is because client secrets are logically associated with Azure tenants.</p>
+<h4 id="retrieve-information-for-an-existing-azure-connector-configuration"><a class="toclink" href="#retrieve-information-for-an-existing-azure-connector-configuration">Retrieve information for an <a name="Retrieve"></a>existing<a name="Retrieve"></a> Azure Connector Configuration<a name="Retrieve"></a></a></h4>
+<p>If you have already run the Azure Credentials Tool to set up a subscription, you do not need to run the tool again. You can simply reuse the Name, Subscription ID, Tenant ID, Client ID, and Client Secret that you obtained. </p>
+<h4 id="what-to-do-if-your-azure-client-secret-is-lost"><a class="toclink" href="#what-to-do-if-your-azure-client-secret-is-lost">What to do if your Azure Client Secret is lost<a name="Secret"></a></a></h4>
+<p>Once Unidesk creates the Client Secret for a Connector Configuration, the secret will always be hidden from view. If you forget and lose the Client Secret for a Configuration, you can reset it by using the following procedure:</p>
+<p>Note: You may have to be the primary Administrator of your Azure subscription to complete this procedure. Other Azure users may not have the access required.</p>
+<ol>            <li>Log in to the <i>Classic</i> Azure Portal at: <a href="https://manage.windowsazure.com/">https://manage.windowsazure.com/</a>.</li>            <li>In the left sidebar, select <b>Active Directory</b>.</li>            <li>From the list of Active Directories, select the entry corresponding to your Unidesk installation.</li>            <li>From the top menu, select <b>Applications</b>.</li>            <li>In the Show field, select <b>Applications my company owns</b>.</li>            <li>In the Search box, enter <b>Unidesk</b> and click the check mark to perform the search.</li>            <li>In the search results, locate an entry named "Unidesk ELM Access for <i>your-subscription-name</i>" and delete it. If you do not see such an entry, look for it in your other Active Directories.</li>            <li>Run the Unidesk Azure Credentials Tool again to create a new Client Secret.</li>        </ol>
+
+<h2 id="add-a-connector-configuration"><a class="toclink" href="#add-a-connector-configuration">Add a Connector Configuration<a name="Create"></a></a></h2>
+<p>To add a new Connector Configuration:</p>
+<ol>            <li>In the wizard for creating a Layer or for adding a Layer Version, click the <b>Connector</b> tab. </li>            <li>Below the list of Connector Configurations, click the <b>New</b> button. This opens a small dialog box.</li>            <li>Select the Connector Type for the platform and location where you are creating the Layer or publishing the image. Then click <b>New</b> to open the Connector Configuration page.  </li>            <li>Complete the fields on the Connector Configuration page. For guidance, see the above field definitions.</li>            <li>Click the <b>TEST</b>button to verify that Unidesk can access the location specified using the credentials supplied.</li>            <li>Click <b>Save</b>. The new Connector Configuration should now be listed on the Connector tab.</li>        </ol> 
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+    <!--<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/ajitchelat/AppDNA-SDK.git" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span class="prev"><a href="../connector_config_fields_ah_mc4/"><i class="fa fa-angle-left"></i> Previous</a></span>
+      
+      
+        <span class="next"><a href="../connector_config_fields_fs4/">Next <i class="fa fa-angle-right"></i></a></span>
+      
+    </span>
+	<div class="footer-right">
+		<ul class="social-links">
+			<li class="list-inline"><a href="https://twitter.com/citrix"><i class="fa fa-twitter"></i>@citrix</a></li>
+			<li class="list-inline"><a href="mailto:support@citrix.com"><i class="fa fa-envelope-o"></i>support@citrix.com</a></li>
+		</ul>
+		<ul class="inner-pages">
+			<li class="list-inline"><a href="http://citrix.com/about/legal">Privacy and Terms</li>
+		</ul>
+	</div>
+</div>-->
+
+  </body>
+
+</html>

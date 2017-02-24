@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Connector essentials</title>
+    </head>
+    <body style="padding-left: 1.5em; padding-right: 1em; border-bottom-width: .5em; border-left-width: .5em; border-right-width: .5em; border-top-width: .5em; color: #000000; font-family: Arial, ' Helvetica', ' Sans Serif'; font-size: 9pt; margin-left: 0pt; text-align: left; background-color: #ffffff;">
+        <div class="MCBreadcrumbsBox_0" style="border-bottom-color: #ffffff;border: 1px;border-bottom-width: 1px;border-top-width: 1px;border-left-width: 1px;border-right-width: 1px;font-size: 9pt;color: #636363;border-bottom-style: solid;padding-bottom: 10px;margin-bottom: 10px;"><span class="MCBreadcrumbsPrefix">You are here: </span><span class="MCBreadcrumbsSelf">Learn about Citrix App Layering [UnideskVersion Layering 4.0.8]</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">Connectors</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Connector essentials</span>
+        </div>
+        <h1 style="clear: both;width: 85%;page-break-before: always;color: #d31245;font-size: 20px;font-weight: 500;margin-bottom: 0.40em;margin-top: 0.4em;">Connector essentials</h1>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this article:</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#What" class="MCXref_0" xrefformat=" {paratext}" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> What are Connectors?</a>
+        </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#What2" class="MCXref_0" xrefformat=" {paratext}" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> What are Connector Configurations?</a>
+        </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Selectin" class="MCXref_0" xrefformat=" {paratext}" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> What Connector Configurations do I need?</a>
+        </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Before" class="MCXref_0" xrefformat=" {paratext}" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> How and when to add a new Connector Configuration</a>
+        </p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="What"></a>What are Connectors?</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Connectors are the interfaces to environments where layers are created and images are published. The type of platform connector determines the information required to create a specific Connector Configuration.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="What2"></a>What are Connector Configurations?</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">A Connector Configuration is a stored set of values for connecting to a storage location in your environment. A configuration typically includes credentials for authentication, a storage location, and any other information required to interface with the environment where you will be creating layers or publishing images. You can create multiple Connector Configurations, each configured to access a unique location in your environment. </p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Selectin"></a>What Connector Configurations do I need?</h2>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Connector Configurations for importing an OS&#160;to create an OS&#160;Layer </h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When you create an OS&#160;Layer, you need a Connector Configuration to give Unidesk access to the location of the OS&#160;image that you want to use for your OS&#160;Layer. </p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Connector Configurations for creating and updating App Layers, and adding Versions to OS Layers</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When creating or updating an App Layer, or adding Versions to an OS&#160;Layer, you need a Connector Configuration for the location in your environment where you will package the Layer. You can create as many configurations as you need, for example, if you have more than one storage location in the environment.</p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Connector Configurations for publishing Layered Images</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Publishing Layered Images will require different Connector Configurations than the ones you use for creating Layers, if, for example, you publish Layered Images to a variety of storage locations near the users being served. For example, you can prepare your Layers for a server farm in vSphere, and publish Layered Images to Citrix PVS for streaming to servers in vSphere. Or, you can publish Layered Images to more than one storage location in the same environment, each requiring a different Connector Configuration. Each location is likely to require different credentials.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Before"></a>How and when to add a new Connector Configuration</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If this is your first time using Unidesk, you will need to add one or more Connector Configurations in the process of adding Layers and publishing Layered Images. In the Unidesk Management Console, the wizards for Creating Layers, Adding Versions, and Publishing Layered Images each include a page for selecting and creating Connector Configurations. For details, click <a href="connector_config_create_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Add a Connector Configuration</a>. and select a platform.</p>
+    </body>
+</html>

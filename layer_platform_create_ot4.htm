@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Create a Platform Layer (Network File Share Connector)</title>
+    </head>
+    <body style="padding-left: 1.5em; padding-right: 1em; border-bottom-width: .5em; border-left-width: .5em; border-right-width: .5em; border-top-width: .5em; color: #000000; font-family: Arial, ' Helvetica', ' Sans Serif'; font-size: 9pt; margin-left: 0pt; text-align: left; background-color: #ffffff;">
+        <div class="MCBreadcrumbsBox_0" style="border-bottom-color: #ffffff;border: 1px;border-bottom-width: 1px;border-top-width: 1px;border-left-width: 1px;border-right-width: 1px;font-size: 9pt;color: #636363;border-bottom-style: solid;padding-bottom: 10px;margin-bottom: 10px;"><span class="MCBreadcrumbsPrefix">You are here: </span><span class="MCBreadcrumbsSelf">Learn about Citrix App Layering [UnideskVersion Layering 4.0.8]</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">Layer</span><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="layer_platform_create_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Platform Layers</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Cross platform (NFS connector)</span>
+        </div>
+        <h1 style="clear: both;width: 85%;page-break-before: always;color: #d31245;font-size: 20px;font-weight: 500;margin-bottom: 0.40em;margin-top: 0.4em;">Create a Platform Layer (Network File Share Connector)</h1>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this article:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 100%;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Other" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Prerequisites</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Create2" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Prepare a new Platform Layer</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Deploy" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Deploy a Packaging Machine </a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Install" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Install the required platform tools</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Verify" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Verify the Layer and shut down the Packaging Machine</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Finalize" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Finalize the Layer</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">A Platform Layer includes the platform software and settings required to deploy images in your environment. For example, a Platform Layer for publishing to PVS in vSphere with XenApp as the broker would include the PVS Target Device Imaging software, vmTools, and the XenApp Virtual Delivery Agent Installer (and other platform-related software as well). </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When do you need a Platform Layer? </p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">When creating your App Layers and OS&#160;Layer Versions, you will need a Platform Layer for Packaging Layers, if you imported your OS&#160;image (aka  gold image)  from a different hypervisor than the one where the ELM&#160;is installed.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Whenever you publish a Layered Image, you will need a Platform Layer for Publishing.</li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You can create two kinds of Platform Layers:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Platform Layers for <i>publishing Layered Images</i> (Required) <ul style="margin-left: 0px;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">These Layers include the software and settings required for a Layered Image to run flawlessly in your environment. </li></ul></li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Platform Layers for <i>packaging Layers</i> (Required in some cases) <ul style="margin-left: 0px;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">These Layers include the hypervisor software and settings you need to easily install the software for your other layers on a VM in your hypervisor environment.</li></ul></li>
+        </ul>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Other"></a>Prerequisites</h2>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Prerequisites for creating a Platform Layer for Packaging Layers </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You need the <a href="platforms_for_publishing_pb_hy4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">hypervisor</a> software for your environment.</p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Prerequisites for creating a Platform Layer for publishing Layered Images</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You need the <a href="platforms_for_publishing_pb_hy4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">hypervisor</a> prerequisites, plus the prerequisites for the <a href="platforms_for_publishing_pb_ps4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">provisioning service</a> and/or <a href="platforms_for_publishing_pb_bk4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">connection broker</a> software for your environment.</p>
+            </li>
+        </ul>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Create2"></a>Prepare a new Platform Layer</h2>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Select <b>Layers &gt;&#160;Platform Layers</b> and select <b>Create Platform Layer</b> in the Action bar. This opens the Create Platform Layer wizard.</p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Layer Details tab, enter a <b>Layer Name</b> and <b>Version</b>, both required values. Optionally, you can also enter other values. For details, see more about these values <span><a href="#Create" class="selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">below</a></span>.</p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the OS&#160;Layer tab, select the OS&#160;Layer you want to associate with this Platform Layer. </p>
+            </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Connector tab, choose the <b>Network File Share</b> for your Connector Configuration.</p>
+            </li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Platform Types tab, select the radio button that describes the purpose of this Platform Layer: </p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">For creating and updating Layers - <i>Only</i> required if you will create Layers on a different hypervisor than the one from which you imported your OS.</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">For publishing Layered Images - Required whenever you publish Layered Images.</li>
+                </ul>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">For more about these choices, see <a href="layer_platform_essentials_co4.htm" class="MCXref_0" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Platform Layer Essentials</a>.</p>
+            </li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If this Platform Layer is for:</p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Creating and updating Layers - Select the Hypervisor where you will be creating and updating (packaging) Layers. </li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Publishing Layered Images - Select the Hypervisor, Provisioning Service, and Connector Broker that make up the environment where you will be <i>publishing</i> images. </li>
+                </ul>
+            </li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Packaging Disk tab, enter a <b>file name</b> for the Packaging Disk, and select the disk format. This disk will be used for the Packaging Machine (the VM)&#160;where you will install the tools, as described in the next two sections.</p>
+            </li>
+            <li value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Icon Assignment tab, select an icon to assign to the layer. This icon represents the layer in the Layers Module.</p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">To use an existing image, select an image in the image box.</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">To import a new image, click <b>Browse</b>  and select an image in PNG or JPG format.</li>
+                </ul>
+            </li>
+            <li value="9" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the&#160;Confirm and Complete tab, review the details of the App Layer, enter a comment if required, and click <b>Create Layer</b>. Any comments you enter will appear in the  Information view Audit History.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">A Boot disk and a Packaging disk are created, and the Tasks bar displays instructions to navigate to them.</p>
+            </li>
+            <li value="10" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Expand the Tasks bar at the bottom of the UI, and double-click the Packaging Disk task to show the full task description. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Once the disks have been created, the Task bar displays the location of the disks on the Network File Share: /Unidesk/Packaging Disks.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/layers_app_action_required_vs.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_0" src="Resources/Images/layers_app_action_required_vs_thumb_0_150.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;width: 754px;height: 150px;" tabindex="" /></a>
+                </p>
+            </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Next, you can deploy the Packaging Machine for your Layer.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Deploy"></a>Deploy a Packaging Machine </h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Packaging Machine is a temporary VM where you install the platform tools you want to include in the Layer. </p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Create the Packaging Machine </h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Task Description (example shown in the last step above) contains the location in your environment where the disks for this Layer have been created.</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log into the client for your hypervisor. </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Locate the Packaging disks in the following directory on the Network File Share: </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">\Unidesk\Packaging Disks</p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Copy the disks to the hypervisor where you will install the software for the Layer.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>Note:</b> Even if the Packaging Disks in \Unidesk\Packaging Disks are already in the hypervisor where you will be installing the tools, we recommend copying the disks to another location. This is because when you use the disk to create a new VM, the directory will quickly become crowded with files generated by your hypervisor.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>Important:</b> Do not copy the disk to the Finalize folder until it is ready to finalize. A disk in the Finalize folder cannot be attached to the new VM that you are going to create next.</p>
+            </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In your hypervisor, create a VM from the <b>Boot</b> disk and name it <i>Layer_Name</i><b>Boot</b>.<i>xxx</i>.</p>
+            </li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In your hypervisor, select the VM, and attach the disk called <i>Layer_Name</i><b>Pkg</b>.<i>xxx</i> to the VM.</p>
+            </li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Create a virtual machine using the Packaging Disk as the boot disk. This is the Packaging Machine where you will install the application(s) to include in the layer. </p>
+            </li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Power on the Packaging Machine.</li>
+        </ol>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Install"></a>Install the required platform tools</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">This section explains how to install the tools your Layered Images will need to run your the target platform onto the Packaging Machine you just created. Keep in mind that the state of the software before you finalize the layer is what the image will use. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To install the tools for the selected platform:</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Remote log in to the Packaging Machine you created. Be sure to log in using the User account you used to create the OS. </p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Install the tools that your Layered Image will need to run on vSphere and in PVS, along with any drivers, boot-level applications, or files needed.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If a software installation requires a system restart, restart it manually. The Packaging Machine does not restart automatically.</p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Make sure the Packaging Machine is in the state you want it to be in when the image is booted:</p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If the tools you install require any post-installation setup or registration, complete those steps now.  </li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Remove any settings, configurations, files, mapped drives, or applications that you do not want to include on the Packaging Machine.</li>
+                </ul>
+            </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Next, you'll need to shut down the Packaging Machine and verify that the Platform Layer is ready to finalize.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Verify"></a>Verify the Layer and shut down the Packaging Machine</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Once the tools are installed on the Packaging Machine, the next step is to verify that the Layer is ready to finalize. At this point, any required post-installation processing needs to be completed. For example, a reboot may be required, or a Microsoft NGen process may need to complete.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To verify that any outstanding processes are complete, you can run the <i>Shutdown For Finalize</i> tool (icon below), which appears on the Packaging Machine's desktop.  </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+            <img src="Resources/Images/shutdown_for_finalize.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+        </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To use the Shutdown For Finalize tool:</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"> Copy the Packaging Machine to the Finalize folder on the Network File Share: </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">\Unidesk\Finalize</p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If you are not logged into the Packaging Machine, remote log in as the user who created the machine.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Double-click the <i>Shutdown For Finalize</i> icon. A command line window displays messages detailing the layer verification process. </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If there is an outstanding operation that must be completed before the Layer can be finalized, you are prompted to complete the process. For example, if a Microsoft NGen operation needs to complete, you may be able to expedite the NGen operation, as detailed <a href="#Layer_Integrity_Check" class="selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">below</a>.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Once any pending operations are complete, double-click the <i>Shutdown For Finalize</i> icon again. This shuts down the Packaging Machine. </li>
+        </ol>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Layer_Integrity_Check"></a>Layer integrity messages you may see during the finalization process</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Layer integrity messages let you know what queued tasks must be completed before a Layer is finalized.</p>
+        <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><a name="Layer_Integrity_Messages"></a>The new Layer or Version can only be finalized when the following conditions have been addressed:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <ul style="margin-left: 0px;padding-left: 15px;">
+                <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">A reboot is pending to update drivers on the boot disk - please check and reboot the Packaging Machine.</li>
+                <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">A post-installation reboot is pending - please check and reboot the Packaging Machine.</li>
+                <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">An MSI install operation is in progress - please check the Packaging Machine.</li>
+                <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                    <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">A Microsoft NGen operation is in progress in the background. </p>
+                    <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><b>Note:</b> If a Microsoft NGen operation is in progress, you may be able to expedite it, as described in the next section.</p>
+                </li>
+            </ul>
+        </ul>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Complete_MS_NGen_Operations"></a>Expediting a Microsoft NGen operation </h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">NGen is the Microsoft <i>Native Image Generator</i>.  It is part of the .NET system, and basically re-compiles .NET byte code into native images and constructs the registry entries to manage them.  Windows will decide when to run NGen, based on what is being installed and what Windows detects in the configuration.  When NGen is running, you must let it complete.  An interrupted NGen operation can leave you with non-functioning .NET assemblies or other problems in the .NET system.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You have the choice of waiting for the NGen to complete in the background, or you can force the NGen to the foreground. You can also check the status of the NGen operation, as described below. However, every time you check the queue status, you are creating foreground activity, which might cause the background processing to temporarily pause. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Forcing the NGen to the foreground will allow you to view the progress and once the output has completed, you should be able to finalize the layer.</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Force an NGen operation to the foreground. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Normally, NGen is a background operation and will pause if there is foreground activity.  Bringing the task into the foreground can help the task to complete as quickly as possible. To do this:</p>
+                <ol style="margin-left: 20px;padding-left: 0px;list-style-type: lower-alpha;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Open a command prompt as Administrator.</p>
+                    </li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Go to the Microsoft .NET Framework directory for the version currently in use:</p><pre xml:space="preserve">cd C:\Windows\Microsoft.NET\FrameworkNN\vX.X.XXXXX</pre>
+                    </li>
+                    <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Enter the NGen command to execute the queued items:</p><pre xml:space="preserve">ngen update /force</pre>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">This brings the NGen task to the foreground in the command prompt, and lists the assemblies being compiled. </p>
+                        <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><b>Note:</b> It’s okay if you see several compilation failed messages!</p>
+                    </li>
+                    <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Look in the Task Manager to see if an instance of MSCORSVW.EXE is running. If it is, you must allow it to complete, or re-run <span style="font-family: monospace;">ngen update /force</span>.  Do <i>not</i> reboot to stop the task. You <i>must</i> allow it to complete.</li>
+                </ol>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Check the status of an NGen operation</p>
+                <ol style="margin-left: 20px;padding-left: 0px;list-style-type: lower-alpha;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Open a command prompt as Administrator.</p>
+                    </li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Check status by running this command:</p><pre xml:space="preserve">ngen queue status</pre>
+                    </li>
+                    <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When you receive the following status, the NGen is complete, and you can finalize the Layer.</p><pre xml:space="preserve">The .NET Runtime Optimization Service is stopped</pre>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Finalize"></a>Finalize the Layer</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Once the platform tools are installed and the Packaging Machine has been verified and shut down, you are ready to finalize the layer. </p>
+        <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><b>Note:</b> When you finalize a Layer, Unidesk may delete the Packaging Machine to minimize storage space used. </p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Return to the Unidesk Management Console (UMC).</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <b>Layers &gt; Platform Layers</b>.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select the Layer to finalize, and then select <b>Finalize</b> on the Action bar. The Layer is finalized and becomes Deployable.</li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When a layer is ready to finalize:</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Return to the Unidesk Management Console.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <b>Layers &gt; Platform Layers</b>.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select the Platform Layer you just prepared, and select <span class="bold" style="font-weight: bold;">Finalize</span> in the Action bar.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Monitor the Task bar and verify that the layer becomes deployable.</li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>connector_config_fields_ah_mc4 - Citrix XenServer SDK</title>
+     
+    <link rel="shortcut icon" href="
+https://www.citrix.com/etc/designs/citrix/icon-favicon.png"> 
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/override.css" type="text/css" />
+    <link rel="stylesheet" href="../css/font-awesome.css" type="text/css" /> 
+    <script>
+      // Current page data
+      var mkdocs_page_name = "connector_config_fields_ah_mc4";
+      var mkdocs_page_input_path = "connector_config_fields_ah_mc4.md";
+      var mkdocs_page_url = "/connector_config_fields_ah_mc4/";
+
+    </script>
+    
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/custom.js"></script>  
+  </head>
+
+  <body class="wy-body-for-nav" role="document">
+
+    <div class="header-top">
+      <div class="header-inner-body">
+        <div class="header-top-left">
+          <a href="http://citrix.github.io" class="logo-position"><img height="60" src="img/citrixlogoblack.png" target="_blank" class="logo-citrix"><span style="color:#000;font-size: 20px;position: relative;top:4px;left: 5px">Developer Documentation</span></a>
+        </div>
+        <div class="header-top-right">
+          <ul>
+
+            <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+             <ul class="header-elements">
+              <li class="list-inline support">
+                <input name="q" id="txtName" type="text" placeholder="Search SDKs" class="searchdocs">
+                <a class="fa fa-search errspan"></a>
+              </li>
+             <li> <a href="javascript:void(0);" style="font-size: 22px;position: relative;left: -10px;top: 3px"><i class="fa fa-globe"></i></a></li>
+             </ul>
+            </form>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="wy-grid-for-nav">
+
+        
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+          <div class="wy-side-nav-search">
+            <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+	<i class="fa fa-search"></i>
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+          </div>
+
+          <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+            <ul class="current">
+              
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="..">Welcome</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connectors_about_co4/">connectors_about_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_create_co4/">connector_config_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields3_vs4/">connector_config_fields3_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_ah4/">connector_config_fields_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 current">
+        <span class="expli"><i class="fa fa-plus-square-o" aria-hidden="true"></i></span><a class="current" style="width:270px;font-size: 12px" href="./">connector_config_fields_ah_mc4</a>
+        
+            <ul style="display:none">
+            
+                <li class="toctree-l3"><a href="#connector-configuration-optional-script-mcs-for-nutanix-ahv" style="font-size: 12px;margin-left: 10px;position: relative;">&nbsp;Connector Configuration ; Optional Script  (MCS for Nutanix AHV)</a></li>
+                
+                    <li><a class="toctree-l4" href="#before-you-start" style="font-size: 12px;margin-left: 30px;position: relative;">Before you start</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-a-connector-configuration" style="font-size: 12px;margin-left: 30px;position: relative;">Create a Connector Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#script-configuration-optional-advanced-feature" style="font-size: 12px;margin-left: 30px;position: relative;">Script Configuration (Optional, Advanced feature)</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_az4/">connector_config_fields_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_fs4/">connector_config_fields_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_pv4/">connector_config_fields_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_vs_mc4/">connector_config_fields_vs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_vw4/">connector_config_fields_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_xs4/">connector_config_fields_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_xs_mc4/">connector_config_fields_xs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_release_notes_co4/">get_started_deploy_release_notes_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_ah4/">get_started_deploy_unidesk_elm_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_az4/">get_started_deploy_unidesk_elm_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_co4/">get_started_deploy_unidesk_elm_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_hv4/">get_started_deploy_unidesk_elm_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_vs4/">get_started_deploy_unidesk_elm_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_xs4/">get_started_deploy_unidesk_elm_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_install_agent_pv4/">get_started_install_agent_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_license_co4/">get_started_license_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_ah4/">get_started_login_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_az4/">get_started_login_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_co4/">get_started_login_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_hv4/">get_started_login_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_vs4/">get_started_login_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_xs4/">get_started_login_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_ah4/">get_started_prerequisites_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_az4/">get_started_prerequisites_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_hv4/">get_started_prerequisites_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_vs4/">get_started_prerequisites_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_xs4/">get_started_prerequisites_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_setup_fileshare_co4/">get_started_setup_fileshare_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_upgrade_elm_co4/">get_started_upgrade_elm_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_upgrade_unidesk_co4/">get_started_upgrade_unidesk_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../glossary_co4/">glossary_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../labs_enable_co4/">labs_enable_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_ah4/">landing_install_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_az4/">landing_install_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_hv4/">landing_install_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_vs4/">landing_install_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_xs4/">landing_install_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_layer_co4/">landing_layer_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_publish_co4/">landing_publish_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_set_up_co4/">landing_set_up_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_co4/">layered_images_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_ah4/">layered_images_create_template_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_ah_mc4/">layered_images_create_template_ah_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_az4/">layered_images_create_template_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_co4/">layered_images_create_template_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_fs4/">layered_images_create_template_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_mc4/">layered_images_create_template_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_pv4/">layered_images_create_template_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_vs4/">layered_images_create_template_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_vw4/">layered_images_create_template_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_xs4/">layered_images_create_template_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_xs_mc4/">layered_images_create_template_xs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_manage_template_co4/">layered_images_manage_template_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_ah4/">layered_images_publish_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_ah_mc4/">layered_images_publish_ah_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_az4/">layered_images_publish_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_co4/">layered_images_publish_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_fs4/">layered_images_publish_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_mc4/">layered_images_publish_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_pv4/">layered_images_publish_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_vs4/">layered_images_publish_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_vw4/">layered_images_publish_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_xs4/">layered_images_publish_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_xs_mc4/">layered_images_publish_xs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_about_co4/">layer_about_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_co4/">layer_apps_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_ah4/">layer_apps_create_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_az4/">layer_apps_create_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_co4/">layer_apps_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_fs4/">layer_apps_create_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_vs4/">layer_apps_create_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_xs4/">layer_apps_create_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_delete_co4/">layer_apps_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_recipes_co4/">layer_apps_recipes_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_assign_apps_co4/">layer_assign_apps_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_assign_apps_elastic_co4/">layer_assign_apps_elastic_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_assign_apps_image_template_co4/">layer_assign_apps_image_template_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_delete_co4/">layer_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_co4/">layer_os_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_ah4/">layer_os_create_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_az4/">layer_os_create_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_co4/">layer_os_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_fs4/">layer_os_create_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_vs4/">layer_os_create_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_xs4/">layer_os_create_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_delete_co4/">layer_os_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_ah4/">layer_os_image_prep_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_az4/">layer_os_image_prep_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_co4/">layer_os_image_prep_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_vs4/">layer_os_image_prep_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_xs4/">layer_os_image_prep_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_ah4/">layer_os_version_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_az4/">layer_os_version_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_co4/">layer_os_version_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_vs4/">layer_os_version_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_xs4/">layer_os_version_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_ah4/">layer_platform_create_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_ah_mc4/">layer_platform_create_ah_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_az4/">layer_platform_create_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_co4/">layer_platform_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_mc4/">layer_platform_create_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_ot4/">layer_platform_create_ot4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_pv4/">layer_platform_create_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_vs4/">layer_platform_create_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_vw4/">layer_platform_create_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_xs4/">layer_platform_create_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_delete_co4/">layer_platform_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_user_enable_co4/">layer_user_enable_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../logs_export_co4/">logs_export_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../platforms_for_publishing_pb_bk4/">platforms_for_publishing_pb_bk4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../platforms_for_publishing_pb_hy4/">platforms_for_publishing_pb_hy4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../platforms_for_publishing_pb_ps4/">platforms_for_publishing_pb_ps4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_ah4/">scenarios_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_az4/">scenarios_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_co4/">scenarios_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_hv4/">scenarios_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_pv4/">scenarios_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_vw4/">scenarios_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_xa65_pv4/">scenarios_xa65_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_xs4/">scenarios_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../support_co4/">support_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_manage_appliance_co4/">system_manage_appliance_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_ports_firewall_co4/">system_ports_firewall_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_settings_co4/">system_settings_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_storage_co4/">system_storage_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_update_license_co4/">system_update_license_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../users_admins_assign_role_co4/">users_admins_assign_role_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../users_admin_password_co4/">users_admin_password_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../users_dir_service_co4/">users_dir_service_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../welcome_platform_support_co4/">welcome_platform_support_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../welcome_release_notes_co4/">welcome_release_notes_co4</a>
+        
+    </li>
+
+                <li>
+                  
+            </ul>
+          </div>
+          &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+           
+          <div class="wy-nav-content">
+            <div class="rst-content">
+              <!-- <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>connector_config_fields_ah_mc4</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/ajitchelat/AppDNA-SDK.git" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div> -->
+              <div role="main">
+                <div class="section">
+                <div class="file-format">
+                 <div class="leftAlign" style="float: left;visibility: hidden;">
+                  </div>
+                  <div class="rightAlign" style="float: right;">
+                      <span>Download full document:</span>
+                      <ul class="file-types">
+                        <li><a style="border: 1px solid #EE3D24;padding: 5px;font-size: 11px;color: #EE3D24;border-radius: 5px;font-weight: 700">PDF</a></li>
+                        <li><a style="border: 1px solid #2A579A;padding: 5px;font-size: 11px;color: #2A579A;border-radius: 5px;font-weight: 700">DOCX</a></li>
+                        <li><a style="border: 1px solid #495164;padding: 5px;font-size: 11px;color: #495164;border-radius: 5px;font-weight: 700">EMAIL</a></li>
+                        <li><a style="border: 1px solid #495164;padding: 5px;font-size: 11px;color: #495164;border-radius: 5px;font-weight: 700">PRINT</a></li>
+                      </ul>
+                  </div>
+                  </div>
+                   <p><a href="../connector_config_create_co4">Add Connector Configuration</a></p>
+<blockquote>
+<p>Citrix MCS for Nutanix AHV</p>
+</blockquote>
+<h1 id="connector-configuration-optional-script-mcs-for-nutanix-ahv"><a class="toclink" href="#connector-configuration-optional-script-mcs-for-nutanix-ahv">Connector Configuration ; Optional Script  (MCS for Nutanix AHV)<a name="Azure_Platform_Connector_Fields"></a></a></h1>
+<p>In this article:</p>
+<table>            <col></col>            <tbody>                <tr>                    <td>                        <p><a href="#Before"> Before you start</a>                        </p>                        <p><a href="#Create"> Create a Connector Configuration</a>                        </p>                        <p><a href="#Configure_Script_Path"> Script Configuration (Optional, Advanced feature)</a>                        </p>                    </td>                </tr>            </tbody>        </table>
+
+<p>An MCS for Nutanix AHV (Acropolis) Connector Configuration contains the credentials and storage location Unidesk needs to publish Layered Images to MCS in your Nutanix AHV environment. This connector does not support Layer creation.</p>
+<h2 id="before-you-start"><a class="toclink" href="#before-you-start">Before you start<a name="Before"></a></a></h2>
+<p>You can use MCS for Nutanix AHV  to publish Layered Images. Each Connector Configuration accesses a specific storage location in your Nutanix AHV environment to which you can publish Layered Images. </p>
+<p>You may need more than one Nutanix AHV Connector Configuration to access the correct location for each purpose. Further, you may want to publish each Layered Image to a location convenient to the systems you will be provisioning with the published image. For more about Connectors, and Connector Configurations, see <a href="../connectors_about_co4">About Connectors</a><a href="../connectors_about_co4">. </a></p>
+<h3 id="if-this-is-your-first-time-using-unidesk"><a class="toclink" href="#if-this-is-your-first-time-using-unidesk">If this is your first time using Unidesk <a name="How"></a></a></h3>
+<p>When publishing Layered Images to Nutanix AHV, you will need at least one Connector Configuration for each storage location you plan to publish to. You can add  Connector Configurations when creating an Image Template from which you will publish Layered Images. If you don't yet have the right Connector Configuration for the task, you can create one by clicking New on the Connector wizard tab (see details below).</p>
+<h3 id="required-information-for-nutanix-ahv-connector-configuration-settings"><a class="toclink" href="#required-information-for-nutanix-ahv-connector-configuration-settings">Required information for Nutanix AHV Connector Configuration settings<a name="Creds"></a></a></h3>
+<p>The Nutanix AHV Connector Configuration wizard let's you browse for the Nutanix AHV Server, Data Store, and Host to use for a new configuration. </p>
+<p>Important: The fields are case sensitive, so any values that you enter manually must match the case of the object in Nutanix AHV, or the validation will fail. </p>
+<ul>            <li><b>Connector Name</b> - A useful name to help identify and keep track of this connector configuration. </li>            <li><b>Prism Address</b> - The host name (resolvable via DNS) or IP address of the Prism Web Console. This is the same address you use to access the Nutanix Prism Web Console.. </li>            <li>                <p><b>User Name/Password</b> - Credentials that will be used when interacting with the Nutanix system. The specified user must have sufficient privileges for the following operations: </p>                <ul>                    <li>VM operations:<ul><li>clone</li><li>delete</li><li>power on/off</li><li>attach virtual disks</li></ul></li>                    <li>Image operations:<ul><li>create</li><li>update (aka upload)</li><li>delete</li></ul></li>                    <li>Virtual disks:<ul><li>create</li><li>attach to VMs</li></ul></li>                </ul>            </li>            <li><b>Allow Certificate Errors</b> - Lets you use SSL encryption for the API connection traffic between the Unidesk Connector and Nutanix AHV. This field is unchecked by default.</li>            <li><b>Template</b> - This is a drop down list of existing virtual machines that can be used for cloning. There is no concept of a "template" in Nutanix, so these VMs are actual VMs. The selected template must <i>not</i> have any disks attached, and must have at least one network card attached. If it does not, you will see an error when trying to validate or save the configuration.</li>            <li><b>Storage Container</b> - Lets you select the storage container for the images (vhds) that will get uploaded and the resulting virtual disks that will get created from those images. When creating App Layers and OS Layer versions, we are required to mount the storage container as an NFS mount point. This means that the selected storage container MUST have the ELM included in a white list of clients that are allowed to mount the storage container via NFS. The white list configuration must be done through the Nutanix product (either their web console or through their CLI tools). If the ELM is not properly white listed for the selected storage container, then the validation phase will fail, and the error will be indicated with the storage container selection.</li>        </ul>
+
+<h3 id="how-virtual-machines-are-organized"><a class="toclink" href="#how-virtual-machines-are-organized">How Virtual Machines are Organized</a></h3>
+<p>Nutanix does not provide a mechanism for organizing virtual machines. Because of this, it may be difficult to find the virtual machines created by your Unidesk ELM when the total number of virtual machines is large. To help you find these VMs, the following naming conventions are used:</p>
+<ul>            <li><b>Packaging Machines</b> (virtual machines created during the process of creating an App Layer or OSVersion)<ul><li>The virtual machine name will start with the layer name that is being created/modified</li><li>The virtual machine names will end with the following text: (Unidesk Packaging Machine)</li></ul></li>            <li><b>Layered Image Virtual Machines</b> (virtual machines created as a result of publishing a Layered Image)<ul><li>The virtual machine name will start with the image name that was published</li><li>The virtual machine name will end with the following text: (Unidesk Published Image)</li></ul></li>        </ul>
+
+<p>When viewing virtual machines through the Nutanix web console, you can search for virtual machines by filtering on:</p>
+<ul>            <li>"Unidesk" to find all virtual machines created by Unidesk</li>            <li>"Unidesk Packaging Machine" to find all virtual machines created for Layer management jobs.</li>            <li>"Unidesk Layered Image" to find all virtual machines created to publish a Layered Image.</li>            <li>Image name or Layer name to find virtual machines related to a specific Layered Image publishing job or App or OS creation.</li>        </ul>
+
+<h3 id="virtual-machine-network-connectivity"><a class="toclink" href="#virtual-machine-network-connectivity">Virtual Machine Network Connectivity</a></h3>
+<p>The virtual network settings of the source template specified in the Nutanix AHV Connector Configuration will be carried over when creating any VMs through the Nutanix Acropolis Hypervisor (AHV) Connector. There is no option in the Connector Configuration UI to override the network settings.</p>
+<h2 id="create-a-connector-configuration"><a class="toclink" href="#create-a-connector-configuration">Create a Connector Configuration<a name="Create"></a></a></h2>
+<p>To enter values:</p>
+<ul>            <li>The first three Connector fields must be entered manually. Once the credentials in those fields are validated, you can select values for the remaining fields from drop-down menus.</li>            <li>To enter values manually, click to put the cursor in the field and type the value, making sure that the case matches the value in Nutanix AHV.</li>            <li>To select a value from a drop-down list, click once to put the cursor in the field, and a second time to display the list of possible values.</li>        </ul>
+
+<p>To add a new Connector Configuration:</p>
+<ol>            <li>On the wizard for creating a Layer or for adding a Layer Version, click the <b>Connector</b> tab. </li>            <li>Below the list of Connector Configurations, click the <b>New</b> button. This opens a small dialog box.</li>            <li>Select the Connector Type for the platform and location where you are creating the Layer or publishing the image. Then click <b>New</b> to open the Connector Configuration page.  </li>            <li>Enter the configuration <i>Name</i>, and the <i>Nutanix AHV Address</i>, <i>User Name</i>, and <i>Password</i>). For guidance, see the above field definitions.</li>            <li>Click the <b>CHECKCREDENTIALS</b> button below the Nutanix AHV Configuration fields. The Virtual Machine Clone Settings field is then enabled. </li>            <li>Select the Virtual Machine Template. </li>            <li>Select the Storage Repository and click the <b>TEST</b>button to verify that Unidesk can access the location specified using the credentials supplied.</li>            <li>Click <b>Save</b>. The new Connector Configuration should now be listed on the Connector page.</li>        </ol>
+
+<h2 id="script-configuration-optional-advanced-feature"><a class="toclink" href="#script-configuration-optional-advanced-feature">Script Configuration (Optional, Advanced feature)<a name="Configure_Script_Path"></a></a></h2>
+<p>When creating a new Connector Configuration, you can configure an optional Powershell script to run on any Windows machine running a Unidesk Agent. These scripts must be stored on the same machine that the Unidesk Agent is installed on, and will only be executed after a successful deployment of a Layered Image. </p>
+<p>Some preset variables are available to enable scripts to be reusable with different template images and different connector configurations. These variables will also contain information needed to identify the virtual machine created as part of the published Layered Image in Nutanix AHV.</p>
+<p>Execution of these scripts will not affect the outcome of the publish job, and progress of commands executed in the script will not be visible. The Nutanix AHV connector logs will contain the output of the executed script.</p>
+<h3 id="configure-a-script-optional"><a class="toclink" href="#configure-a-script-optional">Configure a Script (optional)</a></h3>
+<p>If you want a script to run each time a Layered Image is published, complete these steps using the values described in the sections that follow.</p>
+<ol>            <li>                <p>Complete and save the Connector Configuration as described above.</p>                <p><b>Note:</b> Before selecting Script Configuration page, you must save (or discard) any edits to the Connector Configuration settings, </p>            </li>            <li>                <p>If the Navigation menu on the left is not open, select it and click <b>Script Configuration</b> to open the Script Path page.</p>            </li>            <li>                <p>Complete the required fields using the values detailed herein, and click <b>Save</b>.</p>            </li>        </ol>
+
+<h3 id="script-configuration-fields"><a class="toclink" href="#script-configuration-fields">Script Configuration fields<a name="Creds"></a></a></h3>
+<ul>            <li><b>Enable script</b> - Select this check box to enable the remaining fields. This allows you to enter a script that will be executed each time a Layered Image is published.</li>            <li><b>Script Agent</b> - The agent machine where the scripts will be located and executed from.</li>            <li><b>Username (optional)</b> - The username to <i>impersonate</i> when running the script. This can be used to ensure the script runs in the context of a user that has the needed rights/permissions to perform the operations in the script.</li>            <li><b>Password (optional)</b> - The password for the specified username.</li>            <li><b>Path</b> - A full path and filename on the agent machine where the script file resides.</li>        </ul>
+
+<h3 id="other-script-configuration-values"><a class="toclink" href="#other-script-configuration-values">Other Script Configuration values</a></h3>
+<h4 id="powershell-variables"><a class="toclink" href="#powershell-variables">Powershell variables</a></h4>
+<p>When the script is executed the following variables will be set and can be used in the powershell script:</p>
+<table>            <col></col>            <col></col>            <col></col>            <col></col>            <thead>                <tr>                    <th>Value</th>                    <th>Applies to connector types:</th>                    <th>Value determined by which code:</th>                    <th>Description</th>                </tr>            </thead>            <tbody>                <tr>                    <td>connectorCfgName</td>                    <td>Common</td>                    <td>Common</td>                    <td>This is the name of the connector configuration that the script configuration is associated with.</td>                </tr>                <tr>                    <td>imageName</td>                    <td>Common</td>                    <td>Common</td>                    <td>This is the name of the layered image template that was used to build/publish the layered image.</td>                </tr>                <tr>                    <td>osType</td>                    <td>Common</td>                    <td>Common</td>                    <td>                        <p>This is the OS type of the layered image that was published. It can be one of the following values:</p>                        <ul>                            <li>Windows7</li>                            <li>Windows7 64-bit</li>                            <li>Windows2008  64-bit</li>                            <li>Windows2012  64-bit</li>                            <li>Windows10</li>                            <li>Windows1064</li>                        </ul>                    </td>                </tr>                <tr>                    <td>virtualInfrastructureServer</td>                    <td>Common</td>                    <td>Nutanix AHV</td>                    <td>The Nutanix AHV (Prism Server) specified in the connector configuraiton.</td>                </tr>                <tr>                    <td>vmId</td>                    <td>Common</td>                    <td>Nutanix AHV</td>                    <td>The virtual machine UUID (same as vmUuid).</td>                </tr>                <tr>                    <td>vmName</td>                    <td>Common</td>                    <td>Nutanix AHV</td>                    <td>The name of the virtual machine that was created.</td>                </tr>                <tr>                    <td>vmNetwork</td>                    <td>Common</td>                    <td>Nutanix AHV</td>                    <td>The name of the virtual network that the main NIC of the virtual machine is connected to.</td>                </tr>                <tr>                    <td>vmNetworkId</td>                    <td>Common</td>                    <td>Nutanix AHV</td>                    <td>The UUID of the virtual network that the main NIC of the virtual machine is connected to.</td>                </tr>                <tr>                    <td>vmNetworkMAC</td>                    <td>Common</td>                    <td>Nutanix AHV</td>                    <td>The MAC address of the main NIC that is connected to the virtual network specified in vmNetwork and vmNetworkId.</td>                </tr>                <tr>                    <td>vmUuid</td>                    <td>Common</td>                    <td>Nutanix AHV</td>                    <td>The virtual machine UUID (same as vmId).</td>                </tr>            </tbody>        </table>
+
+<h4 id="definition-scope"><a class="toclink" href="#definition-scope">Definition Scope</a></h4>
+<p>Defines whether the scripts variable is set for all Connector types or whether it is specific to a particular Connector type.</p>
+<h4 id="value-source"><a class="toclink" href="#value-source">Value Source</a></h4>
+<p>Defines whether the variable value is determined by common code or by Connector-specific code.</p> 
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+    <!--<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/ajitchelat/AppDNA-SDK.git" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span class="prev"><a href="../connector_config_fields_ah4/"><i class="fa fa-angle-left"></i> Previous</a></span>
+      
+      
+        <span class="next"><a href="../connector_config_fields_az4/">Next <i class="fa fa-angle-right"></i></a></span>
+      
+    </span>
+	<div class="footer-right">
+		<ul class="social-links">
+			<li class="list-inline"><a href="https://twitter.com/citrix"><i class="fa fa-twitter"></i>@citrix</a></li>
+			<li class="list-inline"><a href="mailto:support@citrix.com"><i class="fa fa-envelope-o"></i>support@citrix.com</a></li>
+		</ul>
+		<ul class="inner-pages">
+			<li class="list-inline"><a href="http://citrix.com/about/legal">Privacy and Terms</li>
+		</ul>
+	</div>
+</div>-->
+
+  </body>
+
+</html>

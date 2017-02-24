@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Manage system storage</title>
+    </head>
+    <body style="padding-left: 1.5em; padding-right: 1em; border-bottom-width: .5em; border-left-width: .5em; border-right-width: .5em; border-top-width: .5em; color: #000000; font-family: Arial, ' Helvetica', ' Sans Serif'; font-size: 9pt; margin-left: 0pt; text-align: left; background-color: #ffffff;">
+        <div class="MCBreadcrumbsBox_0" style="border-bottom-color: #ffffff;border: 1px;border-bottom-width: 1px;border-top-width: 1px;border-left-width: 1px;border-right-width: 1px;font-size: 9pt;color: #636363;border-bottom-style: solid;padding-bottom: 10px;margin-bottom: 10px;"><span class="MCBreadcrumbsPrefix">You are here: </span><span class="MCBreadcrumbsSelf">Learn about Citrix App Layering [UnideskVersion Layering 4.0.8]</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">System</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Manage system storage</span>
+        </div>
+        <h1 style="clear: both;width: 85%;page-break-before: always;color: #d31245;font-size: 20px;font-weight: 500;margin-bottom: 0.40em;margin-top: 0.4em;">Manage system storage</h1>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this article:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 100%;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Check" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Check the amount of free space in the Unidesk ELM's local storage </a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Add" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Add space to an existing disk in locally attached storage</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Expand" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Add a disk to locally attached storage</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Check"></a>Check the amount of free space in the Unidesk ELM's local storage </h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The ELM's local storage is your Layer Repository where the ELM creates, composites, and stores Layers and Layered Images. You can see how much disk space is used in the System module of the Unidesk Management Appliance (UMC). </p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Log into the UMC and select <b>System -&gt; Manage Appliance</b>. </p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Unidesk Services table, the Local Storage for the Layering Service shows how much space is used and how much is free. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Notes:</p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Disk space is shown in 1024-based Gigabytes, not metric.</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Free space is updated every time a Layering Service job completes. If you want to make sure the page has been refreshed, click the Refresh icon just above the Manage Appliance subtab. </li>
+                    <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">When creating a Layer or adding a Version to it, extra space is temporarily required to build the Packaging Disk. You can calculate the amount of space needed during Layer creation by adding the following Layer sizes:<ul style="margin-left: 0em;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The size of the OS Layer Version you're using.</li><li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The size of the writable disk you want for the App Layer.</li><li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The size of any Prerequisite Layers (if you have any). </li></ul></li>
+                </ul>
+            </li>
+        </ol>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Add"></a>Add space to an existing disk in locally attached storage</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You can add storage space to an existing local storage disk as follows.</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log into your hypervisor's management console, and follow the normal procedure to increase the size of the ELM's local storage disk. (You may have more than one of these disks, and can expand each one of them.)</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log into the UMC and select System -&gt; Manage Appliance.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select Expand Storage. A list of expanded disks is displayed. (You might also see attached disks that are not yet part of the layer repository, but you can ignore those.)</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Notice that the New Size of the disk you expanded is larger than the Current Size.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select the check box for the disk that you want to expand to the New Size.</li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Confirm and Complete tab, click Expand Storage.</li>
+        </ol>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Expand"></a>Add a disk to locally attached storage</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When you install the Unidesk ELM in vSphere, it comes equipped with an additional 200 GB data disk that is used as a Layer Repository. You can expand the ELM's local storage by adding another disk to it.</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Log into your hypervisor's management console, and follow the normal procedure to add a blank SCSI disk to the ELM appliance.</p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Log into the UMC and select System -&gt; Manage Appliance.</p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Select Expand Storage.</p>
+            </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">On the Disk Selection tab, a list is displayed of disks that are attached to the system and are not part of the layer repository.</p>
+            </li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Select the check box for each disk that you want to use to expand the layer repository.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If a check box is grayed out and a yellow icon with an ! (exclamation point) is displayed, it means that the attached disk is not eligible for use (for example, if the disk is not blank). Once the attached disk is blank and unpartitioned, you will be able to use it to expand the ELM's local storage.</p>
+            </li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">On the Confirm and Complete tab, click Expand Storage.</p>
+            </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">&#160;</p>
+    </body>
+</html>

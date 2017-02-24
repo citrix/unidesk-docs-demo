@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Assign Unidesk Roles to users</title>
+    </head>
+    <body style="padding-left: 1.5em; padding-right: 1em; border-bottom-width: .5em; border-left-width: .5em; border-right-width: .5em; border-top-width: .5em; color: #000000; font-family: Arial, ' Helvetica', ' Sans Serif'; font-size: 9pt; margin-left: 0pt; text-align: left; background-color: #ffffff;">
+        <div class="MCBreadcrumbsBox_0" style="border-bottom-color: #ffffff;border: 1px;border-bottom-width: 1px;border-top-width: 1px;border-left-width: 1px;border-right-width: 1px;font-size: 9pt;color: #636363;border-bottom-style: solid;padding-bottom: 10px;margin-bottom: 10px;"><span class="MCBreadcrumbsPrefix">You are here: </span><span class="MCBreadcrumbsSelf">Learn about Citrix App Layering [UnideskVersion Layering 4.0.8]</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">Set up</span><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="landing_set_up_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Set up Unidesk</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Assign Unidesk Roles to users</span>
+        </div>
+        <h1 style="clear: both;width: 85%;page-break-before: always;color: #d31245;font-size: 20px;font-weight: 500;margin-bottom: 0.40em;margin-top: 0.4em;">Assign Unidesk Roles to users</h1>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this article:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 100%;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Unidesk" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Unidesk Roles defined</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Assign" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Assign Unidesk Roles to users</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Next" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Next step</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;">About Unidesk users, roles, and rights</h2>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">
+            <img src="Resources/Images/user_builtin_admin_icon.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />Built-in Administrator account</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When you first install the Unidesk ELM (appliance) and log onto the Unidesk Management Console (UMC), there is a "built-in" Administrator account that you can use to get started. This Administrator has the rights to perform all Unidesk operations. You can edit this user's properties, including the name, password, and contact info. Be sure to change the password for this built-in Administrator account as part of installing and configuring the Unidesk ELM. </p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">
+            <img src="Resources/Images/user_hybrid_icons.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" /> AD&#160;User accounts</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Other than the built-in Administrator account, all Unidesk users are actually AD&#160;users imported via one or more directory junctions. Once your directory junction(s) have been created, you can assign Unidesk Roles to each user, as described later in this topic. You can see which roles are assigned to a user in the User Details.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/user_roles_details.PNG" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_0" src="Resources/Images/user_roles_details_thumb_0_200.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;width: 418px;height: 200px;" tabindex="" /></a> <![CDATA[ ]]></p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Unidesk"></a>Unidesk Roles defined</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Unidesk Roles determine which Unidesk modules a user can manage. Users assigned one or more Unidesk Roles can log into the UMC, and these users are listed on the Administrators tab (select <b>Users &gt; Administrators</b>). </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>Note:</b> When upgrading from Unidesk 4.0.6 or earlier, users assigned the Machine Administrator Role in earlier releases will now be assigned the <i>Read Only</i> Role. If the user needs more than read only access, reconfigure the user roles, as needed. </p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Rights by Role</h3>
+        <table class="TableStyle-standard_table" style="border-collapse: collapse; border-left-style: solid; border-left-color: #d4d4d4; border-left-width: 1px; border-right-style: solid; border-right-color: #d4d4d4; border-right-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-top-width: 1px; border-bottom-style: solid; border-bottom-color: #d4d4d4; border-bottom-width: 1px; margin-top: 5px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; margin-left: 0; margin-right: auto;" cellspacing="1">
+            <col class="TableStyle-standard_table-Column-Column1" style="width: 176px;" />
+            <col class="TableStyle-standard_table-Column-Column1" style="width: 439px;" />
+            <thead style="display: table-header-group;">
+                <tr class="TableStyle-standard_table-Head-Header1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <th class="TableStyle-standard_table-HeadE-Column1-Header1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;color: #000000;text-align: left;vertical-align: top;background-color: #d4d4d4;border-bottom-width: 1px;border-bottom-color: #ffffff;border-bottom-style: solid;font-size: 10pt;">Role</th>
+                    <th class="TableStyle-standard_table-HeadD-Column1-Header1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;color: #000000;text-align: left;vertical-align: top;background-color: #d4d4d4;border-bottom-width: 1px;border-bottom-color: #ffffff;border-bottom-style: solid;font-size: 10pt;">Rights </th>
+                </tr>
+            </thead>
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 10pt; color: #4d4d4d; font-family: Arial;">Administrator</p>
+                    </td>
+                    <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">    Can do every operation available in the UMC.  
+    </li>
+                            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Only users assigned the Administrator Role can edit user properties on the Users tab (Select  <b>Users &gt; Users</b>).</li>
+                            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"> 
+    Only administrators can configure ELM system settings. and manage licenses.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 10pt; color: #4d4d4d; font-family: Arial;">Manage App Layers</p>
+                    </td>
+                    <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Can create, edit, and delete application layers and versions.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 10pt; color: #4d4d4d; font-family: Arial;">Manage Elastic Layer Assignments</p>
+                    </td>
+                    <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Can add, update, and remove Elastic layer assignments.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 10pt; color: #4d4d4d; font-family: Arial;">Manage Image Templates</p>
+                    </td>
+                    <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">    Can create, edit and delete Image templates.</li>
+                            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+    Can add, update, and remove app layer assignments for image templates.
+    </li>
+                            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Can update platform layer assignments for image templates.
+    </li>
+                            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Can update OS layer assignments for image templates.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 10pt; color: #4d4d4d; font-family: Arial;">Manage OS&#160;Layers</p>
+                    </td>
+                    <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Can create, edit, and delete OS layers and versions.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 10pt; color: #4d4d4d; font-family: Arial;">Manage Platform Layers</p>
+                    </td>
+                    <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Can create, edit, and delete Platform layers and versions.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 10pt; color: #4d4d4d; font-family: Arial;">Publish Layered Images</p>
+                    </td>
+                    <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">    Can publish layered images.    </li>
+                            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Cannot create or modify existing image templates.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-standard_table-BodyB-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 10pt; color: #4d4d4d; font-family: Arial;">Read Only </p>
+                    </td>
+                    <td class="TableStyle-standard_table-BodyA-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;text-align: left;vertical-align: top;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Can view information about any items in the UMC.
+    </li>
+                            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Cannot launch any wizards or make any changes.
+    </li>
+                            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The Read Only user cannot cancel any tasks.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">User credentials for logging into the UMC</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When you assign Unidesk Roles to Directory Service users, they can use their Directory Service credentials to log into the UMC.</p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Who"></a>Who can assign Unidesk Roles?</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You can change a user's role if you are logged into the UMC as a user assigned the Administrator Role.  </p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Assign"></a>Assign Unidesk Roles to users</h2>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log into the UMC.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <b>Users &gt; Users</b>.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"> Select a user and click <span class="bold" style="font-weight: bold;">Edit Properties</span>. This opens the Edit User wizard. </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Skip to the Roles tab, and select one or more roles for this user. For details, see <i>Rights by Role</i> above.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/user_roles_wizard.PNG" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_0" src="Resources/Images/user_roles_wizard_thumb_0_200.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;width: 302px;height: 200px;" tabindex="" /></a>
+                </p>
+            </li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Confirm and Complete tab, click <span class="bold" style="font-weight: bold;">Update User</span>. Any comments you enter will appear in the  Information view Audit History.</li>
+        </ol>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Next"></a>Next step</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="landing_layer_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Create Layers</a>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Create an App Layer (Azure)</title>
+    </head>
+    <body style="padding-left: 1.5em; padding-right: 1em; border-bottom-width: .5em; border-left-width: .5em; border-right-width: .5em; border-top-width: .5em; color: #000000; font-family: Arial, ' Helvetica', ' Sans Serif'; font-size: 9pt; margin-left: 0pt; text-align: left; background-color: #ffffff;">
+        <div class="MCBreadcrumbsBox_0" style="border-bottom-color: #ffffff;border: 1px;border-bottom-width: 1px;border-top-width: 1px;border-left-width: 1px;border-right-width: 1px;font-size: 9pt;color: #636363;border-bottom-style: solid;padding-bottom: 10px;margin-bottom: 10px;"><span class="MCBreadcrumbsPrefix">You are here: </span><span class="MCBreadcrumbsSelf">Learn about Citrix App Layering [UnideskVersion Layering 4.0.8]</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">Layer</span><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="layer_apps_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">App Layers</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Azure connector</span>
+        </div>
+        <h1 style="clear: both;width: 85%;page-break-before: always;color: #d31245;font-size: 20px;font-weight: 500;margin-bottom: 0.40em;margin-top: 0.4em;">Create an App Layer (Azure)</h1>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this article:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 100%;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;"><a href="#Before" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Before you start</a>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Create2" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Prepare a new App Layer</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Deploy" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Deploy a Packaging Machine </a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Install" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Install the Application(s) </a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Verify" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Verify the Layer and shut down the Packaging Machine</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Finalize" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Finalize the Layer</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">An App Layer includes one or more installed applications that you can use in your Layered Images. You can create any number of App Layers, each with one or more applications. When it's time to update an app, you can add a new version to the layer. When you are ready to deliver the application updates to users, you can update your Image Templates, republish your Layered Images, and provision your servers with the new Layered Image.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To create an App Layer, you open the Create Layer wizard, deploy a Packaging Machine, then install the application(s). Once the application(s) are installed, you finalize the Layer.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Before"></a>Before you start</h2>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Requirements</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To create an App Layer, you need:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><a href="layer_os_create_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Create an OS&#160;Layer</a>
+            </li>
+        </ul>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Optional </h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; font-weight: normal;">Before you create an App Layer, you may also want to create resources that facilitate the application installation process. These resources are for temporary use during installation only, and will not be used to deliver the application.</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><a href="#Does" class="selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Create Prerequisite Layers</a> <![CDATA[ ]]></li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><a href="layer_platform_create_az4.htm" class="MCXref_0" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Create a Platform Layer (Azure connector)</a>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><a href="#Run" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Run Once Script</a>
+            </li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If the application you install affects boot-level components, you'll need to restart the Packaging Machine as part of finalizing the layer or version.</p>
+        <h4 style="font-size: 100%;margin-top: 1.2em;margin-bottom: .5em;clear: both;color: #303030;"><a name="Does"></a>Does this App Layer require Prerequisite Layers?</h4>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Prerequisite Layers provide a mechanism to include existing Application Layers on the Packaging Disk when creating or adding a version to an Application Layer.  Prerequisite Layers <i>should only be used if they are required</i>, since it is possible that the prerequisite applications will pull something into the Layer that is not required for the current application deployment, and which may cause conflict in the future.  Prerequisite Layers can be required for several reasons:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">      If the software installed in one layer is required by the current layer's application just to be installed.  For example, if you are installing an application that requires Java and you have Java in a separate layer.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If the software to be installed adds settings of an existing application.  For example, when installing an Office add-in, Microsoft Office must first be installed.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">      If two applications modify the same registry key and the second application must add to a key and not replace it.  For example, two application that both modify logon keys in Windows like a Citrix Agent and Imprivata.</li>
+        </ul>
+        <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><b>Note:</b> Some of these issues can also be handled by putting the two applications in the same layer rather than using prerequisite layers. </p>
+        <h4 style="font-size: 100%;margin-top: 1.2em;margin-bottom: .5em;clear: both;color: #303030;"><a name="Run"></a>Run Once Script</h4>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You can include a Run Once script in an App Layer. This allows you to run a script the first time any Layered Image that includes the App Layer boots. If the App Layer  is elastically layered, the Run Once script runs when the App Layer Disk is mounted. Run Once scripts are typically used for apps, such as MS&#160;Office, that require license activation on the first boot.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Create2"></a>Prepare a new App Layer</h2>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Select <b>Layers &gt;&#160;App Layers</b> and select <b>Create Layer</b> in the Action bar. This opens the Create Layer wizard.</p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Layer Details tab, enter a <b>Layer Name</b> and <b>Version</b>, both required values. Optionally, you can also enter other values. For details, see more about these values <span><a href="#Create" class="selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">below</a></span>.</p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the OS&#160;Layer tab, select the OS&#160;Layer you want to associate with this App Layer. </p>
+            </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the <span>Prerequisite Layers</span> tab, if the application you are layering requires other App Layers to be present during installation, select the <b>Include Prerequisite Layers</b> check box, and pick the necessary App Layer(s).  </p>
+                <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><b>Notes:</b> <![CDATA[ ]]></p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Prerequisite layers are <i>not included</i> in the App Layer being created.</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Prerequisite layers are <i>not included</i> when adding a new <i>Version</i> to this App Layer. So, when you add a new Version to this App Layer, you must choose the Prerequisite Layers again.  </li>
+                    <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The App Layer you are creating and each of its Prerequisite Layers must be associated with the selected OS&#160;Layer.</li>
+                </ul>
+            </li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Connector tab, choose a <b>Platform Connector Configuration</b> that contains the credentials for the platform where you plan to build the Layer, along with the storage location. If the configuration you need isn't listed, add a <b>New</b><a href="connector_config_fields3_vs4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Connector Configuration</a> and select it from this list. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Example: If you're using the Azure environment to create the Layer, select the Azure connector with the credentials and location required to access the location where you want to build the Layer.</p>
+            </li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Platform Layer tab you can select a Platform Layer containing the tools and hardware settings that you need to install and package an application during Layer creation. This selection is only used during layer creation. Once created, the Layer can be used in Layered Images published to any platform.</p>
+            </li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Packaging Disk tab, enter a <b>file name</b> for the Packaging Disk, and select the disk format. This disk will be used for the Packaging Machine (the VM)&#160;where you will install the application, as described in the next two sections.</p>
+            </li>
+            <li value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Icon Assignment tab, select an icon to assign to the layer. This icon represents the layer in the Layers Module.</p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">To use an existing image, select an image in the image box.</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">To import a new image, click <b>Browse</b>  and select an image in PNG or JPG format.</li>
+                </ul>
+            </li>
+            <li value="9" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the&#160;Confirm and Complete tab, review the details of the App Layer, enter a comment if required, and click <b>Create Layer</b>. Any comments you enter will appear in the  Information view Audit History. Once the Packaging Disk has been created, the Task bar displays a link to the Packaging Disk on the Azure portal. You will use this link to deploy the Packaging Machine.</p>
+            </li>
+            <li value="10" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Expand the Tasks bar at the bottom of the UI, and double-click the Packaging Disk task. The task expands to show the full task description. This description contains a link to the location in the Azure portal where the Packaging Machine for this Layer has been published.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/layers_app_action_required.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="img_1" src="Resources/Images/layers_app_action_required_thumb_0_150.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;visibility: visible;mso-wrap-style: square;width: 750px;height: 150px;" tabindex="" /></a>
+                </p>
+            </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Next, you can deploy the Packaging Machine for your Layer.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Deploy"></a>Deploy a Packaging Machine </h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Packaging Machine is a virtual machine where you install the app(s) you want to include in this Layer. It is strongly recommended that you use a unique Packaging Machine for each Layer. The Packaging Machine is a temporary VM that will be deleted once the Layer has been finalized.</p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Deploy a Packaging Machine to Azure </h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Task Description (example shown in the last step above) contains a link to the location in the Azure portal where the Packaging Machine for this Layer has been published.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To create your Packaging Machine in Azure, begin with the expanded Packaging Disk Task shown in the last step above.</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log into the Azure portal (https://portal.azure.com) from your web browser.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the expanded Packaging Disk Task shown below, copy the full URL and paste it into the web browser where you logged into the Azure portal. This opens the Microsoft Azure portal to the <i>Custom deployment</i> template where you can create the virtual machine that you will use as your Unidesk Packaging Machine. </p>
+                <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><b>Note:</b> We recommend copying the full URL instead of using the Click <u style="color: #0d4cef;">here</u> link. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/layers_app_action_required.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="img_1" src="Resources/Images/layers_app_action_required_thumb_0_150.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;visibility: visible;mso-wrap-style: square;width: 750px;height: 150px;" tabindex="" /></a>
+                </p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">On the Custom deployment panel, complete the required fields for customizing your Azure parameters. </p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Packaging Machine Name - must conform to Azure VM name requirements.</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Size - the Azure VM size of the packaging machine.</li>
+                    <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Virtual Network and Subnet - the virtual network and subnet for deploying the Packaging Machine.</li>
+                </ul>
+                <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;">IMPORTANT: Be sure that the value for the <b>Resource group location</b> matches the <b>Storage account location</b> that you configured in the Platform Connector Configuration. If these locations are not the same, the Packaging Machine will fail to deploy and you will have to reattempt deployment. If your deployment does fail, you can simply re-paste the link into the browser to start over.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/layers_app_pkg_machine_az.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="img_1" src="Resources/Images/layers_app_pkg_machine_az_thumb_0_150.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;visibility: visible;mso-wrap-style: square;width: 251px;height: 150px;" tabindex="" /></a>
+                </p>
+            </li>
+        </ol>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Install"></a>Install the Application(s) </h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">This section explains how to install your application(s) on the Packaging Machine you created in Azure. Keep in mind that the state of the app before you finalize the layer is what users experience when they access it. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To install the application(s):</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Remote log in to the Packaging Machine you created in Azure. Be sure to log in using the User account you used to create the OS&#160;in Azure.</p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Install the applications, along with any drivers, boot-level applications,  or files that the user will need with it.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If an application installation requires a system restart, restart it manually. The Packaging Machine does not restart automatically.</p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Make sure the Packaging Machine is in the state you want it to be for the user:</p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If the applications you install require any post-installation setup or application registration, complete those steps now.  </li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Remove any settings, configurations, files, mapped drives, or applications that you do not want to include on the Packaging Machine.</li>
+                </ul>
+            </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Next, you'll need to shut down the Packaging Machine and verify that the Layer is ready to finalize.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Verify"></a>Verify the Layer and shut down the Packaging Machine</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Once the application is installed on the Packaging Machine, the next step is to verify that the Layer is ready to be finalized. To be ready for finalization, any required post-installation processing needs to be completed. For example, a reboot may be required, or a Microsoft NGen process may need to complete.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To verify that any outstanding processes are complete, you can run the <i>Shutdown For Finalize</i> tool (icon below), which appears on the Packaging Machine's desktop.  </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+            <img src="Resources/Images/shutdown_for_finalize.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+        </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To use the Shutdown For Finalize tool:</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If you are not logged into the Packaging Machine, remote log in as the user who created the machine.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Double-click the <i>Shutdown For Finalize</i> icon. A command line window displays messages detailing the layer verification process. </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If there is an outstanding operation that must be completed before the Layer can be finalized, you are prompted to complete the process. For example, if a Microsoft NGen operation needs to complete, you may be able to expedite the NGen operation, as detailed <a href="#Layer_Integrity_Check" class="selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">below</a>.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Once any pending operations are complete, double-click the <i>Shutdown For Finalize</i> icon again. This shuts down the Packaging Machine. </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Layer is now ready to finalize.</p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Layer_Integrity_Check"></a>Layer integrity messages you may see during the finalization process</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Layer integrity messages let you know what queued tasks must be completed before a Layer is finalized.</p>
+        <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><a name="Layer_Integrity_Messages"></a>The new Layer or Version can only be finalized when the following conditions have been addressed:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <ul style="margin-left: 0px;padding-left: 15px;">
+                <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">A reboot is pending to update drivers on the boot disk - please check and reboot the Packaging Machine.</li>
+                <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">A post-installation reboot is pending - please check and reboot the Packaging Machine.</li>
+                <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">An MSI install operation is in progress - please check the Packaging Machine.</li>
+                <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                    <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">A Microsoft NGen operation is in progress in the background. </p>
+                    <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><b>Note:</b> If a Microsoft NGen operation is in progress, you may be able to expedite it, as described in the next section.</p>
+                </li>
+            </ul>
+        </ul>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Complete_MS_NGen_Operations"></a>Expediting a Microsoft NGen operation </h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">NGen is the Microsoft <i>Native Image Generator</i>.  It is part of the .NET system, and basically re-compiles .NET byte code into native images and constructs the registry entries to manage them.  Windows will decide when to run NGen, based on what is being installed and what Windows detects in the configuration.  When NGen is running, you must let it complete.  An interrupted NGen operation can leave you with non-functioning .NET assemblies or other problems in the .NET system.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You have the choice of waiting for the NGen to complete in the background, or you can force the NGen to the foreground. You can also check the status of the NGen operation, as described below. However, every time you check the queue status, you are creating foreground activity, which might cause the background processing to temporarily pause. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Forcing the NGen to the foreground will allow you to view the progress and once the output has completed, you should be able to finalize the layer.</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Force an NGen operation to the foreground. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Normally, NGen is a background operation and will pause if there is foreground activity.  Bringing the task into the foreground can help the task to complete as quickly as possible. To do this:</p>
+                <ol style="margin-left: 20px;padding-left: 0px;list-style-type: lower-alpha;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Open a command prompt as Administrator.</p>
+                    </li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Go to the Microsoft .NET Framework directory for the version currently in use:</p><pre xml:space="preserve">cd C:\Windows\Microsoft.NET\FrameworkNN\vX.X.XXXXX</pre>
+                    </li>
+                    <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Enter the NGen command to execute the queued items:</p><pre xml:space="preserve">ngen update /force</pre>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">This brings the NGen task to the foreground in the command prompt, and lists the assemblies being compiled. </p>
+                        <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><b>Note:</b> It’s okay if you see several compilation failed messages!</p>
+                    </li>
+                    <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Look in the Task Manager to see if an instance of MSCORSVW.EXE is running. If it is, you must allow it to complete, or re-run <span style="font-family: monospace;">ngen update /force</span>.  Do <i>not</i> reboot to stop the task. You <i>must</i> allow it to complete.</li>
+                </ol>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Check the status of an NGen operation</p>
+                <ol style="margin-left: 20px;padding-left: 0px;list-style-type: lower-alpha;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Open a command prompt as Administrator.</p>
+                    </li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Check status by running this command:</p><pre xml:space="preserve">ngen queue status</pre>
+                    </li>
+                    <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When you receive the following status, the NGen is complete, and you can finalize the Layer.</p><pre xml:space="preserve">The .NET Runtime Optimization Service is stopped</pre>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Finalize"></a>Finalize the Layer</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Once the software has been installed and the Packaging Machine has been verified and shut down, you are ready to finalize the layer.  </p>
+        <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><b>Note:</b> When you finalize a Layer, Unidesk may delete the Packaging Machine to minimize storage space used. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When the Layer has been verified and is ready to finalize:</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Return to the Unidesk Management Console.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <b>Layers &gt;App Layers</b>, and then the layer you just prepared.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <span class="bold" style="font-weight: bold;">Finalize</span> in the Action bar. The Finalize wizard appears.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">(Optional) On the Script Path wizard tab, you can enter the path to a Run Once Script located on a server on your network. <ul style="margin-left: 0em;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If the App Layer is elastically assigned, the Run Once script will be executed the first time the app is used. </li><li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If the App Layer is included in a Layered Image, the Run Once script will be executed the first time the Layered Image is booted. </li></ul></li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Click <b>Finalize</b> to finish creating the Layer.</li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Monitor the Task bar to verify that the action completes successfully and that the Layer is ready to be deployed.</li>
+        </ol>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Create"></a>Reference: Create App Layer Wizard values</h2>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><i>Layer Name</i> - (Required) A name that will let you know what app(s) the layer will be used for. </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><i>Layer Description</i> - (Optional) Description of the Layer </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><i>Version</i> - (Required) This can be the version of the application or a version you assign to the Layer. This value is displayed in the Details view of the Layer. Keep in mind that you'll add a new version to this layer whenever you update the app(s) included in it, and this is where the version will be described.</p>
+            </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><i>Version Description</i> - (Optional) Enter a description of the version.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><i>Specify the Max Layer Size</i> - Maximum layer size in gigabytes. Layers are <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/dn265487(v=vs.85).aspx" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">thin provisioned</a>, and will grow as needed, up to the maximum size. The default Max Layer Size is 10 gigabytes. If the application you are installing could eventually require more space, change this to an appropriate value.</li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">&#160;</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">&#160;</p>
+    </body>
+</html>

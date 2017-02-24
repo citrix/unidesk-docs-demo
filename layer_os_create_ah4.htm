@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Create an OS Layer (Nutanix AHV)</title>
+    </head>
+    <body style="padding-left: 1.5em; padding-right: 1em; border-bottom-width: .5em; border-left-width: .5em; border-right-width: .5em; border-top-width: .5em; color: #000000; font-family: Arial, ' Helvetica', ' Sans Serif'; font-size: 9pt; margin-left: 0pt; text-align: left; background-color: #ffffff;">
+        <div class="MCBreadcrumbsBox_0" style="border-bottom-color: #ffffff;border: 1px;border-bottom-width: 1px;border-top-width: 1px;border-left-width: 1px;border-right-width: 1px;font-size: 9pt;color: #636363;border-bottom-style: solid;padding-bottom: 10px;margin-bottom: 10px;"><span class="MCBreadcrumbsPrefix">You are here: </span><span class="MCBreadcrumbsSelf">Learn about Citrix App Layering [UnideskVersion Layering 4.0.8]</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">Layer</span><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="layer_os_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">OS Layer</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">From Nutanix AHV</span>
+        </div>
+        <h1 style="clear: both;width: 85%;page-break-before: always;color: #d31245;font-size: 20px;font-weight: 500;margin-bottom: 0.40em;margin-top: 0.4em;">Create an OS Layer (Nutanix AHV)</h1>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this article:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 100%;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Before" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Before you start</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Import" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Import the OS Image into a new OS&#160;Layer</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Unidesk Operating System (OS) Layer contains the Windows Operating System that is assigned to any Unidesk Layered Images you create using that OS Layer. Once created, you can use the OS Layer to build as many Layered Images as you want.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The OS Layer includes a virtual machine in your infrastructure running the <a href="welcome_platform_support_co4.htm#Session" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">supported</a> Windows OS that you use for your Layered Images.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To create an OS Layer, you create a virtual machine in Nutanix AHV to serve as the OS Machine, and import it into the new OS&#160;Layer.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Before"></a>Before you start</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Assuming you have <a href="get_started_deploy_unidesk_elm_ah4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">installed</a> and <a href="landing_set_up_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">set up</a> the Unidesk Enterprise Layer Manager (ELM<a href="get_started_deploy_unidesk_elm_ah4.htm" class="MCXref_0" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Install the Unidesk Enterprise Layer Manager (ELM) (Nutanix AHV)</a>, you'll need to:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><a href="layer_os_image_prep_ah4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Prepare</a> a clean OS&#160;image.</li>
+        </ul>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Import"></a>Import the OS Image into a new OS&#160;Layer</h2>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Unidesk ELM, select <b>Layers &gt; OS Layers</b> and click <b>Create OS Layer</b> in the Action bar. This opens the Create Operating System Layer Wizard.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Layer Details tab, specify a <b>Layer Name</b> and <b>Version</b>, both required values. You can enter <b>Descriptions</b> of the Layer and Version, and change the <b>Max Layer Size</b> to accommodate the OS you are going to import. </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Connector tab, choose a Nutanix AHV <b>Connector Configuration</b> that specifies where your clean OS is located. If the configuration you need is not listed, add a <b>New</b> one and then select it from this list. For information about adding this Connector Configuration, see <a href="connector_config_fields_ah4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Create a Connector Configuration</a>.</p>
+            </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the OS Disk Details tab, click the <b>Select Virtual Machine</b> field. The Virtual Machine field appears. </li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Click in the <b>Virtual Machine</b> field to reveal a list of all VMs. </li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select a VM from the list, or start by typing the name to filter  the list to VMs that contain the search text, and then select the VM. </li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Click <b>OK</b>. The selected VM is validated to ensure that:</p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The VM has a single OS disk attached as a SCSI disk. (Attaching the OS&#160;disk as IDE is not supported.)</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The OS disk can be downloaded via the storage container where that disk resides. The storage container housing the OS disk:</li>
+                    <ul style="margin-left: 0em;padding-left: 15px;">
+                        <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                            <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Does <i>not</i> need to be the same as the configured storage container.</p>
+                        </li>
+                        <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                            <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><i>Must</i> be configured so the ELM is in its white list of clients allowed to perform an NFS mount. If the ELM does <i>not</i> have permissions to mount the VM's storage container, you must correct this through the Nutanix UI.</p>
+                        </li>
+                    </ul>
+                    <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If there are problems with the VM or OS&#160;Disk, an error is displayed. Otherwise, you are returned to the wizard where the VM's name, and the size of the OS disk are listed.</p>
+                </ul>
+            </li>
+            <li value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Icon Assignment tab, select an icon image to assign to this Layer.</li>
+            <li value="9" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Confirm and Complete tab, review the details of the OS Layer, enter a comment if required, and click <b>Create Layer</b>. If you enter comments, they appear in the Information view Audit History.</li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When the task completes, the new OS Layer in the Unidesk Management Console displays a "Deployable" status.</p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>scenarios_pv4 - Citrix XenServer SDK</title>
+     
+    <link rel="shortcut icon" href="
+https://www.citrix.com/etc/designs/citrix/icon-favicon.png"> 
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/override.css" type="text/css" />
+    <link rel="stylesheet" href="../css/font-awesome.css" type="text/css" /> 
+    <script>
+      // Current page data
+      var mkdocs_page_name = "scenarios_pv4";
+      var mkdocs_page_input_path = "scenarios_pv4.md";
+      var mkdocs_page_url = "/scenarios_pv4/";
+
+    </script>
+    
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/custom.js"></script>  
+  </head>
+
+  <body class="wy-body-for-nav" role="document">
+
+    <div class="header-top">
+      <div class="header-inner-body">
+        <div class="header-top-left">
+          <a href="http://citrix.github.io" class="logo-position"><img height="60" src="img/citrixlogoblack.png" target="_blank" class="logo-citrix"><span style="color:#000;font-size: 20px;position: relative;top:4px;left: 5px">Developer Documentation</span></a>
+        </div>
+        <div class="header-top-right">
+          <ul>
+
+            <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+             <ul class="header-elements">
+              <li class="list-inline support">
+                <input name="q" id="txtName" type="text" placeholder="Search SDKs" class="searchdocs">
+                <a class="fa fa-search errspan"></a>
+              </li>
+             <li> <a href="javascript:void(0);" style="font-size: 22px;position: relative;left: -10px;top: 3px"><i class="fa fa-globe"></i></a></li>
+             </ul>
+            </form>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="wy-grid-for-nav">
+
+        
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+          <div class="wy-side-nav-search">
+            <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+	<i class="fa fa-search"></i>
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+          </div>
+
+          <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+            <ul class="current">
+              
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="..">Welcome</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connectors_about_co4/">connectors_about_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_create_co4/">connector_config_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields3_vs4/">connector_config_fields3_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_ah4/">connector_config_fields_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_ah_mc4/">connector_config_fields_ah_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_az4/">connector_config_fields_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_fs4/">connector_config_fields_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_pv4/">connector_config_fields_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_vs_mc4/">connector_config_fields_vs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_vw4/">connector_config_fields_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_xs4/">connector_config_fields_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../connector_config_fields_xs_mc4/">connector_config_fields_xs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_release_notes_co4/">get_started_deploy_release_notes_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_ah4/">get_started_deploy_unidesk_elm_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_az4/">get_started_deploy_unidesk_elm_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_co4/">get_started_deploy_unidesk_elm_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_hv4/">get_started_deploy_unidesk_elm_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_vs4/">get_started_deploy_unidesk_elm_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_deploy_unidesk_elm_xs4/">get_started_deploy_unidesk_elm_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_install_agent_pv4/">get_started_install_agent_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_license_co4/">get_started_license_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_ah4/">get_started_login_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_az4/">get_started_login_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_co4/">get_started_login_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_hv4/">get_started_login_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_vs4/">get_started_login_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_login_xs4/">get_started_login_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_ah4/">get_started_prerequisites_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_az4/">get_started_prerequisites_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_hv4/">get_started_prerequisites_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_vs4/">get_started_prerequisites_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_prerequisites_xs4/">get_started_prerequisites_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_setup_fileshare_co4/">get_started_setup_fileshare_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_upgrade_elm_co4/">get_started_upgrade_elm_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../get_started_upgrade_unidesk_co4/">get_started_upgrade_unidesk_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../glossary_co4/">glossary_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../labs_enable_co4/">labs_enable_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_ah4/">landing_install_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_az4/">landing_install_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_hv4/">landing_install_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_vs4/">landing_install_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_install_xs4/">landing_install_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_layer_co4/">landing_layer_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_publish_co4/">landing_publish_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../landing_set_up_co4/">landing_set_up_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_co4/">layered_images_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_ah4/">layered_images_create_template_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_ah_mc4/">layered_images_create_template_ah_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_az4/">layered_images_create_template_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_co4/">layered_images_create_template_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_fs4/">layered_images_create_template_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_mc4/">layered_images_create_template_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_pv4/">layered_images_create_template_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_vs4/">layered_images_create_template_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_vw4/">layered_images_create_template_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_xs4/">layered_images_create_template_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_create_template_xs_mc4/">layered_images_create_template_xs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_manage_template_co4/">layered_images_manage_template_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_ah4/">layered_images_publish_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_ah_mc4/">layered_images_publish_ah_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_az4/">layered_images_publish_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_co4/">layered_images_publish_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_fs4/">layered_images_publish_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_mc4/">layered_images_publish_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_pv4/">layered_images_publish_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_vs4/">layered_images_publish_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_vw4/">layered_images_publish_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_xs4/">layered_images_publish_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layered_images_publish_xs_mc4/">layered_images_publish_xs_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_about_co4/">layer_about_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_co4/">layer_apps_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_ah4/">layer_apps_create_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_az4/">layer_apps_create_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_co4/">layer_apps_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_fs4/">layer_apps_create_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_vs4/">layer_apps_create_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_create_xs4/">layer_apps_create_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_delete_co4/">layer_apps_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_apps_recipes_co4/">layer_apps_recipes_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_assign_apps_co4/">layer_assign_apps_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_assign_apps_elastic_co4/">layer_assign_apps_elastic_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_assign_apps_image_template_co4/">layer_assign_apps_image_template_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_delete_co4/">layer_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_co4/">layer_os_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_ah4/">layer_os_create_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_az4/">layer_os_create_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_co4/">layer_os_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_fs4/">layer_os_create_fs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_vs4/">layer_os_create_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_create_xs4/">layer_os_create_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_delete_co4/">layer_os_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_ah4/">layer_os_image_prep_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_az4/">layer_os_image_prep_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_co4/">layer_os_image_prep_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_vs4/">layer_os_image_prep_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_image_prep_xs4/">layer_os_image_prep_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_ah4/">layer_os_version_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_az4/">layer_os_version_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_co4/">layer_os_version_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_vs4/">layer_os_version_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_os_version_xs4/">layer_os_version_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_ah4/">layer_platform_create_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_ah_mc4/">layer_platform_create_ah_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_az4/">layer_platform_create_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_co4/">layer_platform_create_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_mc4/">layer_platform_create_mc4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_ot4/">layer_platform_create_ot4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_pv4/">layer_platform_create_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_vs4/">layer_platform_create_vs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_vw4/">layer_platform_create_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_create_xs4/">layer_platform_create_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_platform_delete_co4/">layer_platform_delete_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../layer_user_enable_co4/">layer_user_enable_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../logs_export_co4/">logs_export_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../platforms_for_publishing_pb_bk4/">platforms_for_publishing_pb_bk4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../platforms_for_publishing_pb_hy4/">platforms_for_publishing_pb_hy4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../platforms_for_publishing_pb_ps4/">platforms_for_publishing_pb_ps4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_ah4/">scenarios_ah4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_az4/">scenarios_az4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_co4/">scenarios_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_hv4/">scenarios_hv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 current">
+        <span class="expli"><i class="fa fa-plus-square-o" aria-hidden="true"></i></span><a class="current" style="width:270px;font-size: 12px" href="./">scenarios_pv4</a>
+        
+            <ul style="display:none">
+            
+                <li class="toctree-l3"><a href="#test-drive-publish-to-pvs-xenapp-7-in-vsphere" style="font-size: 12px;margin-left: 10px;position: relative;">&nbsp;Test drive: Publish to PVS, XenApp 7 in vSphere</a></li>
+                
+                    <li><a class="toctree-l4" href="#platforms-used-in-this-test-drive" style="font-size: 12px;margin-left: 30px;position: relative;">Platforms used in this test drive</a></li>
+                
+                    <li><a class="toctree-l4" href="#components-you-will-create" style="font-size: 12px;margin-left: 30px;position: relative;">Components you will create</a></li>
+                
+                    <li><a class="toctree-l4" href="#prerequisites" style="font-size: 12px;margin-left: 30px;position: relative;">Prerequisites</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-2-create-a-platform-layer-to-include-in-layered-images" style="font-size: 12px;margin-left: 30px;position: relative;">Step 2: Create a Platform Layer to include in Layered Images</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-3-create-an-image-template" style="font-size: 12px;margin-left: 30px;position: relative;">Step 3: Create an Image Template</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-4-publish-a-layered-image-to-pvs" style="font-size: 12px;margin-left: 30px;position: relative;">Step 4: Publish a Layered Image to PVS</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-5-assign-the-new-vdisk-to-a-collection" style="font-size: 12px;margin-left: 30px;position: relative;">Step 5: Assign the new vDisk to a collection</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#add-your-first-app-layer-and-republish-the-layered-image" style="font-size: 12px;margin-left: 10px;position: relative;">&nbsp;Add your first App Layer and republish the Layered Image</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-1-create-a-platform-layer-for-packaging-other-layers" style="font-size: 12px;margin-left: 30px;position: relative;">Step 1: Create a Platform Layer for packaging other layers</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-2-create-an-app-layer" style="font-size: 12px;margin-left: 30px;position: relative;">Step 2: Create an App Layer</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-3-publish-a-new-layered-image-containing-the-new-app-layer" style="font-size: 12px;margin-left: 30px;position: relative;">Step 3: Publish a new Layered Image containing the new App Layer</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_vw4/">scenarios_vw4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_xa65_pv4/">scenarios_xa65_pv4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../scenarios_xs4/">scenarios_xs4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../support_co4/">support_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_manage_appliance_co4/">system_manage_appliance_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_ports_firewall_co4/">system_ports_firewall_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_settings_co4/">system_settings_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_storage_co4/">system_storage_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../system_update_license_co4/">system_update_license_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../users_admins_assign_role_co4/">users_admins_assign_role_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../users_admin_password_co4/">users_admin_password_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../users_dir_service_co4/">users_dir_service_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../welcome_platform_support_co4/">welcome_platform_support_co4</a>
+        
+    </li>
+
+                <li>
+                  
+              <li>
+    <li class="toctree-l1 ">
+        <a class="" style="width:270px;font-size: 12px" href="../welcome_release_notes_co4/">welcome_release_notes_co4</a>
+        
+    </li>
+
+                <li>
+                  
+            </ul>
+          </div>
+          &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+           
+          <div class="wy-nav-content">
+            <div class="rst-content">
+              <!-- <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>scenarios_pv4</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/ajitchelat/AppDNA-SDK.git" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div> -->
+              <div role="main">
+                <div class="section">
+                <div class="file-format">
+                 <div class="leftAlign" style="float: left;visibility: hidden;">
+                  </div>
+                  <div class="rightAlign" style="float: right;">
+                      <span>Download full document:</span>
+                      <ul class="file-types">
+                        <li><a style="border: 1px solid #EE3D24;padding: 5px;font-size: 11px;color: #EE3D24;border-radius: 5px;font-weight: 700">PDF</a></li>
+                        <li><a style="border: 1px solid #2A579A;padding: 5px;font-size: 11px;color: #2A579A;border-radius: 5px;font-weight: 700">DOCX</a></li>
+                        <li><a style="border: 1px solid #495164;padding: 5px;font-size: 11px;color: #495164;border-radius: 5px;font-weight: 700">EMAIL</a></li>
+                        <li><a style="border: 1px solid #495164;padding: 5px;font-size: 11px;color: #495164;border-radius: 5px;font-weight: 700">PRINT</a></li>
+                      </ul>
+                  </div>
+                  </div>
+                   <p>You are here: Learn about Citrix App Layering [UnideskVersion Layering 4.0.8] &gt; Test drive &gt; Publish to PVS, XenApp 7 in vSphere</p>
+<h1 id="test-drive-publish-to-pvs-xenapp-7-in-vsphere"><a class="toclink" href="#test-drive-publish-to-pvs-xenapp-7-in-vsphere">Test drive: Publish to PVS, XenApp 7 in vSphere</a></h1>
+<p>In this article:</p>
+<table>            <col></col>            <tbody>                <tr>                    <td>                        <p><a href="#Platform"> Platforms used in this test drive</a>                        </p>                        <p><a href="#Componen"> Components you will create</a>                        </p>                        <p><a href="#Prerequi"> Prerequisites</a>                        </p>                        <p><a href="#Part"> Publish a test image with an OSLayer and a Platform Layer</a>                        </p>                        <p><a href="#Part2"> Add your first App Layer and republish the Layered Image</a>                        </p>                    </td>                </tr>            </tbody>        </table>
+
+<h2 id="platforms-used-in-this-test-drive"><a class="toclink" href="#platforms-used-in-this-test-drive">Platforms used in this test drive<a name="Platform"></a></a></h2>
+<table>            <col></col>            <col></col>            <tbody>                <tr>                    <td>Create Layers in:</td>                    <td> vSphere</td>                </tr>                <tr>                    <td>Publish Layered Images to:</td>                    <td>PVS</td>                </tr>                <tr>                    <td>For delivery to: </td>                    <td>XenApp users</td>                </tr>            </tbody>        </table>
+
+<p>This test drive leads you through the process of publishing a Layered Image as a vDisk to a PVS server. As this diagram shows, the hypervisor in this scenario is vSphere, and the connection broker is Citrix XenApp. </p>
+<p><img alt="" src="../Resources/Images/unidesk_publish_to_pvs__xenapp_vsphere2_815x331.png" /></p>
+<h2 id="components-you-will-create"><a class="toclink" href="#components-you-will-create">Components you will create<a name="Componen"></a></a></h2>
+<table>            <col></col>            <col></col>            <tbody>                <tr>                    <th>Component</th>                    <th>Description</th>                </tr>                <tr>                    <td>OSLayer</td>                    <td>                        <ul>                            <li>Contains Windows Server 2012 R2 </li>                            <li>Unidesk Tools are installed</li>                            <li>Network card is set to VMXNet3</li>                        </ul>                    </td>                </tr>                <tr>                    <td>Platform Layer</td>                    <td>                        <ul>                            <li>Layer containing all platform-related software and settings</li>                            <li>Created in vSphere using a VMware VM for the Packaging Machine</li>                        </ul>                    </td>                </tr>                <tr>                    <td>App Layer</td>                    <td>                        <ul>                            <li>Notepad++</li>                        </ul>                    </td>                </tr>                <tr>                    <td>Image Template</td>                    <td>                        <ul>                            <li>Created in two stages:<ul><li> Stage 1: Includes OS Layer ; Platform Layer</li><li>Stage 2: Includes the addition of App Layer </li></ul></li>                        </ul>                    </td>                </tr>                <tr>                    <td>Layered Image</td>                    <td>                        <ul>                            <li>Image Template</li>                            <li>OS Layer</li>                            <li>Platform Layer</li>                            <li>App Layer</li>                        </ul>                    </td>                </tr>                <tr>                    <td>PVSvDisk</td>                    <td>                        <ul>                            <li>Contains the Unidesk Layered Image</li>                        </ul>                    </td>                </tr>            </tbody>        </table>
+
+<h2 id="prerequisites"><a class="toclink" href="#prerequisites">Prerequisites<a name="Prerequi"></a></a></h2>
+<table>            <col></col>            <col></col>            <tbody>                <tr>                    <td>                        <h3>Unidesk</h3>                        <p><span>o</span> Unidesk ELMinstalled on a server in your vSphere environment.</p>                        <p><span>o</span> Unidesk Tools downloaded from the Unidesk Download page and copied to a location that the Packaging Machine VM will be able to access.</p>                        <h3>vSphere</h3>                        <p><span>o</span> Access from the Packaging Machine VM in vSphere to the Unidesk Tools download, which is available on the Unidesk Download page.</p>                        <p><span>o</span> vSphere resource information for Unidesk <a href="connector_config_fields3_vs4.htm">vSphere Connector Configuration</a>.</p>                        <h3>Citrix XenApp </h3>                        <p><span>o</span> XenApp Virtual Delivery Agent Installer for Windows Server OS. The XenApp version must match the version of the XenApp server on which the Layered Image will be used.</p>                    </td>                    <td>                        <h3>PVS</h3>                        <p><span>o</span> Unidesk Agent - Installed on all PVS servers used to access the PVS servers to which you will publish images. (Agent must be registered with the Unidesk ELM.)</p>                        <p><span>o</span> All PVSservers where the Unidesk Agent is installed must have the PVSConsole installed. </p>                        <p><span>o</span> PVS Target Device Imaging software (version must match the PVS server to which the Layered Image will be published).</p>                        <p><span>o</span> PVSresource information for the Unidesk <a href="connector_config_fields_pv4.htm">PVS Connector Configuration</a>. </p>                        <p><span>o</span> Appropriate PowerShell Snap-in must be installed.</p>                        <p><span>o</span> When using KMS licensing, PVS requires that each target device has a unique CMID. For more about this, see the Citrix article, <a href="https://www.citrix.com/blogs/2014/05/01/demystifying-kms-and-provisioning-services/">Demystifying KMS and Provisioning Services</a>. The steps for rearming KMS are covered in the <a href="#Step3_platform_pulishing">Platform Layer instructions</a> below.</p>                    </td>                </tr>            </tbody>        </table>
+
+<h2 id="publish-a-test-image-with-an-oslayer-and-a-platform-layer"><a class="toclink" href="#publish-a-test-image-with-an-oslayer-and-a-platform-layer">Publish a test image with an OS<a name="Part"></a>##Layer and a Platform Layer<a name="Part"></a></a></h2>
+<p>In this part of the test drive you will:</p>
+<table>            <col></col>            <tbody>                <tr>                    <td>                        <p><a href="#Step"> Step 1: Create an OSLayer</a>                        </p>                        <p><a href="#Step3_platform_pulishing"> Step 2: Create a Platform Layer to include in Layered Images</a>                        </p>                        <p><a href="#Step4_template"> Step 3: Create an Image Template</a>                        </p>                        <p><a href="#Step5_publish"> Step 4: Publish a Layered Image to PVS</a>                        </p>                        <p><a href="#Step6_provision"> Step 5: Assign the new vDisk to a collection</a>                        </p>                    </td>                </tr>            </tbody>        </table>
+
+<h3 id="step-1-create-an-oslayer"><a class="toclink" href="#step-1-create-an-oslayer">Step 1: Create an OS<a name="Step"></a>###Layer<a name="Step"></a></a></h3>
+<p><img alt="" src="../Resources/Images/scenario_os_layer_thumb_0_300.png" /><a href="../Resources/Images/scenario_os_layer.png">        </a></p>
+<p>In this step you will create a vSphere VM to use as your OSMachine, and prepare the OS on it. Then you will download the OS.vmdk file to the Network File Share and import the OS Disk into the Unidesk OSLayer.</p>
+<ol>            <li>                <p>In vSphere, create a Windows Server 2012 R2 VM, specifying a network adaptor of VMXNet3.</p>                <p><b>Important:</b> When creating the image, be sure to choose the default cluster allocation size of 4K.</p>            </li>            <li>Log into the new VM.</li>            <li>Check to see if the operating system is configured with a VMXNet3 card, and if not, change the setting to VMXNet3. Then restart the system and ensure the new network adapter setting is working.</li>            <li>Install Windows Server 2012 <b>Session Host role</b>.</li>            <li>Download the Unidesk OS Machine Tools from the Unidesk Support Download Center. </li>            <li>Double-click the executable to copy the scripts and files to <code>C:\Windows\Setup\scripts</code>.  </li>            <li>From the <code>C:\Windows\Setup\scripts</code> folder, run the included Setup_x64.exe file on the VM to install the Unidesk tools.</li>            <li>Shut down the VM. </li>            <li>Right-click the VM and select <b>Template > Export OVF Template</b>. This preserves any snapshots you may have made.</li>            <li>In the wizard that opens, select the name of the file that will be created, and the directory in which you would like to store the file and format: "Folder of files (OVF)". Files are downloaded to the Network File Share.</li>            <li>In the Unidesk ELM, select <b>Layers > OS Layers</b> and click <b>Create OS Layer</b>. This opens the Create OS Layer Wizard so you can set up the new Layer and import your operating system into it.</li>            <li>First, specify a <b>Layer Name</b> and <b>Version</b> in the Layer Details tab. </li>            <li>In the Connector tab, select the <b>Network File Share</b> where you downloaded the vSphere .vmdk files. Once connected to the file share, you can select the operating system to import.</li>            <li>In the OS Disk Details tab, click <b>Browse</b> to select the  *.vmdk file. </li>            <li>In the Icon Assignment tab, select the 2012 icon for this Layer.</li>            <li>In the Confirm and Complete tab, make sure the details of the OS Layer are correct, and click <b>Create Layer</b>. </li>        </ol>
+
+<p>When the task completes, the new OS Layer in the Unidesk Management Console (UMC) displays a Deployable status.</p>
+<h3 id="step-2-create-a-platform-layer-to-include-in-layered-images"><a class="toclink" href="#step-2-create-a-platform-layer-to-include-in-layered-images">Step 2: Create a Platform Layer to include in Layered Images<a name="Step3_platform_pulishing"></a></a></h3>
+<p><img alt="" src="../Resources/Images/scenario_platform_layer_thumb_0_300.png" /><a href="../Resources/Images/scenario_platform_layer.png">Platform Layers contain the software and settings required to either:</a></p>
+<ul>            <li>Create other Layers in your hypervisor environment, or </li>            <li>Publish and run your Layered Images in the target environment</li>        </ul>
+
+<p>By putting all platform-specific software and settings into Platform Layers, your other Layers and Image Templates are free of any platform-specific software, and can be used to create Layered Images for multiple environments. </p>
+<p>Now you will create a Platform Layer to use in your Layered Images. This Platform Layer helps to ensure that Layered Images run correctly in your environment. </p>
+<p>For this test drive, the platform software and settings you will include in the Platform Layer are for vSphere, PVS, and XenApp. Using the Create Platform Layer wizard in the UMC, you will:</p>
+<ul>            <li>Deploy a Packaging Machine in vSphere. </li>            <li>Install the platform software, configure platform settings, and verify the Layer.</li>            <li>Rearm KMS (assuming your OS image was activated using KMS).   </li>            <li>Finalize the Platform Layer by importing the Packaging Machine. </li>        </ul>
+
+<p>Here's how:</p>
+<ol>            <li>Select <b>Layers >Platform Layers</b> and then  <b>Create Platform Layer</b> from the Action bar to open the Create Platform Layer wizard.</li>            <li>On the Layer Details tab, enter a <b>Layer Name</b> and <b>Version</b>, both required values.</li>            <li>On the OSLayer tab, select the OSLayer you created earlier. </li>            <li>On the Connector tab, click <b>New</b> to add a vSphere Connector Configuration for creating the Packaging Machine VM. Use the <a href="connector_config_fields3_vs4.htm">prerequisite</a> vSphere Connector Configuration <a href="connector_config_fields3_vs4.htm">information</a> to complete the fields. Click <b>TEST</b>to verify the connection, then click <b>SAVE</b>.</li>            <li>                <p>On the Platform Types tab, select <b>This platform layer will be used for publishing Layered Images</b>, and select the hypervisor, Provisioning Service, and Connection Broker where you will publish your Layered Images.</p>                <p><a href="Resources/Images/layers_platform_pvs.png"><img></img></a>                </p>            </li>            <li>On the Packaging Disk tab, notice the Packaging Disk  <b>File name</b>. This disk will be used for the Packaging Machine (the VM)where you will install the platform tools and configure the settings.</li>            <li>In the Icon Assignment tab, select one of the default icons.</li>            <li>In theConfirm and Complete tab, review the settings and click <b>Create Layer</b>. </li>            <li>                <p>Expand the Tasks bar at the bottom of the UI, and double-click the Packaging Disk task to show the full task description. Once the Packaging Disk has been created, the Task bar displays the location of the Packaging Disk in your environment. Example:</p>                <p><a href="Resources/Images/scenario_layer_task_vs.png"><img></img></a>                </p>            </li>            <li>                <p>Log into your vSphere web client, then use the information displayed in the Create Platform Layer Task (shown above) to navigate to the Packaging Machine in vSphere.</p>            </li>            <li>                <p>Power on the Packaging Machine, and remote log into it. Remote log into the Packaging Machine with the User account you used to create the operatingsystem.</p>            </li>            <li>                <p>Domain join the Packaging Machine VM.</p>            </li>            <li>                <p>Install your vmTools, and configure the vSphere settings as you want them to be when the Packaging Machine starts.</p>            </li>            <li>                <p>Run the PVS Target Device Installation software. In the installation wizard, take the default settings, except on the last page of the wizard, deselect the Launch Imaging Wizard checkbox. </p>                <p><b>Important:</b> Do not run the device Imaging Wizard.</p>            </li>            <li>                <p>Run the PVS Device optimization tool.</p>            </li>            <li>                <p>Install the XenApp Virtual Delivery Agent for Windows Server OS using the default settings. For the Master device option, choose MCS/PVS.</p>            </li>            <li>                <p>Verify the Rearm count on the OS by running slmgr /dlv from a command prompt. </p><pre>slmgr /dlv</pre>            </li>            <li>                <p>Rearm KMS:</p><pre>slmgr /rearm</pre>            </li>            <li>                <p>Double-click the <i>Shutdown For Finalize</i> icon. A command line window displays messages about the layer verification process. If there is an outstanding operation, wait for it to complete. </p>                <p>                    <img></img>                </p>            </li>            <li>Once any pending operations are complete, if the Finalize process tells you to reboot the machine, be sure to rearm KMS again.</li>            <li>Shut down the Packaging Machine by double-clicking the <i>Shutdown For Finalize</i> icon again. </li>            <li>Return to the UMC, and select <b>Layers > Platform Layers</b>, then select the Platform Layer and click <b>Finalize</b>.</li>            <li>Use the Task bar to monitor when the layer becomes deployable. </li>        </ol>
+
+<p>When the new task becomes Deployable, you can add your new layers to an Image Template. </p>
+<h3 id="step-3-create-an-image-template"><a class="toclink" href="#step-3-create-an-image-template">Step 3: Create an Image Template<a name="Step4_template"></a></a></h3>
+<p><img alt="" src="../Resources/Images/scenario_image_templates_thumb_0_300.png" /><a href="../Resources/Images/scenario_image_templates.png">        </a></p>
+<p>Create an Image Template that includes the same OS Layer as you used in the Platform Layer you just created.</p>
+<ol>            <li>Select <b>Images</b> and click <b>Create Template</b>. The Create Template Wizard opens.</li>            <li>Type a name for the template and select an icon for the Layer.</li>            <li>In the OSLayer tab choose the OS Layer.</li>            <li>Skip the App Layer Assignment tab for now. You'll add App Layers in the next part of this test drive.</li>            <li>On the Connector tab, select the PVS Connector Configuration. If you don't have one yet, click <b>New</b> to open the Citrix PVSConnector Configuration page, and enter the information, as described <a href="connector_config_fields_pv4.htm">here</a>.</li>            <li>On the Platform Layer tab, select the Platform Layer that contains the PVS and XenApp software and settings.</li>            <li>On the Layered Image Disk tab, edit the Layered Image Disk Filename, and keep the default values for the rest of the settings.</li>            <li>On the Confirm and Complete tab, click <b>Create Template</b>. </li>        </ol>
+
+<p>Next, you can publish the Layered Image using this template.</p>
+<h3 id="step-4-publish-a-layered-image-to-pvs"><a class="toclink" href="#step-4-publish-a-layered-image-to-pvs">Step 4: Publish a Layered Image to PVS<a name="Step5_publish"></a></a></h3>
+<ol>            <li>Select <b>Images</b>. Your Template is displayed.</li>            <li>Select the Template and click <b>Publish Layered Image</b>. This opens the Publish Layered Image wizard.</li>            <li>Confirm and complete the wizard, then expand the Task bar at the bottom of the window and monitor the task. When the task is <i>Done</i>, the vDisk is ready to add to a collection. </li>        </ol>
+
+<h3 id="step-5-assign-the-new-vdisk-to-a-collection"><a class="toclink" href="#step-5-assign-the-new-vdisk-to-a-collection">Step 5: Assign the new vDisk to a collection<a name="Step6_provision"></a></a></h3>
+<ol>            <li>Access the target PVS server via the PVSConsole. The new vDisk should appear under the targeted PVS store (refresh may be required).</li>            <li>Test the new vDisk by assigning it to a device.</li>            <li>Using Citrix PVSbest practices, assign the new vDisk to a collection of targeted devices. </li>        </ol>
+
+<p>Now that you have tested your Layered Image in PVS, it's time to add an App Layer to the image. </p>
+<h2 id="add-your-first-app-layer-and-republish-the-layered-image"><a class="toclink" href="#add-your-first-app-layer-and-republish-the-layered-image">Add your first App Layer and republish the Layered Image<a name="Part2"></a></a></h2>
+<p>In this part of the test drive you will:</p>
+<table>            <col></col>            <tbody>                <tr>                    <td>                        <p><a href="#Step1_platform_packaging"> Step 1: Create a Platform Layer for packaging other layers</a>                        </p>                        <p><a href="#Step6"> Step 2: Create an App Layer</a>                        </p>                        <p><a href="#Step7"> Step 3: Publish a new Layered Image containing the new App Layer</a>                        </p>                    </td>                </tr>            </tbody>        </table>
+
+<p>Similar to the process for creating a Platform Layer, you will prepare an App Layer in the UMC, deploy a Packaging Machine VM in vSphere where you install Notepad++, then import the VM into the new layer. You will add this layer to your Image Template, and publish a new version of the Layered Image.</p>
+<h3 id="step-1-create-a-platform-layer-for-packaging-other-layers"><a class="toclink" href="#step-1-create-a-platform-layer-for-packaging-other-layers">Step 1: Create a Platform Layer for packaging other layers<a name="Step1_platform_packaging"></a></a></h3>
+<p><img alt="" src="../Resources/Images/scenario_platform_layer_thumb_0_300.png" /><a href="../Resources/Images/scenario_platform_layer.png">        </a></p>
+<p>The Platform Layer for packaging layers is where you install the tools and settings specific to a particular hypervisor. Putting platform-specific software on the Platform Layer means that your App Layers do not need to include it, and therefore can be used on multiple platforms. </p>
+<p>Using the UMC, you will prepare this layer and deploy a Packaging Machine VM in vSphere. On the Packaging Machine, you will install the hypervisor software and configure the hypervisor settings, as needed. Finally, you will import the Packaging Machine to create the Platform Layer for packaging layers. </p>
+<ol>            <li>Select <b>Layers >Platform Layers</b> and then  <b>Create Platform Layer</b> from the Action bar to open the Create Platform Layer wizard.</li>            <li>In the Layer Details tab, enter a <b>Layer Name</b> and <b>Version</b>, both required values.</li>            <li>In the OSLayer tab, select the OSLayer you created earlier. </li>            <li>In the Connector tab, the <b>vSphere</b> Connector Configuration.</li>            <li>On the Packaging Disk tab, notice the Packaging Disk  <b>File name</b>. This disk will be used for the Packaging Machine (the VM)where you will install the platform tools and configure the settings.</li>            <li>In the Icon Assignment tab, select one of the default icons.</li>            <li>In theConfirm and Complete tab, review the settings and click <b>Create Layer</b>. </li>            <li>                <p>Expand the Tasks bar at the bottom of the UI, and double-click the Packaging Disk task to show the full task description. Once the Packaging Disk has been created, the Task bar displays the location of the Packaging Disk in your environment. Example:</p>                <p><a href="Resources/Images/layers_app_action_required_vs.png"><img></img></a>                </p>            </li>            <li>                <p>Log into your vSphere web client, then use the information displayed in the Packaging Disk Task (shown above) to navigate to the Packaging Machine in vSphere.</p>            </li>            <li>                <p>Power on the Packaging Machine, and remote log into it. Remote log in to the Packaging Machine with the User account you used to create the operatingsystem.</p>            </li>            <li>                <p>Domain join the Packaging Machine VM.</p>            </li>            <li>                <p>Install your vmTools, and configure the vSphere settings as you want them to be when the Packaging Machine for this layer starts.</p>            </li>            <li>                <p>Double-click the <i>Shutdown For Finalize</i> icon. A command line window displays messages about the layer verification process. If there is an outstanding operation, wait for it to complete. </p>                <p>                    <img></img>                </p>            </li>            <li>Once any pending operations are complete, shut down the Packaging Machine by double-clicking the <i>Shutdown For Finalize</i> icon again. </li>            <li>Return to the UMC, and select <b>Layers > Platform Layers</b>, then select the Platform Layer and click <b>Finalize</b>.</li>            <li>Use the Task bar to monitor when the layer becomes deployable. </li>        </ol>
+
+<h3 id="step-2-create-an-app-layer"><a class="toclink" href="#step-2-create-an-app-layer">Step 2: Create an App Layer<a name="Step6"></a></a></h3>
+<p><img alt="" src="../Resources/Images/scenario_app_layer_wizard_thumb_0_300.png" /><a href="../Resources/Images/scenario_app_layer_wizard.png">        </a></p>
+<ol>            <li>Select <b>Layers >App Layers</b> and then  <b>Create App Layer</b> from the Action bar to open the Create App Layer wizard.</li>            <li>In the Layer Details tab, enter a <b>Layer Name</b> and <b>Version</b>, both required values.</li>            <li>In the OSLayer tab, select the OSLayer you created earlier. </li>            <li>In the Connector tab, choose the vSphere <b>Connector Configuration</b> you used to create the Platform Layer for packaging other layers.</li>            <li>On the Platform Layer tab, choose the Platform Layer you just created.</li>            <li>On the Packaging Disk tab, enter a <b>File name</b> for the Packaging Disk. This disk will be used for the Packaging Machine (the VM)where you will install the application.</li>            <li>In the Icon Assignment tab, select one of the supplied icons for the layer, or if you'd like to use the application icon, you can browse for it and import it into this tab.</li>            <li>In theConfirm and Complete tab, review the settings and click <b>Create Layer</b>. </li>            <li>                <p>Expand the Tasks bar at the bottom of the UI, and double-click the task to expand it. Once complete, the Task bar displays the location of the Packaging Disk or Machine in your environment.</p>                <p><a href="Resources/Images/layers_app_action_required_vs.png"><img></img></a>                </p>            </li>            <li>Log into your vSphere web client, then use the information displayed in the above Task to navigate to the Packaging Machine in vSphere.</li>            <li>Power on the Packaging Machine, and remote log into it. Remote log in to the Packaging Machine with the User account you used to create the operatingsystem in vSphere.</li>            <li>Install the application, leaving the application and the Packaging Machine in the state you want it to be for the user.</li>            <li>                <p>Double-click the <i>Shutdown For Finalize</i> icon. A command line window displays messages about the layer verification process. </p>                <p>                    <img></img>                </p>            </li>            <li>If there is an outstanding operation that must be completed before the Layer can be finalized, you are prompted to expedite the process. For example, if a Microsoft NGen operation needs to complete, you may be able to expedite the NGen operation, as detailed <a href="layer_apps_create_vs4.htm"><a href="layer_about_co4.htm#Verifyin">here</a></a>.</li>            <li>Once any pending operations are complete, shut down the Packaging Machine by double-clicking the <i>Shutdown For Finalize</i> icon again. </li>            <li>Return to the UMC, and select <b>Layers > App Layers</b>, and select <b>Finalize</b> in the Action bar.</li>            <li>Use the Task bar to monitor when the layer becomes deployable. </li>        </ol>
+
+<p>Once the App Layer task is marked Deployable, you can add the new App Layer to your Image Template. </p>
+<h3 id="step-3-publish-a-new-layered-image-containing-the-new-app-layer"><a class="toclink" href="#step-3-publish-a-new-layered-image-containing-the-new-app-layer">Step 3: Publish a new Layered Image containing the new App Layer<a name="Step7"></a></a></h3>
+<ol>            <li>Select <b>Images</b>, then select your Image Template and click <b>Edit Template</b>.</li>            <li>In the Edit Template wizard, select the Application Assignment tab and select the <b>Notepad++ Layer</b>. </li>            <li>Skip the Confirm and Complete tab, and click Save Template Changes to save the updated template.</li>            <li>Back in the Images module, select the Template again and click <b>Publish Layered Image</b>. This opens the Publish Layered Image wizard.</li>            <li>Confirm the settings and click <b>Publish Layered Image</b>.</li>            <li>Monitor the tasks for completion.</li>            <li>Once the task is complete, access the target PVS server via the PVS Console. The new vDisk should appear under the targeted PVS store (refresh may be required).</li>            <li>                <p>Assign the new vDisk either to a new or existing collection.</p>            </li>        </ol> 
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+    <!--<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/ajitchelat/AppDNA-SDK.git" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span class="prev"><a href="../scenarios_hv4/"><i class="fa fa-angle-left"></i> Previous</a></span>
+      
+      
+        <span class="next"><a href="../scenarios_vw4/">Next <i class="fa fa-angle-right"></i></a></span>
+      
+    </span>
+	<div class="footer-right">
+		<ul class="social-links">
+			<li class="list-inline"><a href="https://twitter.com/citrix"><i class="fa fa-twitter"></i>@citrix</a></li>
+			<li class="list-inline"><a href="mailto:support@citrix.com"><i class="fa fa-envelope-o"></i>support@citrix.com</a></li>
+		</ul>
+		<ul class="inner-pages">
+			<li class="list-inline"><a href="http://citrix.com/about/legal">Privacy and Terms</li>
+		</ul>
+	</div>
+</div>-->
+
+  </body>
+
+</html>
