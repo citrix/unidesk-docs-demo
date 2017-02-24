@@ -1,0 +1,14 @@
+[Install the Unidesk ELM](get_started_deploy_unidesk_elm_co4)
+ > Prerequisites (Acropolis)
+#Unidesk Prerequisites (Nutanix AHV)
+In this article:
+<table>            <col></col>            <tbody>                <tr>                    <td>                        <p><a href="#os_reqs">OS requirements</a>                        </p>                        <p><a href="#Storage"> Storage requirements </a>                        </p>                        <p><a href="#acropolis_reqs">Nutanix Acropolis requirements</a>                        </p>                    </td>                </tr>            </tbody>        </table>
+
+###Operating System requirement <a name="General"></a>
+<ul>            <li>                <p><b>OS for Layered Images</b>                </p>                <p>You need a Unidesk-supported <a href="welcome_platform_support_co4.htm#Session">operating system</a> to import into an OSLayer. This OSwill be used to build your Layered Images.</p>            </li>        </ul>
+###Storage requirements <a name="Storage"></a>
+<ul>            <li>                <p><b>350-500 GB Storage Space</b>                </p>                <p>The Unidesk ELM uses local storage for temporary files and finalized layers. The more layers you create, the more space you need. However, if you run low on space, you can expand the size of the current disk, or add other disks to the ELM when needed.</p>            </li>            <li>                <p><a href="welcome_platform_support_co4.htm#Session"></a><b>40-100 GB network file share  (SMB/NFS)</b>                </p>                <p>The file share connected to the ELM is used for upgrades, Elastic Layers, and cross-platform publishing. This space is easy to expand, if needed. </p>            </li>        </ul>
+
+###Nutanix Acropolis requirements for installing the Unidesk ELM
+If you are installing the Unidesk ELM and building your Layers on Acropolis VMs, or you are publishing Layered Images that will be used in a Acropolis environment, you need:
+<ul>            <li>                <p><b>Acropolis account and privileges</b>                </p>                <ul>                    <li>An existing or new Acropolis account to use for Unidesk.</li>                    <li>The account must have Acropolis privileges to: <ul><li>Create and remove virtual disks.</li><li>Copy and delete layers on virtual disks using Acropolis file APIs.</li></ul></li>                </ul>            </li>            <li>                <p><b>Nutanix Acropolis software and settings</b></p>                <p>Access to the Acropolis Tools to install on the layer.</p>            </li>            <li>                <p><b>Acropolis resource information</b></p>                <p>The Acropolisinfo listed in <a href="connector_config_fields_ah4.htm">Acropolis Connector Configuration</a>.</p>            </li>        </ul>

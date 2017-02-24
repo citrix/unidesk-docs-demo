@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Unidesk Prerequisites (vSphere)</title>
+    </head>
+    <body style="padding-left: 1.5em; padding-right: 1em; border-bottom-width: .5em; border-left-width: .5em; border-right-width: .5em; border-top-width: .5em; color: #000000; font-family: Arial, ' Helvetica', ' Sans Serif'; font-size: 9pt; margin-left: 0pt; text-align: left; background-color: #ffffff;">
+        <div class="MCBreadcrumbsBox_0" style="border-bottom-color: #ffffff;border: 1px;border-bottom-width: 1px;border-top-width: 1px;border-left-width: 1px;border-right-width: 1px;font-size: 9pt;color: #636363;border-bottom-style: solid;padding-bottom: 10px;margin-bottom: 10px;"><span class="MCBreadcrumbsPrefix">You are here: </span><span class="MCBreadcrumbsSelf">Learn about Citrix App Layering [UnideskVersion Layering 4.0.8]</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">Set up</span><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="get_started_deploy_unidesk_elm_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Install the Unidesk ELM</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Prerequisites</span>
+        </div>
+        <h1 style="clear: both;width: 85%;page-break-before: always;color: #d31245;font-size: 20px;font-weight: 500;margin-bottom: 0.40em;margin-top: 0.4em;">Unidesk Prerequisites (vSphere)</h1>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this article:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 7.25in;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#os_requirement" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> <![CDATA[ ]]></a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#storage_req" class="selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Storage requirements</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#vsphere_reqs" class="selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">vSphere requirements</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a name="os_requirement"></a>
+        </p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="General"></a>Operating System requirement <a name="NFS"></a></h3>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>OS for Layered Images</b>
+                </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You need a Unidesk-supported <a href="welcome_platform_support_co4.htm#Session" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">operating system</a> to import into an OS&#160;Layer. This OS&#160;will be used to build your Layered Images.</p>
+            </li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a name="storage_req"></a>
+        </p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Storage requirements </h3>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>350-500 GB Storage Space</b>
+                </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Unidesk ELM uses local storage for temporary files and finalized layers. The more layers you create, the more space you need. However, if you run low on space, you can expand the size of the current disk, or add other disks to the ELM when needed.</p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a name="NFS"></a><b>40-100 GB network file share  (SMB/NFS)</b>
+                </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The file share connected to the ELM is used for upgrades, Elastic Layers, and cross-platform publishing. This space is easy to expand, if needed. </p>
+            </li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a name="vsphere_reqs"></a>
+        </p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">vSphere prerequisites</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If you are installing the Unidesk ELM in vSphere and building your layers on vSphere VMs or publishing Layered Images to vSphere, you need:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>Network access to Unidesk Tools download</b>
+                </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You need access from the Packaging Machine VM in vSphere to the Unidesk Tools download (available on the Unidesk Download page).</p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>vCenter account and privileges</b>
+                </p>
+                <ul style="margin-left: 0px;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">An existing or new vCenter account to use for Unidesk.</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">The account must have vCenter privileges to: Create and remove VMDKs, and to copy and delete layers on VMDKs using vSphere file APIs (see detailed list of vCenter permissions below).</li>
+                </ul>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>Dedicated vCenter role for Unidesk (optional)</b>
+                </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To set up a new role:</p>
+                <ol style="margin-left: 2.0em;padding-left: 0px;list-style-type: decimal;">
+                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">In the vSphere Client, navigate to <span class="bold" style="font-weight: bold;">Home &gt; Administration&#160;&gt;&#160;Roles</span>.</li>
+                    <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Click <b>Add Role</b>. </li>
+                    <li class="table" value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Enter a name. Example: <i>UDAdmin</i>.</li>
+                    <li class="table" value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Set the privileges for this account.</li>
+                </ol>
+            </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>Privileges set for the vCenter role you are using for Unidesk</b>
+                </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Add the required vCenter permissions (detailed permissions list below).</p>
+                <ol style="margin-left: 2.0em;padding-left: 0px;list-style-type: decimal;">
+                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Open the <b>Assign Permissions</b> window.</li>
+                    <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">In the vSphere Client, navigate to <span class="bold" style="font-weight: bold;">Home &gt; Inventory &gt; Hosts and Clusters</span>.</li>
+                    <li class="table" value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Select your <b>vCenter</b>, right-click, and select <b>Add permission</b>.</li>
+                    <li class="table" value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">In the Assign Permissions window, under Assigned Role, expand All Privileges.</li>
+                    <li class="table" value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Select the permissions listed below, make sure that the <b>Propogate to Child Objects</b> check box is selected, and click <b>OK</b>. displayed.</li>
+                </ol>
+            </li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>The </b>Unidesk<b> role associated with the administrator account</b></p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Associate the Unidesk role with the administrator account:</p>
+                <ol style="margin-left: 2.0em;padding-left: 0px;list-style-type: decimal;">
+                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Add the administrator account and assign the Unidesk role to it.</li>
+                    <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Allow the permissions to propagate to the entire Datacenter.</p>
+                        <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><span class="note" style="font-family: Arial, ' Helvetica', ' Sans Serif';font-size: 10pt;font-weight: bold;margin-bottom: 15px;padding-bottom: 15px;color: #303030;">Note:</span> If you want to restrict this use from accessing specific folders in the Datacenter, grant the user more restrictive permissions for those folders.</p>
+                    </li>
+                </ol>
+            </li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a name="Required"></a><b>vCenter permissions</b>
+                </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Unidesk needs vCenter-level privileges to request information about the execution status of tasks. Without those privileges, Unidesk would consider the tasks failed.</p>
+                <table class="TableStyle-standard_table" style="border-collapse: collapse; border-left-style: solid; border-left-color: #d4d4d4; border-left-width: 1px; border-right-style: solid; border-right-color: #d4d4d4; border-right-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-top-width: 1px; border-bottom-style: solid; border-bottom-color: #d4d4d4; border-bottom-width: 1px; margin-top: 5px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; margin-left: 0; margin-right: auto; caption-side: top;" cellspacing="1">
+                    <col class="TableStyle-standard_table-Column-Column1" style="width: 269px;" />
+                    <col class="TableStyle-standard_table-Column-Column1" style="width: 305px;" />
+                    <thead style="display: table-header-group;">
+                        <tr class="TableStyle-standard_table-Head-Header1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <th class="TableStyle-standard_table-HeadE-Column1-Header1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;color: #000000;text-align: left;vertical-align: top;background-color: #d4d4d4;border-bottom-width: 1px;border-bottom-color: #ffffff;border-bottom-style: solid;font-size: 10pt;">Expand <i>All Privileges</i>, and each of the following...</th>
+                            <th class="TableStyle-standard_table-HeadD-Column1-Header1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;color: #000000;text-align: left;vertical-align: top;background-color: #d4d4d4;border-bottom-width: 1px;border-bottom-color: #ffffff;border-bottom-style: solid;font-size: 10pt;">Then select...</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">Datastore</td>
+                            <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;"> Allocate space</li>
+                                    <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Browse datastore</li>
+                                    <li class="table" value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Low level file operations</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">Folder</td>
+                            <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Create folder</li>
+                                    <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Delete folder</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">Global</td>
+                            <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Cancel task</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">Host &gt; Configuration</td>
+                            <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">System Management</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">Network</td>
+                            <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Assign network</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">Resource</td>
+                            <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Assign virtual machine to resource pool</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">vApp</td>
+                            <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Export</li>
+                                    <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Import</li>
+                                    <li class="table" value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">vApp application configuration</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">Virtual machine &gt; Configuration</td>
+                            <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Add existing disk</li>
+                                    <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Add new disk</li>
+                                    <li class="table" value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Add or remove device</li>
+                                    <li class="table" value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Advanced</li>
+                                    <li class="table" value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Change CPU count</li>
+                                    <li class="table" value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Change resource</li>
+                                    <li class="table" value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Configure managedBy</li>
+                                    <li class="table" value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Disk change tracking</li>
+                                    <li class="table" value="9" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Memory</li>
+                                    <li class="table" value="10" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Modify device settings</li>
+                                    <li class="table" value="11" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Remove disk</li>
+                                    <li class="table" value="12" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Rename</li>
+                                    <li class="table" value="13" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Reset guest information</li>
+                                    <li class="table" value="14" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Set annotation</li>
+                                    <li class="table" value="15" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Settings</li>
+                                    <li class="table" value="16" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Swapfile placement</li>
+                                    <li class="table" value="17" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Upgrade virtual hardware</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">Virtual machine &gt; Interaction</td>
+                            <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Answer question</li>
+                                    <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Configure CD media</li>
+                                    <li class="table" value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Console interaction</li>
+                                    <li class="table" value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Device connection</li>
+                                    <li class="table" value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Power off</li>
+                                    <li class="table" value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Power on</li>
+                                    <li class="table" value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Reset</li>
+                                    <li class="table" value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Suspend</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">Virtual machine &gt; Inventory</td>
+                            <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Create from existing</li>
+                                    <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Create new</li>
+                                    <li class="table" value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Register</li>
+                                    <li class="table" value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Remove</li>
+                                    <li class="table" value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Unregister</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyE-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">Virtual machine &gt; Provisioning</td>
+                            <td class="TableStyle-standard_table-BodyD-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;border-bottom-width: 1px;border-bottom-color: #d4d4d4;border-bottom-style: solid;text-align: left;vertical-align: top;margin-left: 0em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Clone template (optional, but required to use a vSphere template as the source VM)</li>
+                                    <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Clone virtual machine</li>
+                                    <li class="table" value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Customize</li>
+                                    <li class="table" value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Deploy template</li>
+                                    <li class="table" value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Mark as template</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-standard_table-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                            <td class="TableStyle-standard_table-BodyB-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;text-align: left;vertical-align: top;border-right-width: 1px;border-right-color: #d4d4d4;border-right-style: solid;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-top-width: .5em;color: #4d4d4d;">Virtual machine &gt; Snapshot management</td>
+                            <td class="TableStyle-standard_table-BodyA-Column1-Body1" style="padding-left: 4px;padding-right: 2px;padding-top: 2px;padding-bottom: 2px;font-family: Arial;font-size: 10pt;text-align: left;vertical-align: top;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;color: #4d4d4d;">
+                                <ul style="margin-left: 0px;padding-left: 15px;">
+                                    <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Create&#160;snapshot</li>
+                                    <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Remove Snapshot</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">&#160;</p>
+    </body>
+</html>

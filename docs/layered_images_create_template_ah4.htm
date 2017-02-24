@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Create Image Templates (Nutanix AHV)</title>
+    </head>
+    <body style="padding-left: 1.5em; padding-right: 1em; border-bottom-width: .5em; border-left-width: .5em; border-right-width: .5em; border-top-width: .5em; color: #000000; font-family: Arial, ' Helvetica', ' Sans Serif'; font-size: 9pt; margin-left: 0pt; text-align: left; background-color: #ffffff;">
+        <div class="MCBreadcrumbsBox_0" style="border-bottom-color: #ffffff;border: 1px;border-bottom-width: 1px;border-top-width: 1px;border-left-width: 1px;border-right-width: 1px;font-size: 9pt;color: #636363;border-bottom-style: solid;padding-bottom: 10px;margin-bottom: 10px;"><span class="MCBreadcrumbsPrefix">You are here: </span><span class="MCBreadcrumbsSelf">Learn about Citrix App Layering [UnideskVersion Layering 4.0.8]</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">Publish</span><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="layered_images_create_template_co4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Create an Image Template</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Nutanix AHV</span>
+        </div>
+        <h1 style="clear: both;width: 85%;page-break-before: always;color: #d31245;font-size: 20px;font-weight: 500;margin-bottom: 0.40em;margin-top: 0.4em;">Create Image Templates (Nutanix AHV)</h1>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this article:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 100%;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Pre" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Prerequisites</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Cr_Temp" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Create an Image Template</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Next" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Next Step</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You can create Image Templates to publish Layered Images to your target platform where you can then use the Layered Image to provision servers on your chosen publishing platform. An Image Template stores your Layer assignments, along with a Layer icon and description. You can easily <a href="layered_images_manage_template_co4.htm#Ed_Temp" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">edit</a> an Image Template and use it to publish new versions of your Layered Images. </p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Pre"></a>Prerequisites</h2>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="layer_os_create_ah4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">OS&#160;Layer</a> (Required) </p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a name="platform_layer_prereqs"></a><a href="layer_platform_create_ah4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Platform Layer</a> (Required for cross-platform deployments)</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Platform Layer contains the software required for publishing to your environment, in this case:</p>
+                <ul style="margin-left: 0px;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Nutanix Acropolis VM Mobility</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Citrix MCS Device imaging tools</li>
+                </ul>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Platform Layer must have the same hardware settings as the OS&#160;Layer. You choose these settings when deploying the VM for the OS&#160;and Platform Layers.</p>
+            </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="layer_apps_create_ah4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">App Layers</a> (Optional)</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">You can create an Image Template without App Layers. This is useful for testing your OS&#160;Layer before using it to create App Layers. </p>
+            </li>
+        </ul>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Cr_Temp"></a>Create an Image Template</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">To create an Image Template:</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Unidesk Management Console (UMC), select the <b>Images</b> module, then click <b>Create Template</b>. This opens the Create Template wizard.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Name and Description tab, enter a <b>Name</b> for the template and notes in the <b>Description</b> field, so you can identify the template when choosing one for publishing a Layered Image. </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the OS&#160;Layer tab, select one of the <b>Available OS&#160;Layers</b>. If there is more than one Layer Version, the most recent version is selected by default. You can choose an older version by expanding the Layer and choosing a different one.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the App Assignment tab, select the <b>App Layers</b> to include in the Layered Images that you publish using this template.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">On the Connector page, select a Citrix&#160;MCS for Nutanix AHV Connector Configuration for the location where you want to publish the Layered Image. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">If you do not yet have a Connector Configuration for Citrix&#160;MCS for Nutanix AHV, add one. Click <b>New</b>, choose the Connector Type, and follow the instructions to <a href="connector_config_fields_ah_mc4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Create a Connector Configuration</a>.</p>
+            </li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In the Platform Layer tab, select a&#160;Platform Layer with the tools and hardware settings that you need to publish Layered Images to your environment. For details, click <a href="#platform_layer_prereqs" class="selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">here</a>.</p>
+            </li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">On the Layered Image Disk page, edit the following fields, as needed:</p>
+                <ul style="margin-left: 0em;padding-left: 15px;">
+                    <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">(Optional) <i>Layered Image Disk File name</i>. Enter a name for the Layered Image Disk.</li>
+                    <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><i>Layered Image Disk Size</i>. The default disk size of 100 GB is recommended.</li>
+                    <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><i>Layered Image Disk Format</i>. The default disk format is VHD, but you can also select VMDK or QCOW2.</li>
+                    <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><i>Sysprep</i>. An appropriate default value is selected for your environment. This setting determines whether the Layered Image will be generalized, and if so, which script will be used to generalize the image and join a domain. Since MCS uses its own built in technology to perform the operations generally performed by sysprep, MCS requires the VMs used with their catalogs not be generalized so they do not  go through the sysprep steps when first powered on in the catalog.</li>
+                    <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><i>Elastic Layering</i> - Controls whether Elastic Layering  on this Layered Image is allowed, and whether the user's app data and configuration settings are saved in a User Layer . , select one of the following values:<ul style="margin-left: 0em;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><b>Application Layers only</b>. Allows Elastic Layers for users who log into this Layered Image. Available for both Session Hosts and Desktops.</li><li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><b>Application and User Layers (Unidesk Labs)</b>. Enables Elastic Layer assignments and User Layers on the Layered Image.  User Layers preserve users' application data and configuration settings. Currently, User Layers can be used on <i>Windows 7</i> Layered Images only, not on Windows 10, nor on Session Hosts.</li><li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"><b>None</b>.  Elastic Layers and User Layers are disabled.</li></ul></li>
+                </ul>
+            </li>
+            <li value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Confirm and Complete tab, enter any comments you would like for this layer, and click <b>Create Template</b>.</li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The new Template icon appears in the Unidesk Images module.</p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Next"></a>Next Step</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="layered_images_publish_ah4.htm" class="MCXref_0" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Publish Layered Images (Nutanix AHV)</a>
+        </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">&#160;</p>
+    </body>
+</html>

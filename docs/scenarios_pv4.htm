@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Test drive: Publish to PVS, XenApp 7 in vSphere</title>
+    </head>
+    <body style="padding-left: 1.5em; padding-right: 1em; border-bottom-width: .5em; border-left-width: .5em; border-right-width: .5em; border-top-width: .5em; color: #000000; font-family: Arial, ' Helvetica', ' Sans Serif'; font-size: 9pt; margin-left: 0pt; text-align: left; background-color: #ffffff;">
+        <div class="MCBreadcrumbsBox_0" style="border-bottom-color: #ffffff;border: 1px;border-bottom-width: 1px;border-top-width: 1px;border-left-width: 1px;border-right-width: 1px;font-size: 9pt;color: #636363;border-bottom-style: solid;padding-bottom: 10px;margin-bottom: 10px;"><span class="MCBreadcrumbsPrefix">You are here: </span><span class="MCBreadcrumbsSelf">Learn about Citrix App Layering [UnideskVersion Layering 4.0.8]</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">Test drive</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Publish to PVS, XenApp 7 in vSphere</span>
+        </div>
+        <h1 style="clear: both;width: 85%;page-break-before: always;color: #d31245;font-size: 20px;font-weight: 500;margin-bottom: 0.40em;margin-top: 0.4em;">Test drive: Publish to PVS, XenApp 7 in vSphere</h1>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this article:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 7.25in;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Platform" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Platforms used in this test drive</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Componen" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Components you will create</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Prerequi" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Prerequisites</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Part" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Publish a test image with an OS&#160;Layer and a Platform Layer</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Part2" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Add your first App Layer and republish the Layered Image</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Platform"></a>Platforms used in this test drive</h2>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; margin-left: 0; margin-right: auto;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" style="width: 200px;" />
+            <col class="TableStyle-Noborders-Column-Column1" style="width: 200px;" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">Create Layers in:</td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;"> vSphere</td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">Publish Layered Images to:</td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">PVS</td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyB-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">For delivery to: </td>
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">XenApp users</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">This test drive leads you through the process of publishing a Layered Image as a vDisk to a PVS server. As this diagram shows, the hypervisor in this scenario is vSphere, and the connection broker is Citrix XenApp. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+            <img src="Resources/Images/unidesk_publish_to_pvs__xenapp_vsphere2_815x331.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;width: 815;height: 331;" />
+        </p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Componen"></a>Components you will create</h2>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; margin-left: 0; margin-right: auto;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" style="width: 131px;" />
+            <col class="TableStyle-Noborders-Column-Column1" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <th class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;font-size: 10pt;">Component</th>
+                    <th class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;font-size: 10pt;">Description</th>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td style="text-align: left;vertical-align: top;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;padding-left: 6px;padding-right: 6px;padding-bottom: 1px;padding-top: 0px;" class="TableStyle-Noborders-BodyE-Column1-Body1">OS&#160;Layer</td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li class="table" value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Contains Windows Server 2012 R2 </li>
+                            <li class="table" value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Unidesk Tools are installed</li>
+                            <li class="table" value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0em;font-size: 13px;color: #4d4d4d;">Network card is set to VMXNet3</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">Platform Layer</td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Layer containing all platform-related software and settings</li>
+                            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Created in vSphere using a VMware VM for the Packaging Machine</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">App Layer</td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Notepad++</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">Image Template</td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Created in two stages:<ul style="margin-left: 0px;padding-left: 15px;"><li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;"> Stage 1: Includes OS Layer &amp; Platform Layer</li><li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Stage 2: Includes the addition of App Layer </li></ul></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyE-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">Layered Image</td>
+                    <td class="TableStyle-Noborders-BodyD-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Image Template</li>
+                            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">OS Layer</li>
+                            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Platform Layer</li>
+                            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">App Layer</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyB-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">PVS&#160;vDisk</td>
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+                            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Contains the Unidesk Layered Image</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Prerequi"></a>Prerequisites</h2>
+        <table style="border-collapse: collapse; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; margin-left: 0; margin-right: auto;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" style="width: 50%;" />
+            <col class="TableStyle-Noborders-Column-Column1" style="width: 50%;" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyB-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Unidesk</h3>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; text-indent: -20px; margin-left: 22px;"><span style="font-family: Wingdings;">o</span> Unidesk ELM&#160;installed on a server in your vSphere environment.</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; text-indent: -20px; margin-left: 22px;"><span style="font-family: Wingdings;">o</span> Unidesk Tools downloaded from the Unidesk Download page and copied to a location that the Packaging Machine VM will be able to access.</p>
+                        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">vSphere</h3>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; text-indent: -20px; margin-left: 22px;"><span style="font-family: Wingdings;">o</span> Access from the Packaging Machine VM in vSphere to the Unidesk Tools download, which is available on the Unidesk Download page.</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; text-indent: -20px; margin-left: 22px;"><span style="font-family: Wingdings;">o</span> vSphere resource information for Unidesk <a href="connector_config_fields3_vs4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">vSphere Connector Configuration</a>.</p>
+                        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">Citrix XenApp </h3>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; text-indent: -20px; margin-left: 22px;"><span style="font-family: Wingdings;">o</span> XenApp Virtual Delivery Agent Installer for Windows Server OS. The XenApp version must match the version of the XenApp server on which the Layered Image will be used.</p>
+                    </td>
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;">PVS</h3>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; text-indent: -20px; margin-left: 22px;"><span style="font-family: Wingdings;">o</span> Unidesk Agent - Installed on all PVS servers used to access the PVS servers to which you will publish images. (Agent must be registered with the Unidesk ELM.)</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; text-indent: -20px; margin-left: 22px;"><span style="font-family: Wingdings;">o</span> All PVS&#160;servers where the Unidesk Agent is installed must have the PVS&#160;Console installed. </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; text-indent: -20px; margin-left: 22px;"><span style="font-family: Wingdings;">o</span> PVS Target Device Imaging software (version must match the PVS server to which the Layered Image will be published).</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; text-indent: -20px; margin-left: 22px;"><span style="font-family: Wingdings;">o</span> PVS&#160;resource information for the Unidesk <a href="connector_config_fields_pv4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">PVS Connector Configuration</a>. </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; text-indent: -20px; margin-left: 22px;"><span style="font-family: Wingdings;">o</span> Appropriate PowerShell Snap-in must be installed.</p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; text-indent: -20px; margin-left: 22px;"><span style="font-family: Wingdings;">o</span> When using KMS licensing, PVS requires that each target device has a unique CMID. For more about this, see the Citrix article, <a href="https://www.citrix.com/blogs/2014/05/01/demystifying-kms-and-provisioning-services/" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Demystifying KMS and Provisioning Services</a>. The steps for rearming KMS are covered in the <a href="#Step3_platform_pulishing" class="selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">Platform Layer instructions</a> below.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Part"></a>Publish a test image with an OS&#160;Layer and a Platform Layer</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this part of the test drive you will:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 100%;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" style="width: 469px;" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Step" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Step 1: Create an OS&#160;Layer</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Step3_platform_pulishing" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Step 2: Create a Platform Layer to include in Layered Images</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Step4_template" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Step 3: Create an Image Template</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Step5_publish" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Step 4: Publish a Layered Image to PVS</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Step6_provision" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Step 5: Assign the new vDisk to a collection</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Step"></a>Step 1: Create an OS&#160;Layer</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/scenario_os_layer.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_flow_around_image_right_thumb300h_0" src="Resources/Images/scenario_os_layer_thumb_0_300.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;float: right;margin-left: 30px;margin-right: 8px;width: 483px;height: 300px;" tabindex="" /></a>
+        </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this step you will create a vSphere VM to use as your OS&#160;Machine, and prepare the OS on it. Then you will download the OS&#160;.vmdk file to the Network File Share and import the OS Disk into the Unidesk OS&#160;Layer.</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In vSphere, create a Windows Server 2012 R2 VM, specifying a network adaptor of VMXNet3.</p>
+                <p class="noteText" style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d; margin-right: 100px; padding-right: 5px;"><b>Important:</b> When creating the image, be sure to choose the default cluster allocation size of 4K.</p>
+            </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log into the new VM.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Check to see if the operating system is configured with a VMXNet3 card, and if not, change the setting to VMXNet3. Then restart the system and ensure the new network adapter setting is working.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Install Windows Server 2012 <b>Session Host role</b>.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Download the Unidesk OS Machine Tools from the Unidesk Support Download Center. </li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Double-click the executable to copy the scripts and files to <code>C:\Windows\Setup\scripts</code>.  </li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">From the <code>C:\Windows\Setup\scripts</code> folder, run the included Setup_x64.exe file on the VM to install the Unidesk tools.</li>
+            <li value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Shut down the VM. </li>
+            <li value="9" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Right-click the VM and select <b>Template &gt; Export OVF Template</b>. This preserves any snapshots you may have made.</li>
+            <li value="10" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the wizard that opens, select the name of the file that will be created, and the directory in which you would like to store the file and format: "Folder of files (OVF)". Files are downloaded to the Network File Share.</li>
+            <li value="11" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Unidesk ELM, select <b>Layers &gt; OS Layers</b> and click <b>Create OS Layer</b>. This opens the Create OS Layer Wizard so you can set up the new Layer and import your operating system into it.</li>
+            <li value="12" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">First, specify a <b>Layer Name</b> and <b>Version</b> in the Layer Details tab. </li>
+            <li value="13" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Connector tab, select the <b>Network File Share</b> where you downloaded the vSphere .vmdk files. Once connected to the file share, you can select the operating system to import.</li>
+            <li value="14" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the OS Disk Details tab, click <b>Browse</b> to select the  *.vmdk file. </li>
+            <li value="15" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Icon Assignment tab, select the 2012 icon for this Layer.</li>
+            <li value="16" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Confirm and Complete tab, make sure the details of the OS Layer are correct, and click <b>Create Layer</b>. </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When the task completes, the new OS Layer in the Unidesk Management Console (UMC) displays a <i>Deployable</i> status.</p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Step3_platform_pulishing"></a>Step 2: Create a Platform Layer to include in Layered Images</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/scenario_platform_layer.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_flow_around_image_right_thumb300h_0" src="Resources/Images/scenario_platform_layer_thumb_0_300.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;float: right;margin-left: 30px;margin-right: 8px;width: 452px;height: 300px;" tabindex="" /></a>Platform Layers contain the software and settings required to either:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Create other Layers in your hypervisor environment, or </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Publish and run your Layered Images in the target environment</li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">By putting all platform-specific software and settings into Platform Layers, your other Layers and Image Templates are free of any platform-specific software, and can be used to create Layered Images for multiple environments. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Now you will create a Platform Layer to use in your Layered Images. This Platform Layer helps to ensure that Layered Images run correctly in your environment. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">For this test drive, the platform software and settings you will include in the Platform Layer are for vSphere, PVS, and XenApp. Using the Create Platform Layer wizard in the UMC, you will:</p>
+        <ul style="margin-left: 0px;padding-left: 15px;margin-top: 0.75em;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Deploy a Packaging Machine in vSphere. </li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Install the platform software, configure platform settings, and verify the Layer.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Rearm KMS (assuming your OS image was activated using KMS).   </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Finalize the Platform Layer by importing the Packaging Machine. </li>
+        </ul>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Here's how:</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <b>Layers &gt;&#160;Platform Layers</b> and then  <b>Create Platform Layer</b> from the Action bar to open the Create Platform Layer wizard.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Layer Details tab, enter a <b>Layer Name</b> and <b>Version</b>, both required values.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the OS&#160;Layer tab, select the OS&#160;Layer you created earlier. </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Connector tab, click <b>New</b> to add a vSphere Connector Configuration for creating the Packaging Machine VM. Use the <a href="connector_config_fields3_vs4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">prerequisite</a> vSphere Connector Configuration <a href="connector_config_fields3_vs4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">information</a> to complete the fields. Click <b>TEST</b>&#160;to verify the connection, then click <b>SAVE</b>.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">On the Platform Types tab, select <b>This platform layer will be used for publishing Layered Images</b>, and select the hypervisor, Provisioning Service, and Connection Broker where you will publish your Layered Images.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/layers_platform_pvs.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_0" src="Resources/Images/layers_platform_pvs_thumb_0_150.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;width: 378px;height: 150px;" tabindex="" /></a>
+                </p>
+            </li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Packaging Disk tab, notice the Packaging Disk  <b>File name</b>. This disk will be used for the Packaging Machine (the VM)&#160;where you will install the platform tools and configure the settings.</li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Icon Assignment tab, select one of the default icons.</li>
+            <li value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the&#160;Confirm and Complete tab, review the settings and click <b>Create Layer</b>. </li>
+            <li value="9" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Expand the Tasks bar at the bottom of the UI, and double-click the Packaging Disk task to show the full task description. Once the Packaging Disk has been created, the Task bar displays the location of the Packaging Disk in your environment. Example:</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/scenario_layer_task_vs.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_0" src="Resources/Images/scenario_layer_task_vs_thumb_0_150.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;width: 756px;height: 150px;" tabindex="" /></a>
+                </p>
+            </li>
+            <li value="10" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Log into your vSphere web client, then use the information displayed in the Create Platform Layer Task (shown above) to navigate to the Packaging Machine in vSphere.</p>
+            </li>
+            <li value="11" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Power on the Packaging Machine, and remote log into it. Remote log into the Packaging Machine with the User account you used to create the operating&#160;system.</p>
+            </li>
+            <li value="12" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Domain join the Packaging Machine VM.</p>
+            </li>
+            <li value="13" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Install your vmTools, and configure the vSphere settings as you want them to be when the Packaging Machine starts.</p>
+            </li>
+            <li value="14" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Run the PVS Target Device Installation software. In the installation wizard, take the default settings, except on the last page of the wizard, deselect the Launch Imaging Wizard checkbox. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><b>Important:</b> Do not run the device Imaging Wizard.</p>
+            </li>
+            <li value="15" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Run the PVS Device optimization tool.</p>
+            </li>
+            <li value="16" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Install the XenApp Virtual Delivery Agent for Windows Server OS using the default settings. For the Master device option, choose MCS/PVS.</p>
+            </li>
+            <li value="17" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Verify the Rearm count on the OS by running slmgr /dlv from a command prompt. </p><pre xml:space="preserve">slmgr /dlv</pre>
+            </li>
+            <li value="18" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Rearm KMS:</p><pre xml:space="preserve">slmgr /rearm</pre>
+            </li>
+            <li value="19" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Double-click the <i>Shutdown For Finalize</i> icon. A command line window displays messages about the layer verification process. If there is an outstanding operation, wait for it to complete. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+                    <img src="Resources/Images/shutdown_for_finalize.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+                </p>
+            </li>
+            <li value="20" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Once any pending operations are complete, if the Finalize process tells you to reboot the machine, be sure to rearm KMS again.</li>
+            <li value="21" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Shut down the Packaging Machine by double-clicking the <i>Shutdown For Finalize</i> icon again. </li>
+            <li value="22" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Return to the UMC, and select <b>Layers &gt; Platform Layers</b>, then select the Platform Layer and click <b>Finalize</b>.</li>
+            <li value="23" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Use the Task bar to monitor when the layer becomes deployable. </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">When the new task becomes <i>Deployable</i>, you can add your new layers to an Image Template. </p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Step4_template"></a>Step 3: Create an Image Template</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/scenario_image_templates.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_flow_around_image_right_thumb300h_0" src="Resources/Images/scenario_image_templates_thumb_0_300.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;float: right;margin-left: 30px;margin-right: 8px;width: 482px;height: 300px;" tabindex="" /></a>
+        </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Create an Image Template that includes the same OS Layer as you used in the Platform Layer you just created.</p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <b>Images</b> and click <b>Create Template</b>. The Create Template Wizard opens.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Type a name for the template and select an icon for the Layer.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the OS&#160;Layer tab choose the OS Layer.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Skip the App Layer Assignment tab for now. You'll add App Layers in the next part of this test drive.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Connector tab, select the PVS Connector Configuration. If you don't have one yet, click <b>New</b> to open the Citrix PVS&#160;Connector Configuration page, and enter the information, as described <a href="connector_config_fields_pv4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">here</a>.</li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Platform Layer tab, select the Platform Layer that contains the PVS and XenApp software and settings.</li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Layered Image Disk tab, edit the Layered Image Disk Filename, and keep the default values for the rest of the settings.</li>
+            <li value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Confirm and Complete tab, click <b>Create Template</b>. </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Next, you can publish the Layered Image using this template.</p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Step5_publish"></a>Step 4: Publish a Layered Image to PVS</h3>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <b>Images</b>. Your Template is displayed.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select the Template and click <b>Publish Layered Image</b>. This opens the Publish Layered Image wizard.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Confirm and complete the wizard, then expand the Task bar at the bottom of the window and monitor the task. When the task is <i>Done</i>, the vDisk is ready to add to a collection. </li>
+        </ol>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Step6_provision"></a>Step 5: Assign the new vDisk to a collection</h3>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Access the target PVS server via the PVS&#160;Console. The new vDisk should appear under the targeted PVS store (refresh may be required).</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Test the new vDisk by assigning it to a device.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Using Citrix PVS&#160;best practices, assign the new vDisk to a collection of targeted devices. </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Now that you have tested your Layered Image in PVS, it's time to add an App Layer to the image. </p>
+        <h2 style="margin-bottom: .5em;margin-top: 1.750em;color: #303030;font-size: 15px;font-weight: 600;"><a name="Part2"></a>Add your first App Layer and republish the Layered Image</h2>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">In this part of the test drive you will:</p>
+        <table style="border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-top-style: none; border-top-width: 0px; border-bottom-style: none; border-bottom-width: 0px; border-spacing: 1px 1px; border-spacing-x: 1px; border-spacing-y: 1px; font-size: 10pt; width: 100%;" class="TableStyle-Noborders" cellspacing="1">
+            <col class="TableStyle-Noborders-Column-Column1" style="width: 469px;" />
+            <tbody style="color: #4d4d4d;font-size: 9pt;margin: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+                <tr class="TableStyle-Noborders-Body-Body1" style="padding: 20px;padding-left: 40px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px;">
+                    <td class="TableStyle-Noborders-BodyA-Column1-Body1" style="padding-top: 0px;padding-bottom: 1px;text-align: left;vertical-align: top;padding-left: 6px;padding-right: 6px;margin-left: 0em;border-bottom-width: .5em;border-left-width: .5em;border-right-width: .5em;border-top-width: .5em;font-family: Arial, ' Helvetica', ' Sans Serif';color: #4d4d4d;font-size: 10pt;">
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Step1_platform_packaging" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Step 1: Create a Platform Layer for packaging other layers</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Step6" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Step 2: Create an App Layer</a>
+                        </p>
+                        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="#Step7" class="MCXref_0 selected" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"> Step 3: Publish a new Layered Image containing the new App Layer</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Similar to the process for creating a Platform Layer, you will prepare an App Layer in the UMC, deploy a Packaging Machine VM in vSphere where you install Notepad++, then import the VM into the new layer. You will add this layer to your Image Template, and publish a new version of the Layered Image.</p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Step1_platform_packaging"></a>Step 1: Create a Platform Layer for packaging other layers</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/scenario_platform_layer.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_flow_around_image_right_thumb300h_0" src="Resources/Images/scenario_platform_layer_thumb_0_300.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;float: right;margin-left: 30px;margin-right: 8px;width: 452px;height: 300px;" tabindex="" /></a>
+        </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">The Platform Layer for packaging layers is where you install the tools and settings specific to a particular hypervisor. Putting platform-specific software on the Platform Layer means that your App Layers do not need to include it, and therefore can be used on multiple platforms. </p>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Using the UMC, you will prepare this layer and deploy a Packaging Machine VM in vSphere. On the Packaging Machine, you will install the hypervisor software and configure the hypervisor settings, as needed. Finally, you will import the Packaging Machine to create the Platform Layer for packaging layers. </p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <b>Layers &gt;&#160;Platform Layers</b> and then  <b>Create Platform Layer</b> from the Action bar to open the Create Platform Layer wizard.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Layer Details tab, enter a <b>Layer Name</b> and <b>Version</b>, both required values.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the OS&#160;Layer tab, select the OS&#160;Layer you created earlier. </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Connector tab, the <b>vSphere</b> Connector Configuration.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Packaging Disk tab, notice the Packaging Disk  <b>File name</b>. This disk will be used for the Packaging Machine (the VM)&#160;where you will install the platform tools and configure the settings.</li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Icon Assignment tab, select one of the default icons.</li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the&#160;Confirm and Complete tab, review the settings and click <b>Create Layer</b>. </li>
+            <li value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Expand the Tasks bar at the bottom of the UI, and double-click the Packaging Disk task to show the full task description. Once the Packaging Disk has been created, the Task bar displays the location of the Packaging Disk in your environment. Example:</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/layers_app_action_required_vs.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_0" src="Resources/Images/layers_app_action_required_vs_thumb_0_150.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;width: 754px;height: 150px;" tabindex="" /></a>
+                </p>
+            </li>
+            <li value="9" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Log into your vSphere web client, then use the information displayed in the Packaging Disk Task (shown above) to navigate to the Packaging Machine in vSphere.</p>
+            </li>
+            <li value="10" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Power on the Packaging Machine, and remote log into it. Remote log in to the Packaging Machine with the User account you used to create the operating&#160;system.</p>
+            </li>
+            <li value="11" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Domain join the Packaging Machine VM.</p>
+            </li>
+            <li value="12" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Install your vmTools, and configure the vSphere settings as you want them to be when the Packaging Machine for this layer starts.</p>
+            </li>
+            <li value="13" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Double-click the <i>Shutdown For Finalize</i> icon. A command line window displays messages about the layer verification process. If there is an outstanding operation, wait for it to complete. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+                    <img src="Resources/Images/shutdown_for_finalize.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+                </p>
+            </li>
+            <li value="14" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Once any pending operations are complete, shut down the Packaging Machine by double-clicking the <i>Shutdown For Finalize</i> icon again. </li>
+            <li value="15" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Return to the UMC, and select <b>Layers &gt; Platform Layers</b>, then select the Platform Layer and click <b>Finalize</b>.</li>
+            <li value="16" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Use the Task bar to monitor when the layer becomes deployable. </li>
+        </ol>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Step6"></a>Step 2: Create an App Layer</h3>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/scenario_app_layer_wizard.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_flow_around_image_right_thumb300h_0" src="Resources/Images/scenario_app_layer_wizard_thumb_0_300.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;float: right;margin-left: 30px;margin-right: 8px;width: 452px;height: 300px;" tabindex="" /></a>
+        </p>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <b>Layers &gt;&#160;App Layers</b> and then  <b>Create App Layer</b> from the Action bar to open the Create App Layer wizard.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Layer Details tab, enter a <b>Layer Name</b> and <b>Version</b>, both required values.</li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the OS&#160;Layer tab, select the OS&#160;Layer you created earlier. </li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Connector tab, choose the vSphere <b>Connector Configuration</b> you used to create the Platform Layer for packaging other layers.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Platform Layer tab, choose the Platform Layer you just created.</li>
+            <li value="6" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">On the Packaging Disk tab, enter a <b>File name</b> for the Packaging Disk. This disk will be used for the Packaging Machine (the VM)&#160;where you will install the application.</li>
+            <li value="7" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Icon Assignment tab, select one of the supplied icons for the layer, or if you'd like to use the application icon, you can browse for it and import it into this tab.</li>
+            <li value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the&#160;Confirm and Complete tab, review the settings and click <b>Create Layer</b>. </li>
+            <li value="9" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Expand the Tasks bar at the bottom of the UI, and double-click the task to expand it. Once complete, the Task bar displays the location of the Packaging Disk or Machine in your environment.</p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;"><a href="Resources/Images/layers_app_action_required_vs.png" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><img class="MCPopupThumbnail_0" src="Resources/Images/layers_app_action_required_vs_thumb_0_150.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;width: 754px;height: 150px;" tabindex="" /></a>
+                </p>
+            </li>
+            <li value="10" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Log into your vSphere web client, then use the information displayed in the above Task to navigate to the Packaging Machine in vSphere.</li>
+            <li value="11" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Power on the Packaging Machine, and remote log into it. Remote log in to the Packaging Machine with the User account you used to create the operating&#160;system in vSphere.</li>
+            <li value="12" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Install the application, leaving the application and the Packaging Machine in the state you want it to be for the user.</li>
+            <li value="13" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Double-click the <i>Shutdown For Finalize</i> icon. A command line window displays messages about the layer verification process. </p>
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">
+                    <img src="Resources/Images/shutdown_for_finalize.png" style="border: none;border-bottom-style: none;border-top-style: none;border-left-style: none;border-right-style: none;padding-bottom: -0.5em;" />
+                </p>
+            </li>
+            <li value="14" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">If there is an outstanding operation that must be completed before the Layer can be finalized, you are prompted to expedite the process. For example, if a Microsoft NGen operation needs to complete, you may be able to expedite the NGen operation, as detailed <a href="layer_apps_create_vs4.htm" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;"><a href="layer_about_co4.htm#Verifyin" style="text-decoration: underline;text-decoration-blink: false;color: #3e63b1;">here</a></a>.</li>
+            <li value="15" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Once any pending operations are complete, shut down the Packaging Machine by double-clicking the <i>Shutdown For Finalize</i> icon again. </li>
+            <li value="16" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Return to the UMC, and select <b>Layers &gt; App Layers</b>, and select <b>Finalize</b> in the Action bar.</li>
+            <li value="17" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Use the Task bar to monitor when the layer becomes deployable. </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Once the App Layer task is marked <i>Deployable</i>, you can add the new App Layer to your Image Template. </p>
+        <h3 style="margin-bottom: .5em;margin-top: 1.50em;color: #4d4d4d;font-size: 13px;font-weight: 600;"><a name="Step7"></a>Step 3: Publish a new Layered Image containing the new App Layer</h3>
+        <ol style="margin-left: 2.0em;padding-left: 0px;margin-top: 0.75em;list-style-type: decimal;">
+            <li value="1" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Select <b>Images</b>, then select your Image Template and click <b>Edit Template</b>.</li>
+            <li value="2" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">In the Edit Template wizard, select the Application Assignment tab and select the <b>Notepad++ Layer</b>. </li>
+            <li value="3" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Skip the Confirm and Complete tab, and click Save Template Changes to save the updated template.</li>
+            <li value="4" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Back in the Images module, select the Template again and click <b>Publish Layered Image</b>. This opens the Publish Layered Image wizard.</li>
+            <li value="5" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">Confirm the settings and click <b>Publish Layered Image</b>.</li>
+            <li style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;font-style: normal;" value="6">Monitor the tasks for completion.</li>
+            <li style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;font-style: normal;" value="7">Once the task is complete, access the target PVS server via the PVS Console. The new vDisk should appear under the targeted PVS store (refresh may be required).</li>
+            <li value="8" style="margin-left: 0px;margin-bottom: 0.75em;margin-top: 0.75em;font-size: 13px;color: #4d4d4d;">
+                <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">Assign the new vDisk either to a new or existing collection.</p>
+            </li>
+        </ol>
+        <p style="text-align: left; margin-top: 1.12em; margin-bottom: 0.75em; font-size: 13px; color: #4d4d4d;">&#160;</p>
+    </body>
+</html>
